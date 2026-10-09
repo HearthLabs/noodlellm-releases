@@ -1,5 +1,2 @@
 User-Agent: *
-Allow: /
-Disallow: /portal/
-
-Sitemap: https://noodlellm.com/sitemap.xml
+Disallow: /
