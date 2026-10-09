@@ -1,7 +1,7 @@
 /* Temporary password screen while the site is private. Not real security: the files are
    public on GitHub. Remove this file and the <script src="/gate.js"> tags to open the site. */
 (function () {
-  var KEY = "nllm_gate", HASH = "e9a76c3b09cfc7b72bbd66671106cc2e2ff9e87aa97d6bf24c15e887f3aba8c9";
+  var KEY = "nllm_gate", HASH = "a00637d03d9f3900aeb23e8172d53299eb4a44d8b338c4f071cf1240a0b03c2d";
   try { if (localStorage.getItem(KEY) === HASH) return; } catch (e) {}
   var root = document.documentElement;
   root.style.visibility = "hidden";
