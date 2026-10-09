@@ -35,7 +35,7 @@
   function show() {
     var box = document.createElement("div");
     box.setAttribute("style", "visibility:visible;position:fixed;inset:0;z-index:2147483647;display:flex;align-items:center;justify-content:center;background:#0b0d10;color:#e8eaed;font:16px system-ui,sans-serif");
-    box.innerHTML = '<form style="display:flex;flex-direction:column;gap:12px;width:280px"><div style="font-weight:600;font-size:18px">Noodle LLM</div><input type="password" placeholder="Password" autofocus style="padding:10px 12px;border-radius:8px;border:1px solid #333;background:#15181d;color:inherit;font:inherit"><button style="padding:10px;border-radius:8px;border:0;background:#3b9eff;color:#0b0d10;font:inherit;font-weight:600;cursor:pointer">Enter</button><div class="err" style="color:#f28b82;font-size:14px;min-height:1em"></div></form>';
+    box.innerHTML = '<form style="display:flex;flex-direction:column;gap:12px;width:280px"><div style="font-weight:600;font-size:18px">Noodle LLM</div><input type="text" placeholder="Password" autofocus autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" style="padding:10px 12px;border-radius:8px;border:1px solid #333;background:#15181d;color:inherit;font:inherit"><button style="padding:10px;border-radius:8px;border:0;background:#3b9eff;color:#0b0d10;font:inherit;font-weight:600;cursor:pointer">Enter</button><div class="err" style="color:#f28b82;font-size:14px;min-height:1em"></div></form>';
     document.body.appendChild(box);
     var form = box.querySelector("form"), input = box.querySelector("input"), err = box.querySelector(".err");
     form.addEventListener("submit", function (ev) {
