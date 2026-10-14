@@ -1,0 +1,53 @@
+# Builds noodlellm.com and publishes it to the gh-pages branch, which GitHub Pages serves.
+#
+# Runs on every push to main, and by hand from the Actions tab.
+#
+# Needs, in this repo's Settings:
+#   Pages      Source: Deploy from a branch, branch gh-pages, folder / (root)
+name: Publish site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: publish-site
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: pages
+
+      - name: Publish
+        run: |
+          scripts/publish-site.sh out pages
+          cd pages
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing changed on the site."
+            exit 0
+          fi
+          git -c user.name="noodlellm-bot" -c user.email="info@noodletechnology.com" \
+            commit -m "Publish the site (${{ github.event_name }}, ${GITHUB_SHA::7})"
+          git push origin gh-pages
