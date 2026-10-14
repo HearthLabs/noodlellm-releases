@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SITE } from "@/lib/catalog";
+import { SITE } from "@/lib/site";
 import { HTML_LANG, href, strings, type Locale } from "@/lib/i18n";
 import LanguageMenu from "./LanguageMenu";
 import LanguageHint from "./LanguageHint";
@@ -21,7 +21,6 @@ export default function Shell({ locale, children }: { locale: Locale; children: 
       title: t.footer.product,
       links: [
         { label: t.footer.download, href: href(locale, "/download") },
-        { label: t.footer.models, href: href(locale, "/models") },
         { label: t.footer.pricing, href: href(locale, "/pricing") },
       ],
     },
@@ -48,9 +47,6 @@ export default function Shell({ locale, children }: { locale: Locale; children: 
               {SITE.name}
             </Link>
             <nav className="flex items-center gap-5 text-sm text-ink-dim">
-              <Link href={href(locale, "/models")} className="hidden hover:text-ink sm:inline">
-                {t.nav.models}
-              </Link>
               <Link href={href(locale, "/pricing")} className="hidden hover:text-ink sm:inline">
                 {t.nav.pricing}
               </Link>

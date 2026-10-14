@@ -1,14 +1,10 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { SITE, allCreators, allModels, creatorByHandle, modelBySlug, price, tagline, vram } from "./catalog";
+import { SITE } from "./site";
 import { alternates, strings, type Locale } from "./i18n";
 import Home from "@/components/pages/Home";
 import Download from "@/components/pages/Download";
 import SubscribeSuccess from "@/components/pages/SubscribeSuccess";
 import Pricing from "@/components/pages/Pricing";
-import Models from "@/components/pages/Models";
-import ModelDetail from "@/components/pages/ModelDetail";
-import Creator from "@/components/pages/Creator";
 import Legal from "@/components/pages/Legal";
 import { Individuals, Practices } from "@/components/pages/Audience";
 import { AUDIENCES } from "@/components/pages/Home";
@@ -71,54 +67,6 @@ export function pricingMetadata(locale: Locale): Metadata {
   };
 }
 export const pricingPage = (locale: Locale) => <Pricing locale={locale} />;
-
-export function modelsMetadata(locale: Locale): Metadata {
-  const t = strings(locale).meta;
-  return { title: t.modelsTitle, description: t.modelsDescription, alternates: alternates(locale, "/models") };
-}
-export const modelsPage = (locale: Locale) => <Models locale={locale} />;
-
-export const modelSlugs = () => allModels().map((m) => ({ slug: m.slug }));
-
-export function modelMetadata(locale: Locale, slug: string): Metadata {
-  const model = modelBySlug(slug);
-  if (!model) return {};
-  const smallest = model.files.reduce((a, b) => (a.size_bytes <= b.size_bytes ? a : b));
-  const description = strings(locale).meta.modelDescription(
-    tagline(model, locale),
-    vram(smallest.min_vram_mb),
-    price(model.price_cents, locale),
-    model.license,
-  );
-  return {
-    title: model.name,
-    description,
-    alternates: alternates(locale, `/models/${model.slug}`),
-    openGraph: { type: "article", title: `${model.name} — ${SITE.name}`, description, locale },
-  };
-}
-export function modelPage(locale: Locale, slug: string) {
-  const model = modelBySlug(slug);
-  if (!model) notFound();
-  return <ModelDetail model={model} locale={locale} />;
-}
-
-export const creatorHandles = () => allCreators().map((c) => ({ handle: c.handle }));
-
-export function creatorMetadata(locale: Locale, handle: string): Metadata {
-  const creator = creatorByHandle(handle);
-  if (!creator) return {};
-  return {
-    title: creator.display_name,
-    description: creator.bio,
-    alternates: alternates(locale, `/creators/${creator.handle}`),
-  };
-}
-export function creatorPage(locale: Locale, handle: string) {
-  const creator = creatorByHandle(handle);
-  if (!creator) notFound();
-  return <Creator creator={creator} locale={locale} />;
-}
 
 /**
  * The pages the homepage's question leads to. Their titles and descriptions are the

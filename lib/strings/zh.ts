@@ -10,14 +10,9 @@ export const zh: Strings = {
       `下载 Windows 版或 Mac 版 ${app}。支持 NVIDIA、AMD 和 Intel 显卡及 Apple 芯片，没有独立显卡也能用。`,
     pricingTitle: "价格",
     pricingDescription: (app) => `${app} 的价格：先免费试用 14 天，之后订阅，按月或按年付款。前 100 位享创始价。`,
-    modelsTitle: "按显卡分类的模型",
-    modelsDescription: "哪些 AI 模型能在 8GB、16GB 或 24GB 显卡上运行，附大小、发布时间以及各自擅长什么。",
-    modelDescription: (tagline, needs, price, licence) =>
-      `${tagline}。在你自己的电脑上运行，显存需求自 ${needs} 起。${price}，${licence}。`,
   },
 
   nav: {
-    models: "模型",
     pricing: "价格",
     download: "下载",
     language: "语言",
@@ -33,13 +28,10 @@ export const zh: Strings = {
     product: "产品",
     legal: "法律",
     download: "下载",
-    models: "模型",
     pricing: "价格",
     privacy: "隐私",
     terms: "条款",
     licences: "许可",
-    sellModel: "上架你的模型",
-    creatorAgreement: "创作者协议",
     rights: (year, company) => `© ${year} ${company}`,
     llc: "美国西弗吉尼亚州有限责任公司",
   },
@@ -159,41 +151,6 @@ export const zh: Strings = {
       },
     ],
 
-    devEyebrow: "开发者",
-    devSoon: "即将开放",
-    devTitle: "让你的模型出现在能运行它的人面前",
-    devIntro: "如果你微调模型或制作适配器，可以免费把它们上架到商店。文件仍放在 Hugging Face；商店只向电脑能运行它的人展示每个模型，并一键安装。没有按 token 收费，也不用租 GPU。",
-    dev: [
-      {
-        t: "免费上架",
-        b: "没有费用，也无需上传。商店直接链接你 Hugging Face 页面上的那个文件。",
-      },
-      {
-        t: "只展示给能运行的人",
-        b: "每个上架模型都会与每个人的实际硬件比对，让他们在下载前就知道能不能运行。",
-      },
-      {
-        t: "属于你的页面",
-        b: "商店里的创作者页面，列出你的所有模型、你的名字和一段简介。",
-      },
-      {
-        t: "销售稍后开放",
-        b: "付费上架正在筹备：你可以定价，并保留每笔销售的 75%。现在上架，你的模型会先通过审核并进入商店。",
-      },
-    ],
-    devStepsTitle: "从头到尾，全部自助",
-    devSteps: [
-      ["创建账户", "用邮箱登录即可。无需填写申请表，也不用预约通话。"],
-      ["接受创作者协议", "条款简单明了：上架免费，你可以随时撤下。"],
-      ["链接你的模型", "写好介绍，为每个版本粘贴 Hugging Face 链接。仓库必须是公开的。"],
-      ["审核后上线", "每个上架模型在公开前都会经过审核，用户只会看到自己电脑能运行的模型。"],
-      ["保持更新", "每次发布新版本时添加即可。别人已经在用的版本永远不会被改动。"],
-    ] as [string, string][],
-    devNote: "创作者功能尚未开放。开放后会是这样。",
-
-    devOpen: "打开创作者门户",
-    devOpenNote:
-      "用邮箱登录，介绍你的模型，并链接它在 Hugging Face 上的文件。每个上架模型在上线前都会经过审核。",
   },
 
   download: {
@@ -233,8 +190,7 @@ export const zh: Strings = {
       ["偶尔需要联网", "用来下载模型和续订订阅。平时断网也能运行；你的提问从来不需要网络。"],
     ],
     unsure: "不确定你的电脑能跑什么？",
-    seeModels: "查看按显卡分类的模型",
-    orInstall: "或者直接安装，它会告诉你。",
+    orInstall: "安装之后，它会告诉你。",
   },
 
   subscribeSuccess: {
@@ -311,81 +267,12 @@ export const zh: Strings = {
       ["我们是一家事务所，每个人都要单独订阅吗？", "不用。事务所方案以一个价格覆盖同一办公室最多 15 台电脑。"],
     ],
     ctaDownload: "下载并开始 14 天试用",
-    ctaOr: "或者先",
-    ctaModels: "看看哪些模型适合你的电脑",
-    ctaFirst: "。",
-  },
-
-  models: {
-    title: "哪些模型能在你的电脑上运行",
-    lead: (app) =>
-      `按显卡分类，方便你找到自己的那一档。${app} 在安装时会检查你的实际硬件，告诉你其中哪些能流畅运行、哪些会比较慢、哪些根本跑不了。`,
-    versionNames: { recommended: "推荐", higher: "更高质量", best: "最高质量", other: "其他" },
-    visionComing: "识别图片——即将推出",
-    goodFor: {
-      allround: "全能",
-      code: "代码",
-      writing: "写作",
-      reasoning: "多步推理",
-      instructions: "详细指令",
-      speed: "回复快",
-      longchats: "长对话",
-    },
-    tiers: [
-      { gb: 8, title: "8GB 显卡", note: "最常见的显卡。这些模型能完全在显卡上运行，并留出长对话的空间。" },
-      { gb: 16, title: "12–16GB 显卡", note: "能力明显更强的模型，也有空间处理长文档。" },
-      { gb: 24, title: "24GB 显卡", note: "单张消费级显卡能装下的最强模型。" },
-      { gb: 32, title: "32GB 显卡", note: "以上全部都能运行，而且最大的几个模型可以用更高质量的版本。这里列出的就是 32GB 显卡多出来的版本。" },
-    ],
-    download: (size) => `下载 ${size}`,
-    needs: (memory) => `需要 ${memory}`,
-    estimated: "估算",
-    estimatedTitle: "根据模型文件和结构推算，尚未在真实硬件上实测。应用会拿你的实际显卡核对。",
-  },
-
-  model: {
-    back: "← 模型",
-    buy: (price: string) => `个人购买 · ${price}`,
-    buyPractice: (price: string) => `为事务所购买 · ${price}`,
-    buyOpening: "正在打开付款页面…",
-    buyError: "无法开始付款，请稍后再试。",
-    buyNote: "个人版：最多 3 台你自己的电脑。事务所版：事务所内最多 15 台电脑。一次性付费，永久归你；付款后请在应用中安装。",
-    install: (app) => `用 ${app} 安装`,
-    noApp: "还没有安装应用？",
-    getApp: "在这里下载",
-    versions: "可用版本",
-    colVersion: "版本",
-    colSize: "大小",
-    colGraphics: "显存",
-    colRam: "内存",
-    colContext: "可记住",
-    installOne: "安装",
-    est: "估算",
-    estTitle: "根据模型大小估算，尚未在真实硬件上实测。",
-    note:
-      "所需内存会随对话长度增加，这里的数字对应表中所示的长度。标有「估算」的数值是根据文件大小推算的，而不是在真实硬件上测得的；应用里也会这样注明。桌面应用在安装前会拿你的实际电脑逐项核对。",
-  },
-
-  creator: {
-    count: (n) => `${n} 个模型`,
-    from: (size) => `${size} 起`,
   },
 
   notFound: {
     title: "找不到页面",
     body: "这个链接没有指向我们认识的任何地方。",
-    browse: "浏览模型",
+    browse: "返回首页",
   },
 
-  format: {
-    included: "包含在订阅中",
-    once: (amount) => `${amount}，一次性`,
-    released: (when) => `${when}发布`,
-    brandNew: "全新",
-    months: (n) => `已发布 ${n} 个月`,
-    years: (y, m) => (m === 0 ? `已发布 ${y} 年` : `已发布 ${y} 年 ${m} 个月`),
-    downloadsMillions: (n) => `每月下载 ${n}M 次`,
-    downloadsThousands: (n) => `每月下载 ${n}k 次`,
-    downloads: (n) => `每月下载 ${n} 次`,
-  },
 };

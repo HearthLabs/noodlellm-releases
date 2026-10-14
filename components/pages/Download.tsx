@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { SITE } from "@/lib/catalog";
+import { SITE } from "@/lib/site";
 import { href, strings, type Locale } from "@/lib/i18n";
 
 /**
@@ -74,11 +73,7 @@ export default function Download({ locale }: { locale: Locale }) {
 
       <section className="mt-12 border-t border-edge pt-8">
         <p className="text-sm text-ink-dim">
-          {t.unsure}{" "}
-          <Link href={href(locale, "/models")} className="text-ink underline underline-offset-4 hover:text-accent">
-            {t.seeModels}
-          </Link>{" "}
-          &mdash; {t.orInstall}
+          {t.unsure} {t.orInstall}
         </p>
       </section>
     </main>

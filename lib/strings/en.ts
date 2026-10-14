@@ -17,15 +17,9 @@ export const en = {
     pricingTitle: "Pricing",
     pricingDescription: (app: string) =>
       `What ${app} costs: 14 days to try it, then a subscription. Founding rate for the first 100.`,
-    modelsTitle: "Models by graphics card",
-    modelsDescription:
-      "Which AI models run on an 8GB, 16GB or 24GB graphics card, with sizes, release dates and what each one is good for.",
-    modelDescription: (tagline: string, needs: string, price: string, licence: string) =>
-      `${tagline}. Runs on your own computer, from ${needs} of graphics memory. ${price}, ${licence}.`,
   },
 
   nav: {
-    models: "Models",
     pricing: "Pricing",
     download: "Download",
     language: "Language",
@@ -41,13 +35,10 @@ export const en = {
     product: "Product",
     legal: "Legal",
     download: "Download",
-    models: "Models",
     pricing: "Pricing",
     privacy: "Privacy",
     terms: "Terms",
     licences: "Licences",
-    sellModel: "List your model",
-    creatorAgreement: "Creator agreement",
     rights: (year: number, company: string) => `© ${year} ${company}`,
     llc: "A West Virginia limited liability company",
   },
@@ -174,41 +165,6 @@ export const en = {
       },
     ],
 
-    devEyebrow: "For developers",
-    devSoon: "Opening soon",
-    devTitle: "Put your model in front of people who can run it",
-    devIntro: "If you fine-tune models or build adapters, list them in the store, free. Your files stay on Hugging Face; the store shows each model to the people whose computer can run it and installs it in one click. Nobody pays per token and nobody rents a GPU.",
-    dev: [
-      {
-        t: "Free to list",
-        b: "No fee and nothing to upload. The store links the exact file on your Hugging Face page.",
-      },
-      {
-        t: "Shown to people it will run on",
-        b: "Every listing is checked against each person's actual hardware, so they know whether it will run before they download it.",
-      },
-      {
-        t: "A page of your own",
-        b: "A creator page in the store with all your models, your name and a few words about you.",
-      },
-      {
-        t: "Selling comes later",
-        b: "Paid listings are on the way: you will set a price and keep 75% of every sale. Listing now gets your models reviewed and in the store first.",
-      },
-    ],
-    devStepsTitle: "All self-service, start to finish",
-    devSteps: [
-      ["Create your account", "Sign in with your email address. There is no application form and no call to book."],
-      ["Accept the Creator Agreement", "Plain terms: listing is free, and you can withdraw a listing at any time."],
-      ["Link your model", "Describe it, then paste the Hugging Face link for each version. The repository has to be public."],
-      ["We check it, then it goes live", "Every listing is reviewed before anyone can see it, and people are only shown models their computer can run."],
-      ["Keep it up to date", "Add a new version whenever you release one. The versions people already have never change under them."],
-    ] as [string, string][],
-    devNote: "The creator side is not open yet. This is what it will be when it is.",
-
-    devOpen: "Open the creator portal",
-    devOpenNote:
-      "Sign in with your email, describe your model and link its files on Hugging Face. Every listing is reviewed before it goes live.",
   },
 
   download: {
@@ -250,8 +206,7 @@ export const en = {
       ["An internet connection, now and then", "To download models and to keep your subscription current. Day to day it runs with the network switched off; your questions never need it."],
     ],
     unsure: "Not sure what your computer can handle?",
-    seeModels: "See the models grouped by graphics card",
-    orInstall: "or just install it, and it will tell you.",
+    orInstall: "Install it, and it will tell you.",
   },
 
   subscribeSuccess: {
@@ -329,86 +284,14 @@ export const en = {
       ["We are a firm. Do we each need a subscription?", "No. The Practices plan covers up to 15 computers in one office for one price."],
     ],
     ctaDownload: "Download it and start the 14 days",
-    ctaOr: "or",
-    ctaModels: "see which models suit your computer",
-    ctaFirst: "first.",
-  },
-
-  models: {
-    title: "Which models run on your PC",
-    lead: (app: string) =>
-      `Grouped by graphics card, so you can find yours. ${app} checks your actual hardware when you install it and tells you which of these will run well, which will run slowly, and which will not run at all.`,
-    versionNames: { recommended: "Recommended", higher: "Higher quality", best: "Best quality", other: "Other" },
-    visionComing: "Sees images — coming soon",
-    goodFor: {
-      allround: "All-rounder",
-      code: "Code",
-      writing: "Writing",
-      reasoning: "Step-by-step reasoning",
-      instructions: "Detailed instructions",
-      speed: "Fast replies",
-      longchats: "Long conversations",
-    },
-    tiers: [
-      { gb: 8, title: "8GB graphics card", note: "The most common card. These run fully on it, with room for a long conversation." },
-      { gb: 16, title: "12\u201316GB graphics card", note: "Noticeably more capable models, with room for long documents." },
-      { gb: 24, title: "24GB graphics card", note: "The strongest models that fit on one consumer card." },
-      { gb: 32, title: "32GB graphics card", note: "Everything above, and the largest models at a higher-quality version. These are the versions a 32GB card adds." },
-    ],
-    download: (size: string) => `${size} download`,
-    needs: (memory: string) => `needs ${memory}`,
-    estimated: "estimated",
-    estimatedTitle: "Worked out from the model\u2019s file and design, not yet measured on real hardware. The app checks it against your actual card.",
-  },
-
-  model: {
-    back: "← Models",
-    buy: (price: string) => `Buy for yourself · ${price}`,
-    buyPractice: (price: string) => `Buy for a practice · ${price}`,
-    buyOpening: "Opening checkout…",
-    buyError: "Could not start checkout. Try again in a moment.",
-    buyNote: "For yourself: up to 3 of your computers. For a practice: up to 15 computers in your firm. A one-off price, yours to keep; after paying, open the app to install it.",
-    install: (app: string) => `Install with ${app}`,
-    noApp: "Don't have the app?",
-    getApp: "Download it here",
-    versions: "Available versions",
-    colVersion: "Version",
-    colSize: "Size",
-    colGraphics: "Graphics memory",
-    colRam: "Memory",
-    colContext: "Remembers",
-    installOne: "Install",
-    est: "est.",
-    estTitle: "Estimated from the model's size, not yet measured on real hardware.",
-    note:
-      "Memory needed grows with the length of a conversation, so these figures are for the length shown. Anything marked est. is worked out from the file size rather than measured on real hardware; the app says so there too. The desktop app checks all of it against your actual machine before installing.",
-  },
-
-  creator: {
-    count: (n: number) => `${n} model${n === 1 ? "" : "s"}`,
-    from: (size: string) => `from ${size}`,
   },
 
   notFound: {
     title: "Page not found",
     body: "That link does not point anywhere we recognise.",
-    browse: "Browse models",
+    browse: "Go to the homepage",
   },
 
-  format: {
-    included: "Included in the subscription",
-    once: (amount: string) => `${amount} once`,
-    released: (when: string) => `Released ${when}`,
-    brandNew: "brand new",
-    months: (n: number) => `${n} month${n > 1 ? "s" : ""} old`,
-    years: (y: number, m: number) => {
-      const years = `${y} year${y > 1 ? "s" : ""}`;
-      return m === 0 ? `${years} old` : `${years} ${m} month${m > 1 ? "s" : ""} old`;
-    },
-    downloadsMillions: (n: string) => `${n}M downloads/month`,
-    downloadsThousands: (n: string) => `${n}k downloads/month`,
-    downloads: (n: number) => `${n} downloads/month`,
-  },
 };
 
 export type Strings = typeof en;

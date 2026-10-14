@@ -3,9 +3,6 @@ node_modules/
 out/
 *.tsbuildinfo
 
-# Creator-portal models fetched from the live catalog before each build.
-.catalog/
-
 .env
 .env*.local
 .DS_Store

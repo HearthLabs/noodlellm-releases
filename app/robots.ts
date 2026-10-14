@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { SITE } from "@/lib/catalog";
+import { SITE } from "@/lib/site";
 
 // Written once at build time: a static export has no server to generate it per request.
 export const dynamic = "force-static";
@@ -9,8 +9,6 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      // The creator portal is auth-gated and has nothing to index.
-      disallow: ["/portal/"],
     },
     sitemap: `${SITE.url}/sitemap.xml`,
   };

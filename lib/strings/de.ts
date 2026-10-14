@@ -11,15 +11,9 @@ export const de: Strings = {
     pricingTitle: "Preise",
     pricingDescription: (app) =>
       `Was ${app} kostet: 14 Tage zum Ausprobieren, danach ein Abo. Gründerpreis für die ersten 100.`,
-    modelsTitle: "Modelle nach Grafikkarte",
-    modelsDescription:
-      "Welche KI-Modelle auf einer Grafikkarte mit 8, 16 oder 24 GB laufen, mit Größen, Erscheinungsdaten und wofür sich jedes eignet.",
-    modelDescription: (tagline, needs, price, licence) =>
-      `${tagline}. Läuft auf deinem eigenen Computer, ab ${needs} Grafikspeicher. ${price}, ${licence}.`,
   },
 
   nav: {
-    models: "Modelle",
     pricing: "Preise",
     download: "Herunterladen",
     language: "Sprache",
@@ -35,13 +29,10 @@ export const de: Strings = {
     product: "Produkt",
     legal: "Rechtliches",
     download: "Herunterladen",
-    models: "Modelle",
     pricing: "Preise",
     privacy: "Datenschutz",
     terms: "AGB",
     licences: "Lizenzen",
-    sellModel: "Modell eintragen",
-    creatorAgreement: "Creator-Vereinbarung",
     rights: (year, company) => `© ${year} ${company}`,
     llc: "Eine Limited Liability Company nach dem Recht von West Virginia",
   },
@@ -168,41 +159,6 @@ export const de: Strings = {
       },
     ],
 
-    devEyebrow: "Für Entwickler",
-    devSoon: "Bald verfügbar",
-    devTitle: "Bring dein Modell zu Leuten, auf deren Rechner es läuft",
-    devIntro: "Wenn du Modelle feinabstimmst oder Adapter baust, stell sie kostenlos in den Store. Deine Dateien bleiben auf Hugging Face; der Store zeigt jedes Modell den Leuten, deren Computer es ausführen kann, und installiert es mit einem Klick. Niemand zahlt pro Token, niemand mietet eine GPU.",
-    dev: [
-      {
-        t: "Kostenlos eintragen",
-        b: "Keine Gebühr und nichts hochzuladen. Der Store verlinkt genau die Datei auf deiner Hugging-Face-Seite.",
-      },
-      {
-        t: "Nur dort angezeigt, wo es läuft",
-        b: "Jeder Eintrag wird mit der tatsächlichen Hardware jeder Person abgeglichen, damit sie vor dem Download weiß, ob er läuft.",
-      },
-      {
-        t: "Eine eigene Seite",
-        b: "Eine Creator-Seite im Store mit all deinen Modellen, deinem Namen und ein paar Worten über dich.",
-      },
-      {
-        t: "Verkaufen kommt später",
-        b: "Bezahlte Einträge sind in Arbeit: Du legst einen Preis fest und behältst 75 % jedes Verkaufs. Wer jetzt einträgt, ist schon geprüft und im Store.",
-      },
-    ],
-    devStepsTitle: "Alles in Selbstbedienung, von Anfang bis Ende",
-    devSteps: [
-      ["Konto anlegen", "Melde dich mit deiner E-Mail-Adresse an. Kein Antragsformular, kein Termin."],
-      ["Creator-Vereinbarung annehmen", "Klare Bedingungen: Eintragen ist kostenlos, und du kannst einen Eintrag jederzeit zurückziehen."],
-      ["Modell verlinken", "Beschreibe es und füge für jede Version den Hugging-Face-Link ein. Das Repository muss öffentlich sein."],
-      ["Wir prüfen, dann geht es live", "Jeder Eintrag wird geprüft, bevor ihn jemand sieht, und es werden nur Modelle gezeigt, die auf dem jeweiligen Computer laufen."],
-      ["Auf dem neuesten Stand halten", "Füge eine neue Version hinzu, wann immer du eine veröffentlichst. Versionen, die Leute schon haben, ändern sich nie."],
-    ] as [string, string][],
-    devNote: "Der Creator-Bereich ist noch nicht geöffnet. So wird er aussehen, wenn es so weit ist.",
-
-    devOpen: "Creator-Portal öffnen",
-    devOpenNote:
-      "Melde dich mit deiner E-Mail an, beschreibe dein Modell und verlinke seine Dateien auf Hugging Face. Jeder Eintrag wird geprüft, bevor er live geht.",
   },
 
   download: {
@@ -244,8 +200,7 @@ export const de: Strings = {
       ["Ab und zu eine Internetverbindung", "Zum Herunterladen von Modellen und um das Abo aktuell zu halten. Im Alltag läuft es mit ausgeschaltetem Netz; deine Fragen brauchen es nie."],
     ],
     unsure: "Nicht sicher, was dein Computer schafft?",
-    seeModels: "Sieh dir die Modelle nach Grafikkarte an",
-    orInstall: "oder installier es einfach, es sagt es dir.",
+    orInstall: "Installier es, und es sagt es dir.",
   },
 
   subscribeSuccess: {
@@ -323,85 +278,12 @@ export const de: Strings = {
       ["Wir sind eine Kanzlei. Braucht jede Person ein Abo?", "Nein. Der Tarif für Kanzleien & Praxen gilt für bis zu 15 Computer an einem Standort, zu einem Preis."],
     ],
     ctaDownload: "Herunterladen und die 14 Tage starten",
-    ctaOr: "oder",
-    ctaModels: "erst sehen, welche Modelle zu deinem Computer passen",
-    ctaFirst: ".",
-  },
-
-  models: {
-    title: "Welche Modelle auf deinem PC laufen",
-    lead: (app) =>
-      `Nach Grafikkarte sortiert, damit du deine findest. ${app} prüft bei der Installation deine tatsächliche Hardware und sagt dir, welche davon gut laufen, welche langsam und welche gar nicht.`,
-    versionNames: { recommended: "Empfohlen", higher: "Höhere Qualität", best: "Beste Qualität", other: "Andere" },
-    visionComing: "Erkennt Bilder — demnächst",
-    goodFor: {
-      allround: "Allrounder",
-      code: "Code",
-      writing: "Schreiben",
-      reasoning: "Schritt-für-Schritt-Denken",
-      instructions: "Genaue Anweisungen",
-      speed: "Schnelle Antworten",
-      longchats: "Lange Gespräche",
-    },
-    tiers: [
-      { gb: 8, title: "Grafikkarte mit 8 GB", note: "Die häufigste Karte. Diese laufen ganz darauf, mit Platz für ein langes Gespräch." },
-      { gb: 16, title: "Grafikkarte mit 12–16 GB", note: "Deutlich fähigere Modelle, mit Platz für lange Dokumente." },
-      { gb: 24, title: "Grafikkarte mit 24 GB", note: "Die stärksten Modelle, die auf eine einzelne Consumer-Karte passen." },
-      { gb: 32, title: "Grafikkarte mit 32 GB", note: "Alles oben und die größten Modelle in höherer Qualität. Das sind die Versionen, die eine 32-GB-Karte dazu bringt." },
-    ],
-    download: (size) => `${size} Download`,
-    needs: (memory) => `braucht ${memory}`,
-    estimated: "geschätzt",
-    estimatedTitle: "Aus der Datei und dem Aufbau des Modells berechnet, noch nicht auf echter Hardware gemessen. Die App prüft es mit deiner Karte.",
-  },
-
-  model: {
-    back: "← Modelle",
-    buy: (price: string) => `Für dich kaufen · ${price}`,
-    buyPractice: (price: string) => `Für eine Praxis kaufen · ${price}`,
-    buyOpening: "Bezahlung wird geöffnet…",
-    buyError: "Die Bezahlung ließ sich nicht starten. Versuche es gleich noch einmal.",
-    buyNote: "Für dich: bis zu 3 deiner Computer. Für eine Praxis: bis zu 15 Computer in deiner Kanzlei oder Praxis. Einmaliger Preis, gehört danach dir; nach dem Bezahlen in der App installieren.",
-    install: (app) => `Mit ${app} installieren`,
-    noApp: "Du hast die App noch nicht?",
-    getApp: "Hier herunterladen",
-    versions: "Verfügbare Versionen",
-    colVersion: "Version",
-    colSize: "Größe",
-    colGraphics: "Grafikspeicher",
-    colRam: "Arbeitsspeicher",
-    colContext: "Merkt sich",
-    installOne: "Installieren",
-    est: "geschätzt",
-    estTitle: "Aus der Modellgröße geschätzt, noch nicht auf echter Hardware gemessen.",
-    note:
-      "Der Speicherbedarf wächst mit der Länge eines Gesprächs, daher gelten diese Werte für die angegebene Länge. Alles, was als geschätzt markiert ist, wird aus der Dateigröße berechnet statt auf echter Hardware gemessen; die App sagt das dort ebenfalls. Die Desktop-App prüft vor der Installation alles mit deinem tatsächlichen Rechner.",
-  },
-
-  creator: {
-    count: (n) => (n === 1 ? "1 Modell" : `${n} Modelle`),
-    from: (size) => `ab ${size}`,
   },
 
   notFound: {
     title: "Seite nicht gefunden",
     body: "Dieser Link führt nirgendwohin, das wir kennen.",
-    browse: "Modelle ansehen",
+    browse: "Zur Startseite",
   },
 
-  format: {
-    included: "Im Abo enthalten",
-    once: (amount) => `${amount} einmalig`,
-    released: (when) => `Erschienen ${when}`,
-    brandNew: "brandneu",
-    months: (n) => (n === 1 ? "1 Monat alt" : `${n} Monate alt`),
-    years: (y, m) => {
-      const years = y === 1 ? "1 Jahr" : `${y} Jahre`;
-      if (m === 0) return `${years} alt`;
-      return `${years} ${m === 1 ? "1 Monat" : `${m} Monate`} alt`;
-    },
-    downloadsMillions: (n) => `${n} Mio. Downloads/Monat`,
-    downloadsThousands: (n) => `${n} Tsd. Downloads/Monat`,
-    downloads: (n) => `${n} Downloads/Monat`,
-  },
 };

@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SITE } from "@/lib/catalog";
-import { portalEnabled } from "@/lib/portal-config";
+import { SITE } from "@/lib/site";
 import { href, strings, type Locale } from "@/lib/i18n";
 
 /**
- * The sections the homepage and the three audience pages are built from.
+ * The sections the homepage and the audience pages are built from.
  *
  * Originally the homepage.
  *
@@ -110,30 +109,11 @@ function IconSeat() {
     </svg>
   );
 }
-function IconRevenue() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.6" className={ICON} aria-hidden="true">
-      <circle cx="12" cy="12" r="8.5" />
-      <path d="M14.5 9.2a3 3 0 0 0-5.2 1.9c0 2.6 5 1.6 5 4.1a3 3 0 0 1-5.2 1.8M12 7v10" strokeLinecap="round" />
-    </svg>
-  );
-}
-function IconTag() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.6" className={ICON} aria-hidden="true">
-      <path d="M3.5 11.2V4.5a1 1 0 0 1 1-1h6.7a1 1 0 0 1 .7.3l8 8a1 1 0 0 1 0 1.4l-6.7 6.7a1 1 0 0 1-1.4 0l-8-8a1 1 0 0 1-.3-.7Z" />
-      <circle cx="7.8" cy="7.8" r="1.3" />
-    </svg>
-  );
-}
 
 // The icons pair with the cards in the strings by position; the words are per language,
 // the pictures are not.
 const INDIVIDUAL_ICONS = [IconFiles, IconMemory, IconUnlimited, IconEasy, IconPhone, IconGlobe];
 const PRACTICE_ICONS = [IconPrivate, IconFiles, IconEasy, IconSeat];
-// The developer page is parked until the creator side becomes an add-on; the block stays
-// here so bringing it back is a matter of routing to it again.
-const DEVELOPER_ICONS = [IconRevenue, IconTag, IconEasy, IconGauge];
 
 function Card({ Icon, t, b }: { Icon: () => React.JSX.Element; t: string; b: string }) {
   return (
@@ -358,64 +338,6 @@ export function PracticeBlock({ locale }: { locale: Locale }) {
         ))}
       </div>
       <ReadsDetails locale={locale} />
-    </section>
-    </>
-  );
-}
-
-
-export function DeveloperBlock({ locale }: { locale: Locale }) {
-  const t = strings(locale).home;
-  // The portal opens when the site is built with the Supabase settings it needs.
-  const open = portalEnabled();
-  return (
-    <>
-    {/* -------------------------------------------------------- for developers */}
-    <section className="border-y border-edge bg-surface-1/40">
-      <div className="mx-auto max-w-5xl px-6 pt-20 pb-16">
-        <div className="flex flex-wrap items-center gap-3">
-          <p className="text-xs font-medium uppercase tracking-widest text-accent">{t.devEyebrow}</p>
-          {!open && (
-            <span className="rounded-full border border-edge px-2.5 py-0.5 text-[10px] uppercase tracking-wide text-ink-faint">
-              {t.devSoon}
-            </span>
-          )}
-        </div>
-        <h1 className="mt-3 max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">{t.devTitle}</h1>
-        <p className="mt-4 max-w-2xl leading-relaxed text-ink-dim">{t.devIntro}</p>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
-          {t.dev.map((f, i) => (
-            <Card key={f.t} Icon={DEVELOPER_ICONS[i]} {...f} />
-          ))}
-        </div>
-        <h2 className="mt-14 text-lg font-medium">{t.devStepsTitle}</h2>
-        <ol className="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {t.devSteps.map(([title, body], i) => (
-            <li key={title}>
-              <div className="flex h-8 w-8 items-center justify-center rounded-full border border-accent/50 text-sm font-medium text-accent">
-                {i + 1}
-              </div>
-              <h3 className="mt-3.5 font-medium">{title}</h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-ink-dim">{body}</p>
-            </li>
-          ))}
-        </ol>
-        <div className="mt-8">
-          {/* English only, like the legal pages it links to: a plain link, not href(locale). Shown
-              before the portal opens too, where the page says so and what to expect. */}
-          <a
-            href="/portal"
-            className="inline-block rounded-md bg-accent px-5 py-2.5 font-medium text-surface-0 hover:brightness-110"
-          >
-            {t.devOpen}
-          </a>
-          {open ? (
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink-dim">{t.devOpenNote}</p>
-          ) : (
-            <p className="mt-3 max-w-2xl text-xs leading-relaxed text-ink-faint">{t.devNote}</p>
-          )}
-        </div>
-      </div>
     </section>
     </>
   );

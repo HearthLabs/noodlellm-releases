@@ -1,20 +1,16 @@
 # Builds noodlellm.com and publishes it to the gh-pages branch, which GitHub Pages serves.
 #
-# Runs on every push to main, when the catalog changes (the admin-review and creator-model
-# functions send a catalog-published dispatch here after approving, removing or withdrawing a
-# listing, so creator models get their pages), and by hand from the Actions tab.
+# Runs on every push to main, and by hand from the Actions tab.
 #
 # Needs, in this repo's Settings:
 #   Pages      Source: Deploy from a branch, branch gh-pages, folder / (root)
-#   Variables  NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY,
-#              NEXT_PUBLIC_SUPABASE_FUNCTIONS_URL   (public values: they ship in every page)
+#   Variables  NEXT_PUBLIC_SUPABASE_FUNCTIONS_URL   (public: it ships in every page; without it
+#              the Subscribe buttons stay off)
 name: Publish site
 
 on:
   push:
     branches: [main]
-  repository_dispatch:
-    types: [catalog-published]
   workflow_dispatch:
 
 concurrency:
@@ -39,8 +35,6 @@ jobs:
 
       - name: Build
         env:
-          NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           NEXT_PUBLIC_SUPABASE_FUNCTIONS_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_FUNCTIONS_URL }}
         run: npm run build
 

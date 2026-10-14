@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SITE } from "@/lib/catalog";
+import { SITE } from "@/lib/site";
 import { href, strings, type Locale } from "@/lib/i18n";
 import SubscribeButton from "@/components/SubscribeButton";
 import { PRICES, type Plan } from "@/lib/billing";
@@ -136,12 +136,7 @@ export default function Pricing({ locale }: { locale: Locale }) {
         <p className="text-sm text-ink-dim">
           <Link href={href(locale, "/download")} className={link}>
             {t.ctaDownload}
-          </Link>{" "}
-          &mdash; {t.ctaOr}{" "}
-          <Link href={href(locale, "/models")} className={link}>
-            {t.ctaModels}
-          </Link>{" "}
-          {t.ctaFirst}
+          </Link>
         </p>
       </section>
     </main>

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { allCreators, allModels, SITE } from "@/lib/catalog";
+import { SITE } from "@/lib/site";
 import { HTML_LANG, LOCALES, href } from "@/lib/i18n";
 
 /**
@@ -16,11 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/", 1],
     ["/individuals", 0.95],
     ["/practices", 0.95],
-    ["/models", 0.9],
     ["/download", 0.8],
     ["/pricing", 0.8],
-    ...allModels().map((m): [string, number] => [`/models/${m.slug}`, 0.7]),
-    ...allCreators().map((c): [string, number] => [`/creators/${c.handle}`, 0.5]),
   ];
 
   const translated: MetadataRoute.Sitemap = pages.flatMap(([path, priority]) =>
