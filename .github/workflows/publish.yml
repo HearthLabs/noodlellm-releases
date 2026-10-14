@@ -4,8 +4,6 @@
 #
 # Needs, in this repo's Settings:
 #   Pages      Source: Deploy from a branch, branch gh-pages, folder / (root)
-#   Variables  NEXT_PUBLIC_SUPABASE_FUNCTIONS_URL   (public: it ships in every page; without it
-#              the Subscribe buttons stay off)
 name: Publish site
 
 on:
@@ -34,8 +32,6 @@ jobs:
       - run: npm ci
 
       - name: Build
-        env:
-          NEXT_PUBLIC_SUPABASE_FUNCTIONS_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_FUNCTIONS_URL }}
         run: npm run build
 
       - uses: actions/checkout@v4

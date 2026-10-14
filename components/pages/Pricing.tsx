@@ -1,17 +1,16 @@
 import Link from "next/link";
 import { SITE } from "@/lib/site";
 import { href, strings, type Locale } from "@/lib/i18n";
-import SubscribeButton from "@/components/SubscribeButton";
-import { PRICES, type Plan } from "@/lib/billing";
+import { PRICES, type Plan } from "@/lib/prices";
 
 /** The pricing page. */
 
 /** Which plan is highlighted, by position -- the words are per language. */
 const FEATURED = 1;
 
-/** Plan ids by card position, matching t.plans' order. Index 0 ("Try it") has no checkout --
- * it is the free trial, already the app's default state -- so it gets a download link
- * instead of a Subscribe button. */
+/** Plan ids by card position, matching t.plans' order. Index 0 ("Try it") is the free
+ * trial, the app's default state, so it gets a download link. Subscribing happens in the
+ * app, so the paid plans have no button here. */
 const PLAN_IDS: (Plan | null)[] = [null, "founding", "practice"];
 
 function Tick() {
@@ -32,8 +31,8 @@ export default function Pricing({ locale }: { locale: Locale }) {
       <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-dim">{t.lead}</p>
 
       {/* Monthly or yearly, without any client-side code: two radios, and each price shows or
-          hides itself with a :has() selector on the group. Display only -- the Subscribe
-          buttons (when live) still start a monthly checkout; yearly is chosen in the app. */}
+          hides itself with a :has() selector on the group. Display only: the plan and
+          the interval are chosen in the app. */}
       <div className="group">
       <fieldset className="mt-10 inline-flex rounded-lg border border-edge bg-surface-1 p-1 text-sm">
         <legend className="sr-only">{t.billingMonthly} / {t.billingYearly}</legend>
@@ -91,20 +90,7 @@ export default function Pricing({ locale }: { locale: Locale }) {
               ))}
             </ul>
             {p.note && <p className="mt-5 text-xs text-ink-faint">{p.note}</p>}
-            {id ? (
-              <SubscribeButton
-                plan={id}
-                label={t.checkoutButton}
-                openingLabel={t.checkoutOpening}
-                errorLabel={t.checkoutError}
-                className={[
-                  "w-full rounded-md px-4 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-60",
-                  i === FEATURED
-                    ? "bg-accent text-white hover:bg-accent/90"
-                    : "border border-edge text-ink-dim hover:bg-surface-2 hover:text-ink",
-                ].join(" ")}
-              />
-            ) : (
+            {!id && (
               <>
                 <Link
                   href={href(locale, "/download")}

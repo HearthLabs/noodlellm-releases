@@ -205,25 +205,11 @@ export const es: Strings = {
 
   subscribeSuccess: {
     title: "Ya estás suscrito",
-    boughtTitle: "Gracias por tu compra",
-    boughtBody: "Abre Noodle LLM con el botón de abajo para añadir la licencia y luego instala el modelo desde la tienda. O ve a Ajustes → Cuenta y pega esto:",
-    boughtManage: "La licencia no caduca. Abre este enlace en tus otros ordenadores para descargar el modelo allí también.",
-    processing: "Terminando…",
-    processingBody: "Esto tarda unos segundos después de pagar. Esta página se actualizará sola.",
-    errorTitle: "Algo salió mal",
-    errorBody: "No pudimos encontrar este pago. Si se te cobró, contacta con soporte y lo resolveremos.",
-    openInApp: "Abrir en Noodle LLM",
-    tokenLabel: "Tu licencia",
-    tokenBody: "Abre Noodle LLM, ve a Ajustes → Cuenta, y pega esto:",
-    copyButton: "Copiar",
-    copied: "Copiado",
+    body: "Vuelve a Noodle LLM: añade tu suscripción por sí solo en unos segundos. Si al cabo de un minuto no lo ha hecho, abre Ajustes, luego Cuenta, y elige «¿Ya estás suscrito? Usa el correo con el que pagaste».",
     manageBody: "Para actualizar tu tarjeta o cancelar más adelante, usa Gestionar suscripción en la sección Cuenta de la aplicación.",
     backHome: "Volver al inicio",
   },
   pricing: {
-    checkoutButton: "Suscribirme",
-    checkoutOpening: "Abriendo el pago…",
-    checkoutError: "No se pudo iniciar el pago. Inténtalo de nuevo en un momento.",
     tryItButton: "Descargar",
     title: "Lo que cuesta",
     // es-ES leaves 2000 ungrouped; the de-DE form gives the "2.000" Spanish prices use.
