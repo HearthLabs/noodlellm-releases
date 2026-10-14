@@ -1,0 +1,63 @@
+# Builds noodlellm.com and publishes it to the gh-pages branch, which GitHub Pages serves.
+#
+# Runs on every push to main, when the catalog changes (the admin-review and creator-model
+# functions send a catalog-published dispatch here after approving, removing or withdrawing a
+# listing, so creator models get their pages), and by hand from the Actions tab.
+#
+# Needs, in this repo's Settings:
+#   Pages      Source: Deploy from a branch, branch gh-pages, folder / (root)
+#   Variables  NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY,
+#              NEXT_PUBLIC_SUPABASE_FUNCTIONS_URL   (public values: they ship in every page)
+name: Publish site
+
+on:
+  push:
+    branches: [main]
+  repository_dispatch:
+    types: [catalog-published]
+  workflow_dispatch:
+
+concurrency:
+  group: publish-site
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          NEXT_PUBLIC_SUPABASE_FUNCTIONS_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_FUNCTIONS_URL }}
+        run: npm run build
+
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: pages
+
+      - name: Publish
+        run: |
+          scripts/publish-site.sh out pages
+          cd pages
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing changed on the site."
+            exit 0
+          fi
+          git -c user.name="noodlellm-bot" -c user.email="info@noodletechnology.com" \
+            commit -m "Publish the site (${{ github.event_name }}, ${GITHUB_SHA::7})"
+          git push origin gh-pages

@@ -1,0 +1,1161 @@
+{
+  "$comment": "Local seed catalog. Mirrors the Supabase models/model_files schema so the desktop app works before Supabase exists. download_url points at Hugging Face so downloads are real today; these become R2 signed URLs later. Entries with measured:true carry VRAM figures and checksums taken on real hardware with scripts/measure-model.ps1 — see measured_note for the card and the numbers. Entries with measured:false are estimated from file size and the UI tells the user so; do not flip that flag without measuring, because a size-based estimate for the 0.5B was 60% too high. A null sha256 means the download manager cannot verify the file: acceptable in development, never in production.",
+  "version": 12,
+  "generated_at": "2026-09-28",
+  "measured_on": "NVIDIA RTX 3060 Ti (8GB) — the 16GB and 24GB tiers are estimated, not measured",
+  "models": [
+    {
+      "id": "11111111-1111-4111-8111-000000000004",
+      "slug": "qwen2.5-coder-7b-instruct",
+      "name": "Qwen2.5 Coder 7B Instruct",
+      "tagline": "Writes, explains and fixes code, in almost any programming language",
+      "description_md": "Trained on code rather than adapted to it, which shows in the things general models get subtly wrong: it follows an existing file's conventions, explains what a function does without inventing behaviour, and is unusually good at spotting the mistake in code that looks right.\n\n**Choose it if** you write software and want a second pair of eyes that stays on your machine. **Not this one** for general chat or writing prose — it is noticeably blunter there than Qwen3 8B, which is the same size.",
+      "kind": "base",
+      "license": "Apache-2.0",
+      "released_at": "2024-09-19",
+      "price_cents": 0,
+      "price_model": "free",
+      "published": true,
+      "creator_handle": "qwen",
+      "files": [
+        {
+          "id": "22222222-2222-4222-8222-000000000006",
+          "version": "1.0.0",
+          "quantization": "Q4_K_M",
+          "size_bytes": 4683074336,
+          "sha256": "1664fccab734674a50763490a8c6931b70e3f2f8ec10031b54806d30e5f956b6",
+          "min_vram_mb": 5450,
+          "min_ram_mb": 10000,
+          "context_length": 8192,
+          "measured": true,
+          "download_url": "https://huggingface.co/bartowski/Qwen2.5-Coder-7B-Instruct-GGUF/resolve/1f629da0c8bed16b9e50cee91c70693650e66c35/Qwen2.5-Coder-7B-Instruct-Q4_K_M.gguf",
+          "measured_note": "4910MB and 68 tok/s at 8k on an RTX 3060 Ti.",
+          "kv_mb_per_1k": 56.0
+        },
+        {
+          "id": "dfd035e1-7c58-5047-bbdf-cc6dfca41ef4",
+          "version": "1.0.0",
+          "quantization": "Q6_K",
+          "size_bytes": 6254199584,
+          "sha256": "62197abf47f1a46b8d775244024e845e79ce722d5fafe50d00437c955e52046a",
+          "min_vram_mb": 6950,
+          "min_ram_mb": 11000,
+          "context_length": 8192,
+          "measured": false,
+          "download_url": "https://huggingface.co/bartowski/Qwen2.5-Coder-7B-Instruct-GGUF/resolve/1f629da0c8bed16b9e50cee91c70693650e66c35/Qwen2.5-Coder-7B-Instruct-Q6_K.gguf",
+          "kv_mb_per_1k": 56.0
+        },
+        {
+          "id": "ae2490e9-fa9f-5dba-aec6-f2bef400bb62",
+          "version": "1.0.0",
+          "quantization": "Q8_0",
+          "size_bytes": 8098525984,
+          "sha256": "ddabea51a3751a6412f06a8beaf9818a3e3e6931596337458407726220097071",
+          "min_vram_mb": 8700,
+          "min_ram_mb": 13000,
+          "context_length": 8192,
+          "measured": false,
+          "download_url": "https://huggingface.co/bartowski/Qwen2.5-Coder-7B-Instruct-GGUF/resolve/1f629da0c8bed16b9e50cee91c70693650e66c35/Qwen2.5-Coder-7B-Instruct-Q8_0.gguf",
+          "kv_mb_per_1k": 56.0
+        }
+      ],
+      "tier_gb": 8,
+      "hf_downloads_30d": 2509552,
+      "hf_likes": 803,
+      "stats_as_of": "2026-09-22",
+      "tagline_i18n": {
+        "zh": "编写、解释和修复代码，几乎支持所有编程语言",
+        "ja": "ほぼあらゆるプログラミング言語で、コードを書き、説明し、直す",
+        "es": "Escribe, explica y corrige código en casi cualquier lenguaje de programación",
+        "de": "Schreibt, erklärt und repariert Code in fast jeder Programmiersprache"
+      },
+      "description_md_i18n": {
+        "zh": "它是按代码训练出来的，而不是事后适配的，差别就体现在通用模型容易出细微错误的地方：它会沿用你现有文件的写法，解释一个函数时不会凭空编出并不存在的行为，而且特别擅长在看起来没问题的代码里找出问题。\n\n**适合**：你写软件，并且想要一双始终留在本机的「第二只眼睛」。**不适合**：日常聊天或写文章——在这方面它明显不如同样大小的 Qwen3 8B。",
+        "ja": "後から適応させたのではなく、はじめからコードで訓練されたモデルです。その差は、汎用モデルが微妙に間違えるところに表れます。既存ファイルの書き方に合わせ、関数の説明で存在しない挙動をでっち上げず、一見正しく見えるコードの誤りを見つけるのが際立って得意です。\n\n**向いている用途**：ソフトウェアを書いていて、手元から出ない「もう一対の目」がほしいとき。**向かない用途**：雑談や文章書き。同じ大きさの Qwen3 8B に比べて明らかに不器用です。",
+        "es": "Entrenado con código en lugar de adaptado a él, y eso se nota en lo que los modelos generales aciertan solo a medias: respeta las convenciones del archivo que ya tienes, explica qué hace una función sin inventarse comportamientos, y es especialmente bueno detectando el error en código que parece correcto.\n\n**Elígelo si** escribes software y quieres un segundo par de ojos que no salga de tu equipo. **No este** para conversar o escribir prosa: ahí resulta bastante más tosco que Qwen3 8B, que ocupa lo mismo.",
+        "de": "Auf Code trainiert und nicht nachträglich daran angepasst — das zeigt sich genau dort, wo allgemeine Modelle feine Fehler machen: Es hält sich an die Konventionen der vorhandenen Datei, erklärt eine Funktion, ohne Verhalten zu erfinden, und findet ungewöhnlich gut den Fehler in Code, der richtig aussieht.\n\n**Nimm es, wenn** du Software schreibst und ein zweites Paar Augen willst, das auf deinem Rechner bleibt. **Nicht dieses** für Unterhaltung oder Prosa — darin ist es merklich unbeholfener als Qwen3 8B, das genauso groß ist."
+      },
+      "good_for": [
+        "code"
+      ],
+      "best_at": [
+        "Finding the bug in code that looks right",
+        "Explaining what a function does",
+        "Following the style of an existing file"
+      ],
+      "best_at_i18n": {
+        "zh": [
+          "找出看似正确的代码中的错误",
+          "解释一个函数的作用",
+          "沿用现有文件的写法"
+        ],
+        "ja": [
+          "一見正しいコードのバグを見つける",
+          "関数が何をするかの説明",
+          "既存ファイルの書き方に合わせる"
+        ],
+        "es": [
+          "Encontrar el fallo en código que parece correcto",
+          "Explicar qué hace una función",
+          "Seguir el estilo de un archivo existente"
+        ],
+        "de": [
+          "Den Fehler in Code finden, der richtig aussieht",
+          "Erklären, was eine Funktion tut",
+          "Den Stil einer vorhandenen Datei übernehmen"
+        ]
+      },
+      "weaker_at": [
+        "Everyday chat",
+        "Writing prose"
+      ],
+      "weaker_at_i18n": {
+        "zh": [
+          "日常聊天",
+          "写文章"
+        ],
+        "ja": [
+          "日常の会話",
+          "文章を書くこと"
+        ],
+        "es": [
+          "Conversación cotidiana",
+          "Redactar textos"
+        ],
+        "de": [
+          "Alltägliche Unterhaltung",
+          "Fließtext schreiben"
+        ]
+      },
+      "vision": false
+    },
+    {
+      "id": "2514132c-8bfc-4d7c-9a46-dde5a01387a3",
+      "slug": "qwen3-8b",
+      "name": "Qwen3 8B",
+      "tagline": "Quick everyday answers, summaries of your files, and simple code",
+      "description_md": "The one to start with. It holds a conversation, summarises a long document, answers questions about your files and writes usable code, without being poor at any of them.\n\n**Choose it if** you mainly want to chat and ask about your own documents, and you have an 8GB card. **Consider instead** Gemma 4 12B if most of what you want is polished writing, or Qwen3 14B if you have 12GB and want more depth in long or careful answers.",
+      "kind": "base",
+      "license": "Apache-2.0",
+      "released_at": "2025-04-27",
+      "tier_gb": 8,
+      "price_cents": 0,
+      "price_model": "free",
+      "published": true,
+      "creator_handle": "qwen",
+      "hf_downloads_30d": 12687299,
+      "hf_likes": 2033,
+      "stats_as_of": "2026-09-22",
+      "files": [
+        {
+          "id": "b6516727-1dac-4e27-9ad4-24773dead12f",
+          "version": "1.0.0",
+          "quantization": "Q4_K_M",
+          "size_bytes": 5027783488,
+          "sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+          "min_vram_mb": 6450,
+          "min_ram_mb": 9500,
+          "context_length": 8192,
+          "measured": true,
+          "download_url": "https://huggingface.co/Qwen/Qwen3-8B-GGUF/resolve/7c41481f57cb95916b40956ab2f0b139b296d974/Qwen3-8B-Q4_K_M.gguf",
+          "measured_note": "5858MB and 71 tok/s at 8k on an RTX 3060 Ti. Uses more graphics memory than the larger Ornith 1.5 9B, whose attention layout keeps its cache smaller.",
+          "kv_mb_per_1k": 144.0
+        },
+        {
+          "id": "a4c6ac54-ebe4-5ca5-a871-0e66409c24e5",
+          "version": "1.0.0",
+          "quantization": "Q6_K",
+          "size_bytes": 6725899040,
+          "sha256": "cb042ccd76795a8830d6be6bd4165245847cc68e41797b13bd61aed4c2cfbce6",
+          "min_vram_mb": 8100,
+          "min_ram_mb": 11500,
+          "context_length": 8192,
+          "measured": false,
+          "download_url": "https://huggingface.co/Qwen/Qwen3-8B-GGUF/resolve/7c41481f57cb95916b40956ab2f0b139b296d974/Qwen3-8B-Q6_K.gguf",
+          "kv_mb_per_1k": 144.0
+        },
+        {
+          "id": "cd7cef3f-1fb7-5944-93de-6502b2af324b",
+          "version": "1.0.0",
+          "quantization": "Q8_0",
+          "size_bytes": 8709518112,
+          "sha256": "408b955510e196121c1c375201744783b5c9a43c7956d73fc78df54c66e883d6",
+          "min_vram_mb": 10000,
+          "min_ram_mb": 13500,
+          "context_length": 8192,
+          "measured": false,
+          "download_url": "https://huggingface.co/Qwen/Qwen3-8B-GGUF/resolve/7c41481f57cb95916b40956ab2f0b139b296d974/Qwen3-8B-Q8_0.gguf",
+          "kv_mb_per_1k": 144.0
+        }
+      ],
+      "tagline_i18n": {
+        "zh": "快速回答日常问题、总结你的文件、编写简单代码",
+        "ja": "日常の質問への素早い回答、ファイルの要約、簡単なコード",
+        "es": "Respuestas rápidas del día a día, resúmenes de tus archivos y código sencillo",
+        "de": "Schnelle Antworten im Alltag, Zusammenfassungen deiner Dateien und einfacher Code"
+      },
+      "description_md_i18n": {
+        "zh": "建议从它开始。聊天、总结长文档、回答关于你自己文件的问题、写出能用的代码，它都做得来，而且没有哪一项特别差。\n\n**适合**：你主要想聊天并询问自己的文档，且拥有一张 8GB 显卡。**也可以考虑**：如果你最看重的是打磨过的文字，选 Gemma 4 12B；如果你有 12GB 显卡并希望长答案更有深度，选 Qwen3 14B。",
+        "ja": "まずはこれから。会話も、長い文書の要約も、自分のファイルについての質問も、実用になるコードも、どれも不得手なくこなします。\n\n**向いている用途**：主に会話と自分の文書について尋ねたい、8GB のカードをお使いの方。**代わりに検討**：整った文章が主目的なら Gemma 4 12B、12GB あって長く丁寧な回答に深みがほしければ Qwen3 14B。",
+        "es": "El primero por el que empezar. Mantiene una conversación, resume un documento largo, responde preguntas sobre tus archivos y escribe código utilizable, sin flaquear en ninguna de esas cosas.\n\n**Elígelo si** sobre todo quieres conversar y preguntar por tus propios documentos, y tienes una tarjeta de 8GB. **Considera en su lugar** Gemma 4 12B si lo que más te importa es un texto pulido, o Qwen3 14B si tienes 12GB y quieres más profundidad en respuestas largas.",
+        "de": "Das Modell, mit dem man anfängt. Es führt ein Gespräch, fasst ein langes Dokument zusammen, beantwortet Fragen zu deinen Dateien und schreibt brauchbaren Code, ohne in einer dieser Aufgaben schwach zu sein.\n\n**Nimm es, wenn** du vor allem reden und nach deinen eigenen Dokumenten fragen willst und eine 8-GB-Karte hast. **Alternativ** Gemma 4 12B, wenn es dir vor allem um geschliffene Texte geht, oder Qwen3 14B, wenn du 12 GB hast und mehr Tiefe in langen Antworten willst."
+      },
+      "good_for": [
+        "allround"
+      ],
+      "best_at": [
+        "Everyday questions",
+        "Summarising your documents",
+        "Thinking step by step when asked",
+        "Chinese as well as English"
+      ],
+      "best_at_i18n": {
+        "zh": [
+          "日常问题",
+          "总结你的文档",
+          "需要时逐步思考",
+          "中文和英文都很好"
+        ],
+        "ja": [
+          "日常の質問",
+          "文書の要約",
+          "必要に応じて順を追って考える",
+          "英語だけでなく中国語も得意"
+        ],
+        "es": [
+          "Preguntas del día a día",
+          "Resumir tus documentos",
+          "Razonar paso a paso cuando se le pide",
+          "Chino además de inglés"
+        ],
+        "de": [
+          "Alltagsfragen",
+          "Deine Dokumente zusammenfassen",
+          "Auf Wunsch Schritt für Schritt denken",
+          "Chinesisch ebenso wie Englisch"
+        ]
+      },
+      "weaker_at": [
+        "Polished writing",
+        "Facts about obscure topics"
+      ],
+      "weaker_at_i18n": {
+        "zh": [
+          "精致的文笔",
+          "冷门话题的事实"
+        ],
+        "ja": [
+          "洗練された文章",
+          "マイナーな話題の事実"
+        ],
+        "es": [
+          "Textos pulidos",
+          "Datos sobre temas poco conocidos"
+        ],
+        "de": [
+          "Ausgefeilte Texte",
+          "Fakten zu entlegenen Themen"
+        ]
+      },
+      "vision": false
+    },
+    {
+      "id": "73bbd918-79ea-48c6-8320-1569c76b353d",
+      "slug": "ornith-1.5-9b",
+      "name": "Ornith 1.5 9B",
+      "tagline": "Step-by-step problems, and conversations about three times longer than other 8 GB models",
+      "description_md": "Released in August 2026 and already among the most downloaded models of its size. It is a little sharper than Qwen3 8B on problems that take several steps, and its design stores a conversation compactly, so on the same card it can remember about three times as much.\n\n**Choose it if** you have an 8GB card and want long conversations or careful step-by-step answers. **Be aware** it is newer, so there is less accumulated experience of where it goes wrong than with the Qwen and Gemma families.",
+      "kind": "base",
+      "license": "MIT",
+      "released_at": "2026-08-18",
+      "tier_gb": 8,
+      "price_cents": 0,
+      "price_model": "free",
+      "published": true,
+      "creator_handle": "ornith",
+      "hf_downloads_30d": 483343,
+      "hf_likes": 330,
+      "stats_as_of": "2026-09-23",
+      "files": [
+        {
+          "id": "dd5848c7-b165-4dea-a006-0eda3e5f6103",
+          "version": "1.0.0",
+          "quantization": "Q4_K_M",
+          "size_bytes": 5780090816,
+          "sha256": "70c112196e0b7023803c9762752e46d29e612a92c83f995bc3ba1ceb07e8fab6",
+          "min_vram_mb": 6050,
+          "min_ram_mb": 10500,
+          "context_length": 8192,
+          "measured": true,
+          "download_url": "https://huggingface.co/ornith-ai/Ornith-1.5-9B-GGUF/resolve/abdd624b12ebf020b767fff532ff44fe552b28c3/Ornith-1.5-9B-Q4_K_M.gguf",
+          "measured_note": "5496MB and 57 tok/s at 8k on an RTX 3060 Ti.",
+          "kv_mb_per_1k": 32.0
+        },
+        {
+          "id": "38ab5193-40e8-5323-ab1e-78019fa7ebee",
+          "version": "1.0.0",
+          "quantization": "Q6_K",
+          "size_bytes": 7558901696,
+          "sha256": "b6f76e74f86245b3caee014b797c10dca931c4dfdaabfb134eab655f81e4154a",
+          "min_vram_mb": 8000,
+          "min_ram_mb": 12500,
+          "context_length": 8192,
+          "measured": false,
+          "download_url": "https://huggingface.co/ornith-ai/Ornith-1.5-9B-GGUF/resolve/abdd624b12ebf020b767fff532ff44fe552b28c3/Ornith-1.5-9B-Q6_K.gguf",
+          "kv_mb_per_1k": 32.0
+        },
+        {
+          "id": "dd93af7f-4d5b-579d-8f63-2e9edb3753e6",
+          "version": "1.0.0",
+          "quantization": "Q8_0",
+          "size_bytes": 9786060384,
+          "sha256": "22086870b009dbe9815ee752c48a82de930118a7c5ce5599590892ae03b8b010",
+          "min_vram_mb": 10100,
+          "min_ram_mb": 14500,
+          "context_length": 8192,
+          "measured": false,
+          "download_url": "https://huggingface.co/ornith-ai/Ornith-1.5-9B-GGUF/resolve/abdd624b12ebf020b767fff532ff44fe552b28c3/Ornith-1.5-9B-Q8_0.gguf",
+          "kv_mb_per_1k": 32.0
+        }
+      ],
+      "tagline_i18n": {
+        "zh": "擅长多步骤问题，对话长度约为其他 8 GB 模型的三倍",
+        "ja": "段階を踏む問題に強く、他の 8 GB 向けモデルの約3倍長い会話を覚えられる",
+        "es": "Problemas paso a paso, y conversaciones unas tres veces más largas que otros modelos de 8 GB",
+        "de": "Aufgaben in mehreren Schritten und etwa dreimal längere Gespräche als andere 8-GB-Modelle"
+      },
+      "description_md_i18n": {
+        "zh": "2026 年 8 月发布，已是同尺寸中下载量最高的模型之一。在需要多步推理的问题上，它比 Qwen3 8B 略胜一筹；而且它的结构存放对话很紧凑，在同一张显卡上能记住大约三倍的内容。\n\n**适合**：你有 8GB 显卡，想要长对话或细致的分步回答。**注意**：它比较新，因此关于它会在哪里出错，积累的经验不如 Qwen 和 Gemma 系列那么多。",
+        "ja": "2026 年 8 月公開。同規模では既に最もダウンロードされているものの一つです。数段階を要する問題で Qwen3 8B よりわずかに鋭く、会話をコンパクトに保持する設計のため、同じカードで約 3 倍の量を覚えていられます。\n\n**向いている用途**：8GB のカードで、長い会話や丁寧な段階的な答えがほしいとき。**注意**：新しいぶん、どこで間違えるかの知見が Qwen や Gemma ほど蓄積されていません。",
+        "es": "Publicado en agosto de 2026 y ya entre los más descargados de su tamaño. Es algo más fino que Qwen3 8B en problemas de varios pasos, y su diseño guarda la conversación de forma compacta, así que en la misma tarjeta puede recordar unas tres veces más.\n\n**Elígelo si** tienes una tarjeta de 8 GB y quieres conversaciones largas o respuestas cuidadosas paso a paso. **Ten en cuenta** que es nuevo, así que hay menos experiencia acumulada sobre dónde se equivoca que con las familias Qwen y Gemma.",
+        "de": "Im August 2026 veröffentlicht und schon eines der am häufigsten geladenen Modelle seiner Größe. Bei Aufgaben über mehrere Schritte ist es etwas schärfer als Qwen3 8B, und seine Bauweise speichert ein Gespräch kompakt, sodass es auf derselben Karte etwa dreimal so viel behalten kann.\n\n**Nimm es, wenn** du eine 8-GB-Karte hast und lange Gespräche oder sorgfältige Schritt-für-Schritt-Antworten willst. **Beachte**: Es ist neu, es gibt also weniger gesammelte Erfahrung darüber, wo es irrt, als bei den Familien Qwen und Gemma."
+      },
+      "good_for": [
+        "reasoning",
+        "longchats"
+      ],
+      "best_at": [
+        "Problems that take several steps",
+        "Very long conversations"
+      ],
+      "best_at_i18n": {
+        "zh": [
+          "需要多个步骤的问题",
+          "很长的对话"
+        ],
+        "ja": [
+          "いくつもの段階を踏む問題",
+          "とても長い会話"
+        ],
+        "es": [
+          "Problemas de varios pasos",
+          "Conversaciones muy largas"
+        ],
+        "de": [
+          "Aufgaben mit mehreren Schritten",
+          "Sehr lange Gespräche"
+        ]
+      },
+      "weaker_at": [
+        "Short track record: released August 2026"
+      ],
+      "weaker_at_i18n": {
+        "zh": [
+          "经验积累较少：2026 年 8 月才发布"
+        ],
+        "ja": [
+          "実績が浅い：2026年8月公開"
+        ],
+        "es": [
+          "Poca trayectoria: publicado en agosto de 2026"
+        ],
+        "de": [
+          "Wenig Erfahrungswerte: erschienen im August 2026"
+        ]
+      },
+      "vision": true
+    },
+    {
+      "id": "d6fd01b1-7ce3-4c5d-9438-8f96f7d4c6dd",
+      "slug": "gemma-4-12b",
+      "name": "Gemma 4 12B",
+      "tagline": "Letters, reports and summaries that read well, in the tone you ask for",
+      "description_md": "Its strength is prose. Summaries come out structured rather than listy, drafts hold a consistent register, and it is better than most at following an instruction about tone — \"formal but not stiff\" actually lands.\n\n**Choose it if** the main job is writing or rewriting: letters, reports, summaries of your own documents. **Not this one** for code, where Qwen2.5 Coder is far stronger at half the size.",
+      "kind": "base",
+      "license": "Apache-2.0",
+      "released_at": "2026-05-23",
+      "tier_gb": 16,
+      "price_cents": 0,
+      "price_model": "free",
+      "published": true,
+      "creator_handle": "google",
+      "hf_downloads_30d": 2318560,
+      "hf_likes": 1600,
+      "stats_as_of": "2026-09-23",
+      "files": [
+        {
+          "id": "bbfc9db0-666a-46d0-b233-29d81976f89c",
+          "version": "1.0.0",
+          "quantization": "Q4_K_M",
+          "size_bytes": 7121861440,
+          "sha256": null,
+          "min_vram_mb": 7900,
+          "min_ram_mb": 12000,
+          "context_length": 8192,
+          "measured": false,
+          "download_url": "https://huggingface.co/unsloth/gemma-4-12b-it-GGUF/resolve/fc034cfff751157913579611efad8462ac1be606/gemma-4-12b-it-Q4_K_M.gguf",
+          "kv_mb_per_1k": 16.0
+        },
+        {
+          "id": "0c02d412-75c1-53e8-abb2-a88447dd9534",
+          "version": "1.0.0",
+          "quantization": "Q6_K",
+          "size_bytes": 9786022720,
+          "sha256": "6f394336500bb5409bd68c31aa9d75097b5e6104f6cf30c82a09a7b64df41faf",
+          "min_vram_mb": 10450,
+          "min_ram_mb": 14500,
+          "context_length": 8192,
+          "measured": false,
+          "download_url": "https://huggingface.co/unsloth/gemma-4-12b-it-GGUF/resolve/fc034cfff751157913579611efad8462ac1be606/gemma-4-12b-it-Q6_K.gguf",
+          "kv_mb_per_1k": 16.0
+        },
+        {
+          "id": "0833fe7c-6704-594c-9f05-dda7ac18a0cb",
+          "version": "1.0.0",
+          "quantization": "Q8_0",
+          "size_bytes": 12669647680,
+          "sha256": "f20e7ff1be28c283eeeb18fc895733791c56a5851d5cd3fe9691b7f7d12afa72",
+          "min_vram_mb": 13200,
+          "min_ram_mb": 17500,
+          "context_length": 8192,
+          "measured": false,
+          "download_url": "https://huggingface.co/unsloth/gemma-4-12b-it-GGUF/resolve/fc034cfff751157913579611efad8462ac1be606/gemma-4-12b-it-Q8_0.gguf",
+          "kv_mb_per_1k": 16.0
+        }
+      ],
+      "tagline_i18n": {
+        "zh": "写出通顺的信件、报告和摘要，语气随你要求",
+        "ja": "読みやすい手紙・報告書・要約を、指定した調子で",
+        "es": "Cartas, informes y resúmenes que se leen bien, en el tono que pidas",
+        "de": "Briefe, Berichte und Zusammenfassungen, die sich gut lesen, im gewünschten Ton"
+      },
+      "description_md_i18n": {
+        "zh": "它的长处是文字。总结出来是有结构的，而不是罗列要点；草稿的语气前后一致；并且它比多数模型更能听懂关于语气的要求——你说「正式但不生硬」，它真的能做到。\n\n**适合**：主要任务是写作或改写，比如信件、报告、对自己文档的总结。**不适合**：写代码——在这方面，只有它一半大小的 Qwen2.5 Coder 要强得多。",
+        "ja": "強みは文章です。要約は箇条書きの羅列ではなく構成のある形で出てきますし、下書きの文体も一貫します。語調の指示に従う点でも多くのモデルより優秀で、「堅すぎない丁寧さで」と言えば実際にそうなります。\n\n**向いている用途**：手紙、報告書、自分の文書の要約など、書く・書き直すのが主な仕事のとき。**向かない用途**：コード。半分の大きさの Qwen2.5 Coder のほうがはるかに強力です。",
+        "es": "Su fuerza es la prosa. Los resúmenes salen estructurados en lugar de como una lista, los borradores mantienen un registro constante, y sigue mejor que la mayoría una indicación sobre el tono: «formal pero no rígido» funciona de verdad.\n\n**Elígelo si** el trabajo principal es escribir o reescribir: cartas, informes, resúmenes de tus propios documentos. **No este** para código, donde Qwen2.5 Coder es mucho más fuerte con la mitad de tamaño.",
+        "de": "Seine Stärke ist die Sprache. Zusammenfassungen kommen gegliedert statt als Aufzählung, Entwürfe halten eine einheitliche Tonlage, und es folgt einer Anweisung zum Ton besser als die meisten — „sachlich, aber nicht steif“ kommt wirklich so heraus.\n\n**Nimm es, wenn** die Hauptaufgabe Schreiben oder Umschreiben ist: Briefe, Berichte, Zusammenfassungen eigener Dokumente. **Nicht dieses** für Code, wo Qwen2.5 Coder bei halber Größe weit stärker ist."
+      },
+      "good_for": [
+        "writing"
+      ],
+      "best_at": [
+        "Drafting and rewriting",
+        "Getting the tone right",
+        "Summaries with structure",
+        "Writing in many languages"
+      ],
+      "best_at_i18n": {
+        "zh": [
+          "起草和改写",
+          "把握语气",
+          "有条理的摘要",
+          "多种语言写作"
+        ],
+        "ja": [
+          "下書きと書き直し",
+          "調子を的確に合わせる",
+          "構成のある要約",
+          "多言語での執筆"
+        ],
+        "es": [
+          "Redactar y reescribir",
+          "Acertar con el tono",
+          "Resúmenes con estructura",
+          "Escribir en muchos idiomas"
+        ],
+        "de": [
+          "Entwerfen und Umschreiben",
+          "Den richtigen Ton treffen",
+          "Gegliederte Zusammenfassungen",
+          "Schreiben in vielen Sprachen"
+        ]
+      },
+      "weaker_at": [
+        "Code",
+        "Maths"
+      ],
+      "weaker_at_i18n": {
+        "zh": [
+          "代码",
+          "数学"
+        ],
+        "ja": [
+          "コード",
+          "数学"
+        ],
+        "es": [
+          "Código",
+          "Matemáticas"
+        ],
+        "de": [
+          "Code",
+          "Mathematik"
+        ]
+      },
+      "vision": true
+    },
+    {
+      "id": "7d3eb993-0834-4e01-bc29-7eabb068971e",
+      "slug": "qwen3-14b",
+      "name": "Qwen3 14B",
+      "tagline": "Careful answers to questions with several parts",
+      "description_md": "The same family as Qwen3 8B with roughly twice the capacity, and the difference shows where answers get long: it holds a complicated thread without drifting, handles a document with several conflicting sections, and is less likely to lose an earlier instruction halfway through.\n\n**Choose it if** you have a 12GB or 16GB card and ask questions with more than one part to them. **Consider instead** Qwen3 8B if your card is smaller — for short exchanges the gap is slight.",
+      "kind": "base",
+      "license": "Apache-2.0",
+      "released_at": "2025-04-27",
+      "tier_gb": 16,
+      "price_cents": 0,
+      "price_model": "free",
+      "published": true,
+      "creator_handle": "qwen",
+      "hf_downloads_30d": 2130703,
+      "hf_likes": 478,
+      "stats_as_of": "2026-09-22",
+      "files": [
+        {
+          "id": "454b72f5-26a6-4803-8b22-54d94e7e26be",
+          "version": "1.0.0",
+          "quantization": "Q4_K_M",
+          "size_bytes": 9001752960,
+          "sha256": null,
+          "min_vram_mb": 10400,
+          "min_ram_mb": 15000,
+          "context_length": 8192,
+          "measured": false,
+          "download_url": "https://huggingface.co/Qwen/Qwen3-14B-GGUF/resolve/530227a7d994db8eca5ab5ced2fb692b614357fd/Qwen3-14B-Q4_K_M.gguf",
+          "kv_mb_per_1k": 160.0
+        },
+        {
+          "id": "cb8ea85c-a6c5-58f9-86d8-f1e17cb9e32a",
+          "version": "1.0.0",
+          "quantization": "Q6_K",
+          "size_bytes": 12121937248,
+          "sha256": "ec1f1d1421d7636a23e17645cac6fda39ee4b5f1f11e42eb09238089705ef699",
+          "min_vram_mb": 13350,
+          "min_ram_mb": 17000,
+          "context_length": 8192,
+          "measured": false,
+          "download_url": "https://huggingface.co/Qwen/Qwen3-14B-GGUF/resolve/530227a7d994db8eca5ab5ced2fb692b614357fd/Qwen3-14B-Q6_K.gguf",
+          "kv_mb_per_1k": 160.0
+        },
+        {
+          "id": "5b9e5d8e-b49d-55ac-8d20-7ac6fff5ec57",
+          "version": "1.0.0",
+          "quantization": "Q8_0",
+          "size_bytes": 15698533728,
+          "sha256": "a0dfe649137410b7d82f06a209240508e218f32f5b6fd81b69d6932160cfcd9d",
+          "min_vram_mb": 16800,
+          "min_ram_mb": 20000,
+          "context_length": 8192,
+          "measured": false,
+          "download_url": "https://huggingface.co/Qwen/Qwen3-14B-GGUF/resolve/530227a7d994db8eca5ab5ced2fb692b614357fd/Qwen3-14B-Q8_0.gguf",
+          "kv_mb_per_1k": 160.0
+        }
+      ],
+      "tagline_i18n": {
+        "zh": "细致回答包含多个部分的问题",
+        "ja": "いくつもの部分からなる質問に丁寧に答える",
+        "es": "Respuestas cuidadosas a preguntas con varias partes",
+        "de": "Sorgfältige Antworten auf Fragen mit mehreren Teilen"
+      },
+      "description_md_i18n": {
+        "zh": "与 Qwen3 8B 同属一个系列，容量约为两倍，差别在答案变长时显现出来：它能抓住复杂的思路不跑题，能处理内部有矛盾的多段文档，也更不容易在中途忘掉先前的要求。\n\n**适合**：你有 12GB 或 16GB 显卡，并且提的问题往往包含好几个部分。**也可以考虑**：显卡更小的话就用 Qwen3 8B——短对话里两者差距很小。",
+        "ja": "Qwen3 8B と同系列で容量はおよそ 2 倍。その差は回答が長くなるところで出ます。込み入った筋道を見失わずに保ち、矛盾する節を含む文書も扱え、途中で前の指示を忘れることも減ります。\n\n**向いている用途**：12GB か 16GB のカードがあり、複数の要素を含む質問をするとき。**代わりに検討**：カードが小さいなら Qwen3 8B を。短いやり取りでは差はわずかです。",
+        "es": "La misma familia que Qwen3 8B con aproximadamente el doble de capacidad, y la diferencia aparece cuando las respuestas se alargan: sostiene un razonamiento complicado sin desviarse, maneja un documento con secciones que se contradicen, y es menos probable que pierda una indicación anterior a mitad de camino.\n\n**Elígelo si** tienes una tarjeta de 12GB o 16GB y haces preguntas con más de una parte. **Considera en su lugar** Qwen3 8B si tu tarjeta es menor: en intercambios cortos la diferencia es pequeña.",
+        "de": "Dieselbe Familie wie Qwen3 8B mit etwa der doppelten Kapazität, und der Unterschied zeigt sich, wo Antworten lang werden: Es hält einen verwickelten Gedankengang, ohne abzudriften, kommt mit einem Dokument aus widersprüchlichen Abschnitten zurecht und verliert seltener eine frühere Anweisung auf halbem Weg.\n\n**Nimm es, wenn** du eine 12- oder 16-GB-Karte hast und Fragen stellst, die aus mehreren Teilen bestehen. **Alternativ** Qwen3 8B, wenn deine Karte kleiner ist — bei kurzen Wechseln ist der Abstand gering."
+      },
+      "good_for": [
+        "allround",
+        "reasoning"
+      ],
+      "best_at": [
+        "Questions with several parts",
+        "Documents that contradict themselves",
+        "Maths and analysis",
+        "Keeping to an instruction until the end"
+      ],
+      "best_at_i18n": {
+        "zh": [
+          "包含多个部分的问题",
+          "前后矛盾的文档",
+          "数学与分析",
+          "从头到尾遵守指令"
+        ],
+        "ja": [
+          "複数の部分からなる質問",
+          "内容が食い違う文書",
+          "数学と分析",
+          "最後まで指示を守る"
+        ],
+        "es": [
+          "Preguntas con varias partes",
+          "Documentos que se contradicen",
+          "Matemáticas y análisis",
+          "Mantener una instrucción hasta el final"
+        ],
+        "de": [
+          "Fragen mit mehreren Teilen",
+          "Dokumente, die sich widersprechen",
+          "Mathematik und Analyse",
+          "Eine Anweisung bis zum Ende einhalten"
+        ]
+      },
+      "weaker_at": [
+        "Polished writing",
+        "Speed on a 12 GB card"
+      ],
+      "weaker_at_i18n": {
+        "zh": [
+          "精致的文笔",
+          "在 12 GB 显卡上的速度"
+        ],
+        "ja": [
+          "洗練された文章",
+          "12 GB のカードでの速さ"
+        ],
+        "es": [
+          "Textos pulidos",
+          "Velocidad en una tarjeta de 12 GB"
+        ],
+        "de": [
+          "Ausgefeilte Texte",
+          "Tempo auf einer 12-GB-Karte"
+        ]
+      },
+      "vision": false
+    },
+    {
+      "id": "c7e87588-a3fb-4ffd-ab41-a94cfca23cb2",
+      "slug": "mistral-small-3.2-24b",
+      "name": "Mistral Small 3.2 24B",
+      "tagline": "Does exactly what a long, detailed request asks, in the format asked",
+      "description_md": "Mistral's larger open model, and notably good at doing exactly what it was told: a prompt with five requirements comes back having addressed five, in the order asked. It also handles long documents without losing the thread.\n\n**Choose it if** you give long, specific instructions and have a 24GB card. **Be aware** a 16GB card is not enough once a conversation is any length: there it runs partly on the processor, and replies arrive slowly.",
+      "kind": "base",
+      "license": "Apache-2.0",
+      "released_at": "2025-06-19",
+      "tier_gb": 24,
+      "price_cents": 0,
+      "price_model": "free",
+      "published": true,
+      "creator_handle": "mistral",
+      "hf_downloads_30d": 195552,
+      "hf_likes": 616,
+      "stats_as_of": "2026-09-22",
+      "files": [
+        {
+          "id": "e9d5d308-445c-4bf9-98dc-a84443ba170d",
+          "version": "1.0.0",
+          "quantization": "Q4_K_M",
+          "size_bytes": 14333922848,
+          "sha256": null,
+          "min_vram_mb": 15450,
+          "min_ram_mb": 22500,
+          "context_length": 8192,
+          "measured": false,
+          "download_url": "https://huggingface.co/unsloth/Mistral-Small-3.2-24B-Instruct-2506-GGUF/resolve/b750ec2299225e492f1bd27cab88a0a595fa848f/Mistral-Small-3.2-24B-Instruct-2506-Q4_K_M.gguf",
+          "kv_mb_per_1k": 160.0
+        },
+        {
+          "id": "919220e5-cb41-5704-beb0-e0a90335929c",
+          "version": "1.0.0",
+          "quantization": "Q6_K",
+          "size_bytes": 19345952288,
+          "sha256": "e92f341791f7da41021d9ae7fac00a1c02aa007a09cb2ecabea748f73a206217",
+          "min_vram_mb": 20250,
+          "min_ram_mb": 23500,
+          "context_length": 8192,
+          "measured": false,
+          "download_url": "https://huggingface.co/unsloth/Mistral-Small-3.2-24B-Instruct-2506-GGUF/resolve/b750ec2299225e492f1bd27cab88a0a595fa848f/Mistral-Small-3.2-24B-Instruct-2506-Q6_K.gguf",
+          "kv_mb_per_1k": 160.0
+        },
+        {
+          "id": "e594c168-5ff3-5869-96e8-f2c115c72a67",
+          "version": "1.0.0",
+          "quantization": "Q8_0",
+          "size_bytes": 25054793248,
+          "sha256": "b2a40e5ef4eab8837d0462c303e8147ec754e2963e41916b551107d2b0ca6527",
+          "min_vram_mb": 25700,
+          "min_ram_mb": 29000,
+          "context_length": 8192,
+          "measured": false,
+          "download_url": "https://huggingface.co/unsloth/Mistral-Small-3.2-24B-Instruct-2506-GGUF/resolve/b750ec2299225e492f1bd27cab88a0a595fa848f/Mistral-Small-3.2-24B-Instruct-2506-Q8_0.gguf",
+          "kv_mb_per_1k": 160.0
+        }
+      ],
+      "tagline_i18n": {
+        "zh": "严格按照冗长详细的要求执行，并使用指定的格式",
+        "ja": "長く細かい依頼を、指定どおりの形式で正確にこなす",
+        "es": "Hace exactamente lo que pide una petición larga y detallada, en el formato pedido",
+        "de": "Erledigt genau, was eine lange, detaillierte Anfrage verlangt, im gewünschten Format"
+      },
+      "description_md_i18n": {
+        "zh": "Mistral 较大的开放模型，特别擅长严格照做：一个提了五项要求的提示，它会按你说的顺序把五项都回应到。处理长文档时也不会丢失线索。\n\n**适合**：你习惯给出又长又具体的指令，并且有 24GB 显卡。**注意**：对话稍长一些，16GB 显卡就不够用了：那时它会有一部分在处理器上运行，回复会比较慢。",
+        "ja": "Mistral の大きめの公開モデルで、言われたとおりに実行することにかけて優秀です。5 つの要件を並べた指示には、頼んだ順に 5 つとも答えて返ってきます。長い文書でも筋を見失いません。\n\n**向いている用途**：長く具体的な指示を出し、24GB のカードがあるとき。**注意**：会話が少し長くなると 16GB のカードでは足りません。その場合は一部がプロセッサーで動き、返答が遅くなります。",
+        "es": "El modelo abierto grande de Mistral, y notablemente bueno haciendo exactamente lo que se le pidió: una instrucción con cinco requisitos vuelve habiendo atendido los cinco, en el orden solicitado. También maneja documentos largos sin perder el hilo.\n\n**Elígelo si** das instrucciones largas y concretas y tienes una tarjeta de 24 GB. **Ten en cuenta** que una tarjeta de 16 GB no basta en cuanto la conversación se alarga: ahí se ejecuta en parte en el procesador y responde despacio.",
+        "de": "Mistrals größeres offenes Modell und besonders gut darin, genau das zu tun, was man gesagt hat: Eine Anweisung mit fünf Vorgaben kommt zurück und hat alle fünf behandelt, in der gefragten Reihenfolge. Auch bei langen Dokumenten verliert es den Faden nicht.\n\n**Nimm es, wenn** du lange, genaue Anweisungen gibst und eine 24-GB-Karte hast. **Beachte**: Sobald ein Gespräch etwas länger wird, reicht eine 16-GB-Karte nicht; dann läuft es teilweise auf dem Prozessor, und die Antworten kommen langsam."
+      },
+      "good_for": [
+        "instructions"
+      ],
+      "best_at": [
+        "Long lists of requirements",
+        "Tables, forms and fixed formats",
+        "European languages"
+      ],
+      "best_at_i18n": {
+        "zh": [
+          "一长串要求",
+          "表格、表单和固定格式",
+          "欧洲语言"
+        ],
+        "ja": [
+          "長い要件リスト",
+          "表・書式・決まった形式",
+          "ヨーロッパの言語"
+        ],
+        "es": [
+          "Listas largas de requisitos",
+          "Tablas, formularios y formatos fijos",
+          "Idiomas europeos"
+        ],
+        "de": [
+          "Lange Anforderungslisten",
+          "Tabellen, Formulare und feste Formate",
+          "Europäische Sprachen"
+        ]
+      },
+      "weaker_at": [
+        "Hard reasoning puzzles",
+        "Anything under a 24 GB card"
+      ],
+      "weaker_at_i18n": {
+        "zh": [
+          "高难度推理题",
+          "低于 24 GB 的显卡"
+        ],
+        "ja": [
+          "難しい推論問題",
+          "24 GB 未満のカード"
+        ],
+        "es": [
+          "Acertijos de razonamiento difíciles",
+          "Tarjetas de menos de 24 GB"
+        ],
+        "de": [
+          "Schwierige Denkaufgaben",
+          "Karten unter 24 GB"
+        ]
+      },
+      "vision": true
+    },
+    {
+      "id": "b2d23055-a655-40a3-abb6-efb26f6ec020",
+      "slug": "qwen3.8-27b",
+      "name": "Qwen3.8 27B",
+      "tagline": "The strongest thinker here: analysis, maths and code on a 24 GB card",
+      "description_md": "Alibaba's current 27B, and the best general-purpose answer for a 24GB card. It is better than anything smaller here at reasoning that takes several steps, and the gap widens on questions where the obvious answer is wrong.\n\n**Choose it if** you have a 24GB card and want one model for everything. **Consider instead** Gemma 4 31B if most of your work is writing rather than analysis — they are close, and Gemma has the better prose.",
+      "kind": "base",
+      "license": "Apache-2.0",
+      "released_at": "2026-08-05",
+      "tier_gb": 24,
+      "price_cents": 0,
+      "price_model": "free",
+      "published": true,
+      "creator_handle": "qwen",
+      "hf_downloads_30d": 7079646,
+      "hf_likes": 16048,
+      "stats_as_of": "2026-09-22",
+      "files": [
+        {
+          "id": "fe4d945a-05c7-4c92-b931-a66e47cb5fd3",
+          "version": "1.0.0",
+          "quantization": "Q4_K_M",
+          "size_bytes": 16464440224,
+          "sha256": null,
+          "min_vram_mb": 16750,
+          "min_ram_mb": 25500,
+          "context_length": 8192,
+          "measured": false,
+          "download_url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF/resolve/4ca720788d1e01f1bff70c033e0d0028fd02e502/Qwen3.8-27B-UD-Q4_K_M.gguf",
+          "kv_mb_per_1k": 64.0
+        },
+        {
+          "id": "eb0a2098-b173-579a-b946-7c7e43771dcf",
+          "version": "1.0.0",
+          "quantization": "Q6_K",
+          "size_bytes": 21983677344,
+          "sha256": "c9c206812fbe4ac7b76a729e25928b63f2ae89d37f69da7a71c20aec763cd436",
+          "min_vram_mb": 22000,
+          "min_ram_mb": 26000,
+          "context_length": 8192,
+          "measured": false,
+          "download_url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF/resolve/4ca720788d1e01f1bff70c033e0d0028fd02e502/Qwen3.8-27B-UD-Q6_K.gguf",
+          "kv_mb_per_1k": 64.0
+        },
+        {
+          "id": "ea89acf0-9a70-5fa3-8632-b305a2a431ec",
+          "version": "1.0.0",
+          "quantization": "Q8_0",
+          "size_bytes": 29047086048,
+          "sha256": "a680f44a06920e5d689774823782006aa3acc8db95750323373b24139b67e348",
+          "min_vram_mb": 28750,
+          "min_ram_mb": 33000,
+          "context_length": 8192,
+          "measured": false,
+          "download_url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF/resolve/4ca720788d1e01f1bff70c033e0d0028fd02e502/Qwen3.8-27B-Q8_0.gguf",
+          "kv_mb_per_1k": 64.0
+        }
+      ],
+      "tagline_i18n": {
+        "zh": "这里推理能力最强的模型：在 24 GB 显卡上做分析、数学和代码",
+        "ja": "ここで最も考える力が強いモデル：24 GB のカードで分析・数学・コード",
+        "es": "El que mejor razona de todos: análisis, matemáticas y código en una tarjeta de 24 GB",
+        "de": "Der stärkste Denker hier: Analyse, Mathematik und Code auf einer 24-GB-Karte"
+      },
+      "description_md_i18n": {
+        "zh": "阿里巴巴当前的 27B 模型，也是 24GB 显卡上最好的通用选择。在需要多步推理的问题上，它比这里任何更小的模型都强，而且越是「显而易见的答案其实是错的」这类问题，差距越明显。\n\n**适合**：你有 24GB 显卡，并且想用一个模型解决所有事。**也可以考虑**：如果你的工作以写作为主而非分析，选 Gemma 4 31B——两者接近，而 Gemma 的文字更好。",
+        "ja": "Alibaba の現行 27B で、24GB のカードにおける汎用用途の最良解です。数段階の推論を要する問題では、ここにあるどの小さいモデルより優れており、「一見正しい答えが実は誤り」という問題ほど差が開きます。\n\n**向いている用途**：24GB のカードがあり、何にでも使える 1 つがほしいとき。**代わりに検討**：分析より書く仕事が中心なら Gemma 4 31B を。差は小さく、文章は Gemma のほうが上です。",
+        "es": "El 27B actual de Alibaba, y la mejor respuesta de propósito general para una tarjeta de 24GB. Supera a cualquiera más pequeño de aquí en razonamientos de varios pasos, y la diferencia crece en las preguntas donde la respuesta evidente es la equivocada.\n\n**Elígelo si** tienes una tarjeta de 24GB y quieres un solo modelo para todo. **Considera en su lugar** Gemma 4 31B si tu trabajo es más escribir que analizar: están cerca, y Gemma escribe mejor.",
+        "de": "Alibabas aktuelles 27B und die beste Allzweck-Antwort für eine 24-GB-Karte. Bei Schlussfolgerungen über mehrere Schritte ist es besser als alles Kleinere hier, und der Abstand wächst bei Fragen, deren naheliegende Antwort falsch ist.\n\n**Nimm es, wenn** du eine 24-GB-Karte hast und ein Modell für alles willst. **Alternativ** Gemma 4 31B, wenn deine Arbeit mehr aus Schreiben als aus Analyse besteht — die beiden liegen nah beieinander, und Gemma schreibt besser."
+      },
+      "good_for": [
+        "allround",
+        "reasoning",
+        "code"
+      ],
+      "best_at": [
+        "Reasoning over several steps",
+        "Questions where the obvious answer is wrong",
+        "Code"
+      ],
+      "best_at_i18n": {
+        "zh": [
+          "多步骤推理",
+          "显而易见的答案是错的问题",
+          "代码"
+        ],
+        "ja": [
+          "複数段階の推論",
+          "直感的な答えが間違っている問題",
+          "コード"
+        ],
+        "es": [
+          "Razonar en varios pasos",
+          "Preguntas donde la respuesta obvia es errónea",
+          "Código"
+        ],
+        "de": [
+          "Denken über mehrere Schritte",
+          "Fragen, bei denen die naheliegende Antwort falsch ist",
+          "Code"
+        ]
+      },
+      "weaker_at": [
+        "Natural-sounding prose",
+        "Speed: slower than Gemma 4 26B"
+      ],
+      "weaker_at_i18n": {
+        "zh": [
+          "自然流畅的文笔",
+          "速度：比 Gemma 4 26B 慢"
+        ],
+        "ja": [
+          "自然な文章",
+          "速さ：Gemma 4 26B より遅い"
+        ],
+        "es": [
+          "Prosa natural",
+          "Velocidad: más lento que Gemma 4 26B"
+        ],
+        "de": [
+          "Natürlich klingende Texte",
+          "Tempo: langsamer als Gemma 4 26B"
+        ]
+      },
+      "vision": true
+    },
+    {
+      "id": "c97004a7-247e-40a7-a130-3c107046f0ed",
+      "slug": "gemma-4-26b-a4b",
+      "name": "Gemma 4 26B A4B",
+      "tagline": "Answers several times faster than other big models, for long back-and-forth",
+      "description_md": "A mixture-of-experts model: it holds 26B parameters but uses only a slice of them for each word, so it answers several times faster than a dense model its size while knowing about as much.\n\n**Choose it if** you have the graphics memory and want quick replies from a large model — it is the one to use for long back-and-forth conversation. **Be aware** the speed is free but the memory is not: it still needs room for all 26B.",
+      "kind": "base",
+      "license": "Apache-2.0",
+      "released_at": "2026-03-11",
+      "tier_gb": 24,
+      "price_cents": 0,
+      "price_model": "free",
+      "published": true,
+      "creator_handle": "google",
+      "hf_downloads_30d": 10293404,
+      "hf_likes": 1536,
+      "stats_as_of": "2026-09-22",
+      "files": [
+        {
+          "id": "df2bbdbc-b5c7-46e8-991b-b4cff536d0a4",
+          "version": "1.0.0",
+          "quantization": "Q4_K_M",
+          "size_bytes": 16947541728,
+          "sha256": null,
+          "min_vram_mb": 17150,
+          "min_ram_mb": 26000,
+          "context_length": 8192,
+          "measured": false,
+          "download_url": "https://huggingface.co/unsloth/gemma-4-26B-A4B-it-GGUF/resolve/c099eb48e663fd284577b04978a94ffccb261841/gemma-4-26B-A4B-it-UD-Q4_K_M.gguf",
+          "kv_mb_per_1k": 20.0
+        },
+        {
+          "id": "87d4838d-016b-59d2-be40-750cbbf07f6a",
+          "version": "1.0.0",
+          "quantization": "Q6_K",
+          "size_bytes": 23172478688,
+          "sha256": "76bf3eee49cca5b076b34a4b575ecd505dabc470512b46f1207b4f9da08385f0",
+          "min_vram_mb": 23100,
+          "min_ram_mb": 27500,
+          "context_length": 8192,
+          "measured": false,
+          "download_url": "https://huggingface.co/unsloth/gemma-4-26B-A4B-it-GGUF/resolve/c099eb48e663fd284577b04978a94ffccb261841/gemma-4-26B-A4B-it-UD-Q6_K.gguf",
+          "kv_mb_per_1k": 20.0
+        },
+        {
+          "id": "774b0ef4-9db3-5962-a565-399963f9a4e0",
+          "version": "1.0.0",
+          "quantization": "Q8_0",
+          "size_bytes": 26859861728,
+          "sha256": "5f7cbd0f4564e84342fc34321a09acb54b1a3da9215124e5bf444baa6dda152c",
+          "min_vram_mb": 26600,
+          "min_ram_mb": 31000,
+          "context_length": 8192,
+          "measured": false,
+          "download_url": "https://huggingface.co/unsloth/gemma-4-26B-A4B-it-GGUF/resolve/c099eb48e663fd284577b04978a94ffccb261841/gemma-4-26B-A4B-it-Q8_0.gguf",
+          "kv_mb_per_1k": 20.0
+        }
+      ],
+      "tagline_i18n": {
+        "zh": "回复速度是其他大模型的数倍，适合长时间来回对话",
+        "ja": "他の大型モデルより数倍速く答え、長いやり取りに向く",
+        "es": "Responde varias veces más rápido que otros modelos grandes, para conversaciones largas",
+        "de": "Antwortet um ein Vielfaches schneller als andere große Modelle, für langes Hin und Her"
+      },
+      "description_md_i18n": {
+        "zh": "一个混合专家模型：它拥有 260 亿参数，但每生成一个词只调用其中一部分，因此速度比同等规模的稠密模型快好几倍，知道的东西却差不多。\n\n**适合**：你显存充足，又希望从大模型那里得到快速回复——长时间来回对话时首选它。**注意**：快是白来的，显存不是：它仍然需要装下全部 260 亿参数的空间。",
+        "ja": "混合エキスパート方式のモデルです。26B のパラメーターを持ちながら、1 語ごとに使うのはその一部だけなので、同規模の密なモデルより数倍速く答えつつ、知識量はほぼ変わりません。\n\n**向いている用途**：グラフィックメモリに余裕があり、大きなモデルから素早い返答がほしいとき。長いやり取りにはこれが最適です。**注意**：速さは無料でもメモリはそうではありません。26B 全体分の容量は必要です。",
+        "es": "Un modelo de mezcla de expertos: tiene 26B de parámetros pero usa solo una parte para cada palabra, así que responde varias veces más rápido que un modelo denso de su tamaño sabiendo prácticamente lo mismo.\n\n**Elígelo si** tienes la memoria gráfica y quieres respuestas rápidas de un modelo grande: es el indicado para conversaciones largas de ida y vuelta. **Ten en cuenta** que la velocidad es gratis pero la memoria no: sigue necesitando sitio para los 26B completos.",
+        "de": "Ein Mixture-of-Experts-Modell: Es hat 26 Milliarden Parameter, nutzt für jedes Wort aber nur einen Teil davon und antwortet daher mehrfach schneller als ein dichtes Modell seiner Größe, während es etwa genauso viel weiß.\n\n**Nimm es, wenn** du den Grafikspeicher hast und schnelle Antworten von einem großen Modell willst — für langes Hin und Her ist es das richtige. **Beachte**: Die Geschwindigkeit ist gratis, der Speicher nicht: Es braucht weiterhin Platz für alle 26 Milliarden."
+      },
+      "good_for": [
+        "speed",
+        "longchats"
+      ],
+      "best_at": [
+        "Fast replies",
+        "Long conversations",
+        "Brainstorming and drafting"
+      ],
+      "best_at_i18n": {
+        "zh": [
+          "快速回复",
+          "长对话",
+          "头脑风暴和起草"
+        ],
+        "ja": [
+          "素早い返答",
+          "長い会話",
+          "アイデア出しと下書き"
+        ],
+        "es": [
+          "Respuestas rápidas",
+          "Conversaciones largas",
+          "Lluvia de ideas y borradores"
+        ],
+        "de": [
+          "Schnelle Antworten",
+          "Lange Gespräche",
+          "Ideen sammeln und Entwürfe"
+        ]
+      },
+      "weaker_at": [
+        "The hardest questions: a little less accurate than Gemma 4 31B"
+      ],
+      "weaker_at_i18n": {
+        "zh": [
+          "最难的问题：准确度略低于 Gemma 4 31B"
+        ],
+        "ja": [
+          "最も難しい質問：Gemma 4 31B よりやや不正確"
+        ],
+        "es": [
+          "Las preguntas más difíciles: algo menos preciso que Gemma 4 31B"
+        ],
+        "de": [
+          "Die schwierigsten Fragen: etwas ungenauer als Gemma 4 31B"
+        ]
+      },
+      "vision": true
+    },
+    {
+      "id": "05e33f74-a01a-449f-8d74-396aaf945560",
+      "slug": "gemma-4-31b",
+      "name": "Gemma 4 31B",
+      "tagline": "The best writer here, and the most natural over a long conversation",
+      "description_md": "The biggest Gemma. Excellent written output, strong at following detailed instructions, and the most natural-sounding of everything here over a long conversation.\n\n**Choose it if** you have a 24GB card and your work is mostly writing. **Consider instead** Qwen3.8 27B for analysis, reasoning or code — the two are close enough that it is worth running both and keeping whichever suits your work.",
+      "kind": "base",
+      "license": "Apache-2.0",
+      "released_at": "2026-03-11",
+      "tier_gb": 24,
+      "price_cents": 0,
+      "price_model": "free",
+      "published": true,
+      "creator_handle": "google",
+      "hf_downloads_30d": 9158522,
+      "hf_likes": 3894,
+      "stats_as_of": "2026-09-22",
+      "files": [
+        {
+          "id": "c370da1b-a378-4b82-8eda-e08220ca4063",
+          "version": "1.0.0",
+          "quantization": "Q4_K_M",
+          "size_bytes": 18323733440,
+          "sha256": null,
+          "min_vram_mb": 19850,
+          "min_ram_mb": 28000,
+          "context_length": 8192,
+          "measured": false,
+          "download_url": "https://huggingface.co/unsloth/gemma-4-31B-it-GGUF/resolve/c1ac76e99d5513b141e8adde7288b85c3f9c32ec/gemma-4-31B-it-Q4_K_M.gguf",
+          "kv_mb_per_1k": 80.0
+        },
+        {
+          "id": "59a7e988-7b0d-51e2-8a97-aebfe89a9094",
+          "version": "1.0.0",
+          "quantization": "Q6_K",
+          "size_bytes": 25201486784,
+          "sha256": "4660692bca96f1d9d19c550641088789c8c0c25bb07965a1e2798e3cb16885fb",
+          "min_vram_mb": 26400,
+          "min_ram_mb": 29500,
+          "context_length": 8192,
+          "measured": false,
+          "download_url": "https://huggingface.co/unsloth/gemma-4-31B-it-GGUF/resolve/c1ac76e99d5513b141e8adde7288b85c3f9c32ec/gemma-4-31B-it-Q6_K.gguf",
+          "kv_mb_per_1k": 80.0
+        }
+      ],
+      "tagline_i18n": {
+        "zh": "这里文笔最好的模型，长对话也最自然",
+        "ja": "ここで最も文章がうまく、長い会話でも最も自然",
+        "es": "El que mejor escribe de todos, y el más natural en una conversación larga",
+        "de": "Der beste Schreiber hier und der natürlichste in langen Gesprächen"
+      },
+      "description_md_i18n": {
+        "zh": "体积最大的 Gemma。文字输出出色，遵循详细指令的能力很强，长对话中的语感也是这里最自然的。\n\n**适合**：你有 24GB 显卡，而且工作以写作为主。**也可以考虑**：分析、推理或代码方面选 Qwen3.8 27B——两者足够接近，值得都跑一跑，留下更合你工作的那个。",
+        "ja": "最大の Gemma。文章の質が高く、細かい指示にもよく従い、長い会話での自然さはここで随一です。\n\n**向いている用途**：24GB のカードがあり、仕事の中心が書くことであるとき。**代わりに検討**：分析・推論・コードなら Qwen3.8 27B を。両者は十分に近いので、どちらも試して仕事に合うほうを残す価値があります。",
+        "es": "El Gemma más grande. Texto escrito excelente, muy bueno siguiendo instrucciones detalladas, y el que suena más natural de todo lo que hay aquí a lo largo de una conversación larga.\n\n**Elígelo si** tienes una tarjeta de 24GB y tu trabajo es sobre todo escribir. **Considera en su lugar** Qwen3.8 27B para análisis, razonamiento o código: los dos están lo bastante cerca como para probar ambos y quedarte con el que encaje con tu trabajo.",
+        "de": "Das größte Gemma. Ausgezeichnete Texte, stark im Befolgen ausführlicher Anweisungen, und über ein langes Gespräch hinweg das natürlichste hier.\n\n**Nimm es, wenn** du eine 24-GB-Karte hast und deine Arbeit vor allem Schreiben ist. **Alternativ** Qwen3.8 27B für Analyse, Schlussfolgern oder Code — die beiden liegen nah genug beieinander, dass es sich lohnt, beide laufen zu lassen und das zu behalten, das zu deiner Arbeit passt."
+      },
+      "good_for": [
+        "writing"
+      ],
+      "best_at": [
+        "Writing that sounds natural",
+        "Following detailed style instructions",
+        "Writing in many languages"
+      ],
+      "best_at_i18n": {
+        "zh": [
+          "自然的文字",
+          "遵循详细的风格要求",
+          "多种语言写作"
+        ],
+        "ja": [
+          "自然に聞こえる文章",
+          "細かな文体の指示に従う",
+          "多言語での執筆"
+        ],
+        "es": [
+          "Textos que suenan naturales",
+          "Seguir instrucciones de estilo detalladas",
+          "Escribir en muchos idiomas"
+        ],
+        "de": [
+          "Natürlich klingende Texte",
+          "Detaillierte Stilvorgaben befolgen",
+          "Schreiben in vielen Sprachen"
+        ]
+      },
+      "weaker_at": [
+        "Code",
+        "Speed: slower than Gemma 4 26B"
+      ],
+      "weaker_at_i18n": {
+        "zh": [
+          "代码",
+          "速度：比 Gemma 4 26B 慢"
+        ],
+        "ja": [
+          "コード",
+          "速さ：Gemma 4 26B より遅い"
+        ],
+        "es": [
+          "Código",
+          "Velocidad: más lento que Gemma 4 26B"
+        ],
+        "de": [
+          "Code",
+          "Tempo: langsamer als Gemma 4 26B"
+        ]
+      },
+      "vision": true
+    }
+  ],
+  "creators": [
+    {
+      "handle": "qwen",
+      "display_name": "Qwen",
+      "bio": "Alibaba's open-weight model family."
+    },
+    {
+      "handle": "google",
+      "display_name": "Google",
+      "bio": "Gemma — Google's open-weight line. Gemini is not open-weight."
+    },
+    {
+      "handle": "deepseek",
+      "display_name": "DeepSeek",
+      "bio": "Reasoning models released under the MIT licence."
+    },
+    {
+      "handle": "microsoft",
+      "display_name": "Microsoft",
+      "bio": "Phi family of small reasoning models."
+    },
+    {
+      "handle": "mistral",
+      "display_name": "Mistral AI",
+      "bio": "French lab publishing open-weight models."
+    },
+    {
+      "handle": "jetbrains",
+      "display_name": "JetBrains",
+      "bio": "The company behind IntelliJ and PyCharm."
+    },
+    {
+      "handle": "meta",
+      "display_name": "Meta",
+      "bio": "Llama family of open-weight models."
+    },
+    {
+      "handle": "ornith",
+      "display_name": "Ornith",
+      "bio": "Open-weight models released under the MIT licence."
+    }
+  ]
+}
