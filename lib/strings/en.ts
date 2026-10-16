@@ -97,7 +97,7 @@ export const en = {
       },
       {
         t: "Use it from your phone",
-        b: "Pair your phone once by scanning a code, then carry on your conversations from the sofa or the next room, with your files included. It only works on your home or office Wi-Fi and everything is encrypted between the two, so nothing passes through us. The phone app is coming soon.",
+        b: "Pair your phone once by scanning a code, then carry on your conversations from the sofa or the next room. It works through Wi-Fi and everything is encrypted between the two, so nothing gets out.",
       },
     ],
 

@@ -91,7 +91,7 @@ export const de: Strings = {
       },
       {
         t: "Vom Handy aus nutzen",
-        b: "Koppeln Sie Ihr Handy einmal per Code-Scan und führen Sie Ihre Unterhaltungen vom Sofa oder aus dem Nebenzimmer weiter, mitsamt Ihren Dateien. Es funktioniert nur im WLAN zu Hause oder im Büro, und alles ist zwischen beiden Geräten verschlüsselt, sodass nichts über uns läuft. Die Handy-App erscheint in Kürze.",
+        b: "Koppeln Sie Ihr Handy einmal per Code-Scan und führen Sie Ihre Unterhaltungen vom Sofa oder aus dem Nebenzimmer weiter. Es funktioniert über WLAN, und alles ist zwischen beiden Geräten verschlüsselt, sodass nichts nach außen dringt.",
       },
     ],
 
