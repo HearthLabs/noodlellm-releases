@@ -45,10 +45,6 @@ The licence check never sends your conversations or documents anywhere. Those st
 - **Cancel any time** from Settings → Account (it opens Stripe's billing page) or by emailing us. You keep access until the end of the period you have paid for. After that the app pauses as it does when a trial ends, and nothing on your computer is deleted.
 - **Refunds and chargebacks.** If a payment is refunded or disputed with your bank, the licence stops working on every computer the next time each one goes online.
 
-## Models from creators
-
-Every model in the store is free with any plan today. Creators will be able to sell their own models later. When they can, a creator model will be a one-off purchase you keep, not a subscription, and it will use the same two sizes: a **personal** price for one person on up to **3** computers, and a **practice** price for a firm on up to **15**. Each computer that downloads the model counts towards that limit, and a computer unseen for 60 days frees its place, just as with your subscription.
-
 ## Questions
 
 Email [info@noodletechnology.com](mailto:info@noodletechnology.com).
