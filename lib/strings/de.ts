@@ -84,8 +84,12 @@ export const de: Strings = {
         b: "Wird ein Chat länger, als das Modell behalten kann, fasst es die früheren Nachrichten zusammen, statt sie zu vergessen, sodass Namen, Zahlen und Entscheidungen vom Anfang weiter zählen. Diese Zusammenfassung kannst du jederzeit lesen.",
       },
       {
-        t: "Richte jeden Chat für eine Aufgabe ein",
-        b: "Gib einem Gespräch eigene Anweisungen, etwa einen Nachhilfelehrer, der eine Frage nach der anderen stellt, oder einen förmlichen Ton für Briefe an Mandanten, und wähle, wie ruhig oder mutig die Antworten sind. Es gibt Beispiele zum Einstieg.",
+        t: "Aufgaben für wiederkehrende Arbeit",
+        b: "Speichere eine Arbeit, die du oft machst, etwa eine E-Mail beantworten oder aus Notizen ein Protokoll machen, mit eigenen Anweisungen. Dann fügst du ein, was du hast, und klickst auf Ausführen. Vier fertige Aufgaben helfen beim Einstieg.",
+      },
+      {
+        t: "Bring ihm deinen Stil bei",
+        b: "Gib ihm einen Ordner mit deinen eigenen Texten, und es lernt, wie du zu klingen, und nutzt das in jeder Aufgabe. Dafür braucht es einen Windows-PC mit NVIDIA-Grafikkarte; die Funktion kommt bald mit einem Update.",
       },
       {
         t: "Vom Handy aus nutzen",

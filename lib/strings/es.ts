@@ -84,8 +84,12 @@ export const es: Strings = {
         b: "Cuando un chat supera lo que el modelo puede retener, resume los mensajes anteriores en vez de olvidarlos, así que los nombres, las cifras y las decisiones del principio siguen contando. Puedes leer ese resumen cuando quieras.",
       },
       {
-        t: "Prepara cada chat para una tarea",
-        b: "Dale a una conversación sus propias instrucciones, como un profesor que pregunta de una en una o un tono formal para cartas a clientes, y elige si sus respuestas son más estables o más atrevidas. Hay ejemplos para empezar.",
+        t: "Tareas para lo que repites",
+        b: "Guarda un trabajo que haces a menudo, como responder un correo o convertir notas en un acta, con sus propias instrucciones. Luego pega lo que tienes y pulsa Ejecutar. Incluye cuatro tareas listas para empezar.",
+      },
+      {
+        t: "Enséñale tu estilo",
+        b: "Dale una carpeta con tus propios textos y aprende a sonar como tú, para usarlo en cualquier tarea. Enseñarle requiere un PC con Windows y una tarjeta gráfica NVIDIA, y llega pronto en una actualización.",
       },
       {
         t: "Úsalo desde el móvil",

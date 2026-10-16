@@ -69,6 +69,14 @@ function IconOffline() {
     </svg>
   );
 }
+function IconTeach() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.6" className={ICON} aria-hidden="true">
+      <path d="M2.5 9 12 4.5 21.5 9 12 13.5 2.5 9Z" strokeLinejoin="round" />
+      <path d="M6.5 11v4.5c1.5 1.4 3.4 2 5.5 2s4-.6 5.5-2V11M21.5 9v5" strokeLinecap="round" />
+    </svg>
+  );
+}
 function IconSteady() {
   return (
     <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.6" className={ICON} aria-hidden="true">
@@ -95,7 +103,7 @@ function IconGlobe() {
 }
 // The icons pair with the cards in the strings by position; the words are per language,
 // the pictures are not.
-const INDIVIDUAL_ICONS = [IconFiles, IconMemory, IconUnlimited, IconEasy, IconPhone, IconGlobe];
+const INDIVIDUAL_ICONS = [IconFiles, IconMemory, IconUnlimited, IconEasy, IconTeach, IconPhone, IconGlobe];
 
 function Card({ Icon, t, b }: { Icon: () => React.JSX.Element; t: string; b: string }) {
   return (
@@ -264,7 +272,8 @@ export function IndividualBlock({ locale }: { locale: Locale }) {
     <section className="border-y border-edge bg-surface-1/40">
       <div className="mx-auto max-w-5xl px-6 pt-20 pb-16">
         <h2 className="max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">{t.individualTitle}</h2>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+        {/* An odd card out spans the row rather than leaving a hole beside it. */}
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 sm:[&>*:last-child:nth-child(odd)]:col-span-2">
           {t.individual.map((f, i) => (
             <Card key={f.t} Icon={INDIVIDUAL_ICONS[i]} {...f} />
           ))}

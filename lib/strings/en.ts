@@ -90,8 +90,12 @@ export const en = {
         b: "When a chat grows longer than the model can hold, it condenses the earlier messages into a summary instead of forgetting them, so names, figures and decisions from the start still count. You can read that summary at any time.",
       },
       {
-        t: "Set each chat up for a job",
-        b: "Give a conversation its own instructions, such as a tutor that asks one question at a time or a formal tone for client letters, and choose how steady or inventive its answers are. There are examples to start from.",
+        t: "Tasks for jobs you repeat",
+        b: "Save a job you do often, like answering an email or turning notes into minutes, with its own instructions. Then paste in what you have and press Run. Four ready-made tasks are there to start from.",
+      },
+      {
+        t: "Teach it your style",
+        b: "Give it a folder of your own writing and it learns to sound like you, then use what it learned in any task. Teaching needs a Windows PC with an NVIDIA graphics card, and arrives in an update soon.",
       },
       {
         t: "Use it from your phone",
