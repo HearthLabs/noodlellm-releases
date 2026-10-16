@@ -18,14 +18,7 @@ All three include everything: every model in the catalogue, no per-message charg
 
 **A personal licence (Founding member or Standard) covers one person on up to 3 computers.** That means your own computers, for example a desktop at home, a laptop and a work PC. It is not meant to be shared with family or colleagues, even if you have a computer to spare.
 
-**A Practice licence covers the people in one firm, practice or office on up to 15 computers.** You pay one price for the office. There are no per-person seats, so a receptionist, two partners and an assistant can all use it. Only the number of computers counts.
-
-How to choose:
-
-- **Just you**: Standard, or Founding member while places last.
-- **A small office with 2 or 3 people**: buying one personal plan each usually costs less ($29 a month per person) until you get to around 7 people. Each person needs their own plan, because a personal licence is for one person.
-- **More people than that, or computers that several people share**: Practice. It covers up to 15 computers for a single price, and you do not have to track who uses which one.
-- **More than 15 computers**: email [info@noodletechnology.com](mailto:info@noodletechnology.com).
+**A Practice licence covers the people in one firm, practice or office on up to 15 computers.** You pay one price for the office. There are no per-person seats, so a receptionist, two partners and an assistant can all use it. Only the number of computers counts. For more than 15 computers, email [info@noodletechnology.com](mailto:info@noodletechnology.com).
 
 ## How a licence is applied to a computer
 
