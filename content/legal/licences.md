@@ -8,7 +8,7 @@ Every new install gets **14 days free**. You do not need an account or a payment
 
 ## The three plans
 
-- **Founding member**: $8 a month or $80 a year. One person, on up to **3** computers. Only for the first 100 subscribers.
+- **Founding member**: $8 a month, or $100 once for a lifetime licence. One person, on up to **3** computers. Only for the first 100 subscribers.
 - **Standard**: $29 a month or $300 a year. One person, on up to **3** computers.
 - **Practice**: $200 a month or $2,000 a year. Everyone working in one firm, practice or office, on up to **15** computers.
 

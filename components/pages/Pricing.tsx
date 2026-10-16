@@ -11,7 +11,7 @@ const FEATURED = 1;
 /** Plan ids by card position, matching t.plans' order. Index 0 ("Try it") is the free
  * trial, the app's default state, so it gets a download link. Subscribing happens in the
  * app, so the paid plans have no button here. */
-const PLAN_IDS: (Plan | null)[] = [null, "founding", "practice"];
+const PLAN_IDS: (Plan | null)[] = [null, "founding", "standard", "practice"];
 
 function Tick() {
   return (
@@ -26,7 +26,7 @@ export default function Pricing({ locale }: { locale: Locale }) {
   const link = "text-ink underline underline-offset-4 hover:text-accent";
 
   return (
-    <main className="mx-auto max-w-5xl px-6 py-16">
+    <main className="mx-auto max-w-6xl px-6 py-16">
       <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">{t.title}</h1>
       <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-dim">{t.lead}</p>
 
@@ -46,12 +46,12 @@ export default function Pricing({ locale }: { locale: Locale }) {
         </label>
       </fieldset>
 
-      <div className="mt-6 grid items-start gap-5 lg:grid-cols-3">
+      <div className="mt-6 grid items-start gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {t.plans.map((p, i) => {
           const id = PLAN_IDS[i];
-          // The founding card shows the standard price struck through: what everyone after
-          // the first 100 pays.
-          const was = id === "founding" ? PRICES.standard : null;
+          // The founding card shows the standard monthly price struck through (what everyone
+          // after the first 100 pays) and its lifetime price, whichever period is picked.
+          const founding = id === "founding";
           return (
           <div
             key={p.name}
@@ -61,16 +61,23 @@ export default function Pricing({ locale }: { locale: Locale }) {
             ].join(" ")}
           >
             <h2 className="text-sm font-medium text-ink-dim">{p.name}</h2>
-            {id ? (
+            {founding ? (
+              <>
+                <div className="mt-2 flex flex-wrap items-baseline gap-x-2">
+                  <span className="text-xl text-ink-faint line-through">{t.money(PRICES.standard.month!)}</span>
+                  <span className="text-3xl font-semibold tracking-tight">{t.money(PRICES.founding.month!)}</span>
+                  <span className="text-sm text-ink-faint">{p.per}</span>
+                </div>
+                <p className="mt-1 text-sm font-medium text-accent">{t.lifetime(t.money(PRICES.founding.once!))}</p>
+              </>
+            ) : id ? (
               <>
                 <div className="mt-2 flex flex-wrap items-baseline gap-x-2 group-has-[#interval-year:checked]:hidden">
-                  {was && <span className="text-xl text-ink-faint line-through">{t.money(was.month)}</span>}
-                  <span className="text-3xl font-semibold tracking-tight">{t.money(PRICES[id].month)}</span>
+                  <span className="text-3xl font-semibold tracking-tight">{t.money(PRICES[id].month!)}</span>
                   <span className="text-sm text-ink-faint">{p.per}</span>
                 </div>
                 <div className="mt-2 hidden flex-wrap items-baseline gap-x-2 group-has-[#interval-year:checked]:flex">
-                  {was && <span className="text-xl text-ink-faint line-through">{t.money(was.year)}</span>}
-                  <span className="text-3xl font-semibold tracking-tight">{t.money(PRICES[id].year)}</span>
+                  <span className="text-3xl font-semibold tracking-tight">{t.money(PRICES[id].year!)}</span>
                   <span className="text-sm text-ink-faint">{p.perYear}</span>
                 </div>
               </>
