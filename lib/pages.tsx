@@ -100,9 +100,3 @@ export const creatorAgreementMetadata: Metadata = {
   alternates: { canonical: "/creator-agreement" },
 };
 export const creatorAgreementPage = () => <Legal doc="creator-agreement" />;
-export const licencesMetadata: Metadata = {
-  title: "Licences and subscriptions",
-  description: "How each plan covers 3 or 15 computers, how a licence is applied, and how subscriptions renew and cancel.",
-  alternates: { canonical: "/licences" },
-};
-export const licencesPage = () => <Legal doc="licences" />;

@@ -3,7 +3,7 @@ import path from "node:path";
 import Link from "next/link";
 import ReactMarkdown, { type Components } from "react-markdown";
 
-export type LegalDoc = "terms" | "privacy" | "creator-agreement" | "licences";
+export type LegalDoc = "terms" | "privacy" | "creator-agreement";
 
 /**
  * The Terms and the Privacy Statement, read from `content/legal/*.md` at build time.

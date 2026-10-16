@@ -30,7 +30,6 @@ export default function Shell({ locale, children }: { locale: Locale; children: 
         // English only, from every language: the English text is the one that binds.
         { label: t.footer.privacy, href: "/privacy" },
         { label: t.footer.terms, href: "/terms" },
-        { label: t.footer.licences, href: "/licences" },
       ],
     },
   ];

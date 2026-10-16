@@ -34,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
 
   // English only, so one entry each and no translations to list.
-  const legal = ["/terms", "/privacy", "/licences"].map((path) => ({ url: `${SITE.url}${path}`, lastModified: now, priority: 0.3 }));
+  const legal = ["/terms", "/privacy"].map((path) => ({ url: `${SITE.url}${path}`, lastModified: now, priority: 0.3 }));
 
   return [...translated, ...legal];
 }
