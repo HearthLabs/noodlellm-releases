@@ -69,9 +69,9 @@ export const en = {
       },
     ],
 
-    shotTitle: "It tells you what your PC can run",
-    shotBody: "Open the store and every model has already been checked against your computer: which run great, which run slowly and which will not fit. Pick one, install it in one click, and start.",
-    shotAlt: (app: string) => `The ${app} store, with each model marked by how well it runs on this PC`,
+    shotTitle: "It writes the way you do",
+    shotBody: "Pick a model, switch on a skill you taught it, such as your house style, and the replies come back the way you would write them. The model, the skill and every word stay on your computer.",
+    shotAlt: (app: string) => `A chat in ${app} drafting a reply to a client email, with the skill “Our house style” switched on`,
 
     individualTitle: "What it does for you",
     practiceLine:

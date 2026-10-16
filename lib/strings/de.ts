@@ -63,9 +63,9 @@ export const de: Strings = {
       },
     ],
 
-    shotTitle: "Es sagt dir, was dein PC schafft",
-    shotBody: "Öffne den Store, und jedes Modell ist schon mit deinem Computer abgeglichen: was gut läuft, was langsam läuft und was nicht passt. Such dir eins aus, installiere es mit einem Klick und leg los.",
-    shotAlt: (app) => `Der Store von ${app}, jedes Modell markiert danach, wie gut es auf diesem PC läuft`,
+    shotTitle: "Es schreibt so wie du",
+    shotBody: "Wähle ein Modell, schalte eine Fähigkeit ein, die du ihm beigebracht hast, etwa euren Hausstil, und die Antworten klingen so, wie du sie schreiben würdest. Modell, Fähigkeit und jedes Wort bleiben auf deinem Computer.",
+    shotAlt: (app) => `Ein Chat in ${app}, der eine Antwort auf eine Kunden-E-Mail entwirft, mit eingeschalteter Fähigkeit „Our house style“`,
 
     individualTitle: "Was es für dich tut",
     practiceLine:

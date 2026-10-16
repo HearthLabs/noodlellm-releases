@@ -63,9 +63,9 @@ export const es: Strings = {
       },
     ],
 
-    shotTitle: "Te dice qué puede ejecutar tu PC",
-    shotBody: "Abre la tienda y cada modelo ya está comprobado con tu ordenador: cuáles van muy bien, cuáles van lentos y cuáles no caben. Elige uno, instálalo con un clic y empieza.",
-    shotAlt: (app) => `La tienda de ${app}, con cada modelo marcado según lo bien que funciona en este PC`,
+    shotTitle: "Escribe como tú",
+    shotBody: "Elige un modelo, activa una habilidad que le hayas enseñado, como el estilo de tu despacho, y las respuestas salen como las escribirías tú. El modelo, la habilidad y cada palabra se quedan en tu ordenador.",
+    shotAlt: (app) => `Un chat en ${app} redactando la respuesta a un correo de un cliente, con la habilidad «Our house style» activada`,
 
     individualTitle: "Lo que hace por ti",
     practiceLine:
