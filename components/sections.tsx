@@ -246,7 +246,7 @@ export function Shot({ locale }: { locale: Locale }) {
   return (
     <>
     {/* ------------------------------------------------------------ the product */}
-    {/* A chat with a skill switched on: the screen people come back to every day. */}
+    {/* A chat using the person's own files and a skill: the screen people come back to every day. */}
     <section className="mx-auto max-w-5xl px-6 pt-20 pb-20">
       <h2 className="max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">{t.shotTitle}</h2>
       <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-dim">{t.shotBody}</p>

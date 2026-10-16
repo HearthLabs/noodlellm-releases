@@ -62,9 +62,9 @@ export const zh: Strings = {
       },
     ],
 
-    shotTitle: "它按你的方式写作",
-    shotBody: "选一个模型，打开你教给它的技能，比如你们的行文风格，回复就会像你亲手写的一样。模型、技能和每一个字都留在你的电脑上。",
-    shotAlt: (app) => `${app} 中的对话，正在起草给客户邮件的回复，已打开技能“Our house style”`,
+    shotTitle: "用你自己的文件，写出你的风格",
+    shotBody: "打开你的文件和你教给它的技能，它会按你的写法起草回复，并标明每部分出自哪份文件。模型、技能和文件都不会离开你的电脑。",
+    shotAlt: (app) => `${app} 中的对话，根据用户自己的发票和委托书起草给客户的回复，已打开技能“My writing style”`,
 
     individualTitle: "它能为你做什么",
     practiceLine:

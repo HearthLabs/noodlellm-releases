@@ -63,9 +63,9 @@ export const de: Strings = {
       },
     ],
 
-    shotTitle: "Es schreibt so wie du",
-    shotBody: "Wähle ein Modell, schalte eine Fähigkeit ein, die du ihm beigebracht hast, etwa euren Hausstil, und die Antworten klingen so, wie du sie schreiben würdest. Modell, Fähigkeit und jedes Wort bleiben auf deinem Computer.",
-    shotAlt: (app) => `Ein Chat in ${app}, der eine Antwort auf eine Kunden-E-Mail entwirft, mit eingeschalteter Fähigkeit „Our house style“`,
+    shotTitle: "Es schreibt wie du, aus deinen eigenen Dateien",
+    shotBody: "Schalte deine Dateien und eine Fähigkeit ein, die du ihm beigebracht hast, und es entwirft die Antwort so, wie du sie schreiben würdest, mit den Dokumenten, aus denen jeder Teil stammt. Modell, Fähigkeit und Dateien verlassen nie deinen Computer.",
+    shotAlt: (app) => `Ein Chat in ${app}, der aus den eigenen Rechnungen und dem Mandatsschreiben eine Antwort an eine Kundin entwirft, mit eingeschalteter Fähigkeit „My writing style“`,
 
     individualTitle: "Was es für dich tut",
     practiceLine:

@@ -69,9 +69,9 @@ export const en = {
       },
     ],
 
-    shotTitle: "It writes the way you do",
-    shotBody: "Pick a model, switch on a skill you taught it, such as your house style, and the replies come back the way you would write them. The model, the skill and every word stay on your computer.",
-    shotAlt: (app: string) => `A chat in ${app} drafting a reply to a client email, with the skill “Our house style” switched on`,
+    shotTitle: "It writes like you, from your own files",
+    shotBody: "Turn on your files and a skill you taught it, and it drafts the reply the way you would, naming the documents each part came from. The model, the skill and your files never leave your computer.",
+    shotAlt: (app: string) => `A chat in ${app} drafting a reply to a client from the user's own invoices and engagement letter, with the skill “My writing style” switched on`,
 
     individualTitle: "What it does for you",
     practiceLine:

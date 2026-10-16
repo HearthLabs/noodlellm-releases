@@ -63,9 +63,9 @@ export const es: Strings = {
       },
     ],
 
-    shotTitle: "Escribe como tú",
-    shotBody: "Elige un modelo, activa una habilidad que le hayas enseñado, como el estilo de tu despacho, y las respuestas salen como las escribirías tú. El modelo, la habilidad y cada palabra se quedan en tu ordenador.",
-    shotAlt: (app) => `Un chat en ${app} redactando la respuesta a un correo de un cliente, con la habilidad «Our house style» activada`,
+    shotTitle: "Escribe como tú, a partir de tus propios archivos",
+    shotBody: "Activa tus archivos y una habilidad que le hayas enseñado, y redacta la respuesta como lo harías tú, indicando de qué documento sale cada parte. El modelo, la habilidad y tus archivos nunca salen de tu ordenador.",
+    shotAlt: (app) => `Un chat en ${app} redactando la respuesta a una clienta a partir de las propias facturas y la carta de encargo, con la habilidad «My writing style» activada`,
 
     individualTitle: "Lo que hace por ti",
     practiceLine:
