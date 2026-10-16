@@ -1,7 +1,7 @@
-import { individualsMetadata, individualsPage } from "@/lib/pages";
+import { movedMetadata, movedPage, homeFor } from "@/lib/pages";
 
-export const metadata = individualsMetadata("en");
+export const metadata = movedMetadata;
 
 export default function Page() {
-  return individualsPage("en");
+  return movedPage(homeFor("en"));
 }

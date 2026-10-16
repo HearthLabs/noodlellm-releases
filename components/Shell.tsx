@@ -20,7 +20,6 @@ export default function Shell({ locale, children }: { locale: Locale; children: 
     {
       title: t.footer.product,
       links: [
-        { label: t.footer.download, href: href(locale, "/download") },
         { label: t.footer.pricing, href: href(locale, "/pricing") },
       ],
     },
@@ -30,7 +29,6 @@ export default function Shell({ locale, children }: { locale: Locale; children: 
         // English only, from every language: the English text is the one that binds.
         { label: t.footer.privacy, href: "/privacy" },
         { label: t.footer.terms, href: "/terms" },
-        { label: t.footer.licences, href: "/licences" },
       ],
     },
   ];
@@ -51,9 +49,9 @@ export default function Shell({ locale, children }: { locale: Locale; children: 
                 {t.nav.pricing}
               </Link>
               <LanguageMenu locale={locale} label={t.nav.language} />
-              {/* The download page, not a file: it offers Windows and Mac and their warnings. */}
+              {/* The homepage's download buttons, not a file: they offer Windows and Mac and their warnings. */}
               <Link
-                href={href(locale, "/download")}
+                href={`${href(locale, "/")}#download`}
                 className="rounded-md bg-accent px-3 py-1.5 font-medium text-surface-0 hover:brightness-110"
               >
                 {t.nav.download}

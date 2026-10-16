@@ -4,7 +4,7 @@ import { SITE } from "@/lib/site";
 import { href, strings, type Locale } from "@/lib/i18n";
 
 /**
- * The sections the homepage and the audience pages are built from.
+ * The sections the homepage is built from.
  *
  * Originally the homepage.
  *
@@ -26,14 +26,6 @@ function IconUnlimited() {
   return (
     <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.6" className={ICON} aria-hidden="true">
       <path d="M6.5 8.5a3.5 3.5 0 1 0 0 7c2 0 3-1.5 5.5-3.5s3.5-3.5 5.5-3.5a3.5 3.5 0 1 1 0 7c-2 0-3-1.5-5.5-3.5S8.5 8.5 6.5 8.5Z" />
-    </svg>
-  );
-}
-function IconPrivate() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.6" className={ICON} aria-hidden="true">
-      <rect x="4" y="10.5" width="16" height="10" rx="2" />
-      <path d="M8 10.5V7a4 4 0 0 1 8 0v3.5" />
     </svg>
   );
 }
@@ -77,6 +69,14 @@ function IconOffline() {
     </svg>
   );
 }
+function IconTeach() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.6" className={ICON} aria-hidden="true">
+      <path d="M2.5 9 12 4.5 21.5 9 12 13.5 2.5 9Z" strokeLinejoin="round" />
+      <path d="M6.5 11v4.5c1.5 1.4 3.4 2 5.5 2s4-.6 5.5-2V11M21.5 9v5" strokeLinecap="round" />
+    </svg>
+  );
+}
 function IconSteady() {
   return (
     <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.6" className={ICON} aria-hidden="true">
@@ -93,27 +93,9 @@ function IconMemory() {
     </svg>
   );
 }
-function IconGlobe() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.6" className={ICON} aria-hidden="true">
-      <circle cx="12" cy="12" r="8.5" />
-      <path d="M3.5 12h17M12 3.5c2.5 2.6 3.5 5.4 3.5 8.5s-1 5.9-3.5 8.5c-2.5-2.6-3.5-5.4-3.5-8.5s1-5.9 3.5-8.5Z" />
-    </svg>
-  );
-}
-function IconSeat() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.6" className={ICON} aria-hidden="true">
-      <circle cx="9" cy="8" r="3.2" />
-      <path d="M3.5 20a5.5 5.5 0 0 1 11 0M16.5 7.2a3 3 0 0 1 0 5.6M18.5 20a5.2 5.2 0 0 0-2.4-4.3" />
-    </svg>
-  );
-}
-
 // The icons pair with the cards in the strings by position; the words are per language,
 // the pictures are not.
-const INDIVIDUAL_ICONS = [IconFiles, IconMemory, IconUnlimited, IconEasy, IconPhone, IconGlobe];
-const PRACTICE_ICONS = [IconPrivate, IconFiles, IconEasy, IconSeat];
+const INDIVIDUAL_ICONS = [IconFiles, IconMemory, IconUnlimited, IconEasy, IconTeach, IconPhone];
 
 function Card({ Icon, t, b }: { Icon: () => React.JSX.Element; t: string; b: string }) {
   return (
@@ -154,43 +136,6 @@ function DownloadButton({ locale, label }: { locale: Locale; label: string }) {
 }
 
 
-/**
- * The detail behind "it reads your own files", folded away: the cards make the claim, and
- * whoever needs to know whether their .doc files count can open this and find out.
- */
-function ReadsDetails({ locale }: { locale: Locale }) {
-  const t = strings(locale).home;
-  return (
-    <details className="mt-4 rounded-lg border border-edge bg-surface-1 px-5 py-3.5">
-      <summary className="cursor-pointer text-sm text-ink-dim hover:text-ink">{t.readsMore}</summary>
-      <div className="mt-4 grid gap-6 pb-1 sm:grid-cols-2">
-        <div>
-          <h3 className="text-sm font-medium">{t.readsHeading}</h3>
-          <ul className="mt-2.5 space-y-1.5">
-            {t.reads.map((r) => (
-              <li key={r} className="flex gap-2.5 text-sm leading-relaxed text-ink-dim">
-                <span aria-hidden className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
-                {r}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h3 className="text-sm font-medium">{t.cannotHeading}</h3>
-          <ul className="mt-2.5 space-y-2">
-            {t.cannot.map(([what, why]) => (
-              <li key={what} className="text-sm leading-relaxed">
-                <span className="text-ink-dim">{what}</span>
-                <span className="block text-xs text-ink-faint">{why}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </details>
-  );
-}
-
 export function Hero({ locale }: { locale: Locale }) {
   const t = strings(locale).home;
   return (
@@ -206,8 +151,9 @@ export function Hero({ locale }: { locale: Locale }) {
       </p>
 
 
-      <div className="mt-9">
+      <div id="download" className="mt-9 scroll-mt-6">
         <DownloadButton locale={locale} label={t.download} />
+        <p className="mt-1 text-xs text-ink-faint">{t.requires}</p>
         <p className="mt-3 text-sm text-ink-faint">
           {t.trial}{" "}
           <Link href={href(locale, "/pricing")} className="underline underline-offset-4 hover:text-ink">
@@ -232,7 +178,7 @@ export function Why({ locale }: { locale: Locale }) {
         <h2 className="max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">{t.whyTitle}</h2>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-dim">{t.whyIntro}</p>
 
-        <ol className="mt-8 grid gap-4 sm:grid-cols-2">
+        <ol className="mt-8 grid gap-4 md:grid-cols-3">
           {t.why.map((point, i) => (
             <li key={point.t} className="rounded-lg border border-edge bg-surface-1 p-5">
               <span aria-hidden className="text-sm font-semibold tabular-nums text-accent">
@@ -250,55 +196,26 @@ export function Why({ locale }: { locale: Locale }) {
 }
 
 
-export function Steps({ locale }: { locale: Locale }) {
-  const t = strings(locale).home;
-  return (
-    <>
-    {/* ------------------------------------------------- three steps */}
-    <section className="mx-auto max-w-5xl px-6 pt-20 pb-16">
-      <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
-        <h2 className="text-lg font-medium">{t.stepsTitle}</h2>
-        <DownloadButton locale={locale} label={t.download} />
-      </div>
-      <ol className="mt-6 grid gap-8 sm:grid-cols-3">
-        {t.steps.map(([title, body], i) => (
-          <li key={title}>
-            <div className="flex h-8 w-8 items-center justify-center rounded-full border border-accent/50 text-sm font-medium text-accent">
-              {i + 1}
-            </div>
-            <h3 className="mt-3.5 font-medium">{title}</h3>
-            <p className="mt-1.5 text-sm leading-relaxed text-ink-dim">{body}</p>
-          </li>
-        ))}
-      </ol>
-    </section>
-    </>
-  );
-}
-
-
 export function Shot({ locale }: { locale: Locale }) {
   const t = strings(locale).home;
   return (
     <>
     {/* ------------------------------------------------------------ the product */}
-    <section className="mx-auto max-w-5xl px-6 pb-20">
-      <figure>
-        <Image
-          src="/shots/chat.png"
-          alt={t.shotAlt(SITE.name)}
-          width={1280}
-          height={820}
-          className="rounded-xl border border-edge shadow-2xl shadow-black/40"
-          priority
-        />
-        <figcaption className="mt-3 text-xs leading-relaxed text-ink-faint">{t.shotCaption}</figcaption>
-      </figure>
+    {/* A chat using the person's own files and a skill: the screen people come back to every day. */}
+    <section className="mx-auto max-w-5xl px-6 pt-20 pb-20">
+      <h2 className="max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">{t.shotTitle}</h2>
+      <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-dim">{t.shotBody}</p>
+      <Image
+        src="/shots/app.webp"
+        alt={t.shotAlt(SITE.name)}
+        width={1280}
+        height={820}
+        className="mt-10 rounded-xl border border-edge shadow-2xl shadow-black/40"
+      />
     </section>
     </>
   );
 }
-
 
 
 export function IndividualBlock({ locale }: { locale: Locale }) {
@@ -308,14 +225,19 @@ export function IndividualBlock({ locale }: { locale: Locale }) {
     {/* ------------------------------------------------------ for individuals */}
     <section className="border-y border-edge bg-surface-1/40">
       <div className="mx-auto max-w-5xl px-6 pt-20 pb-16">
-        <p className="text-xs font-medium uppercase tracking-widest text-accent">{t.individualEyebrow}</p>
-        <h1 className="mt-3 max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">{t.individualTitle}</h1>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+        <h2 className="max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">{t.individualTitle}</h2>
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-dim">{t.individualIntro}</p>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {t.individual.map((f, i) => (
             <Card key={f.t} Icon={INDIVIDUAL_ICONS[i]} {...f} />
           ))}
         </div>
-        <ReadsDetails locale={locale} />
+        <p className="mt-6 max-w-3xl text-sm leading-relaxed text-ink-dim">
+          {t.practiceLine}{" "}
+          <Link href={href(locale, "/pricing")} className="text-accent underline-offset-4 hover:underline">
+            {t.practicePlan}
+          </Link>
+        </p>
       </div>
     </section>
     </>
@@ -323,22 +245,3 @@ export function IndividualBlock({ locale }: { locale: Locale }) {
 }
 
 
-export function PracticeBlock({ locale }: { locale: Locale }) {
-  const t = strings(locale).home;
-  return (
-    <>
-    {/* ------------------------------------------------------- for practices */}
-    <section className="mx-auto max-w-5xl px-6 pt-20 pb-16">
-      <p className="text-xs font-medium uppercase tracking-widest text-accent">{t.practiceEyebrow}</p>
-      <h1 className="mt-3 max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">{t.practiceTitle}</h1>
-      <p className="mt-4 max-w-2xl leading-relaxed text-ink-dim">{t.practiceIntro}</p>
-      <div className="mt-8 grid gap-4 sm:grid-cols-2">
-        {t.practice.map((f, i) => (
-          <Card key={f.t} Icon={PRACTICE_ICONS[i]} {...f} />
-        ))}
-      </div>
-      <ReadsDetails locale={locale} />
-    </section>
-    </>
-  );
-}

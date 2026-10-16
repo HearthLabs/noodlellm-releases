@@ -81,9 +81,7 @@ The Website shows the current prices and what each plan includes at the time you
 
 7.1 **Models belong to their creators.** The Models in our catalogue are made by third parties and published under their own licences. The licence for each Model is shown on its page. Those licences, not these Terms, govern your use of the Model files. We do not own the Models and make no promises about them.
 
-7.1A **Models from independent creators.** Some Models are listed by independent creators through our creator portal, under our [Creator Agreement](/creator-agreement). We review each listing before it appears, but the creator, not Noodle LLM, is responsible for the Model and for having the right to share it.
 
-7.1B **Buying a Model.** Paid Models are not on sale yet; until they are, every Model from an independent creator is free. Once they are, some creators charge a one-off price for their Model. When you buy one, you pay Noodle LLM, which sells it on the creator's behalf, and Stripe processes the payment. You choose a personal licence, for up to 3 of your own computers, or a practice licence, for up to 15 computers used by your firm or practice; the creator sets a price for each. Either way the licence is yours for as long as you like; it does not expire and it does not need a subscription. A computer frees its place after 60 days without downloading the Model. You can download it again from the App while it remains in our catalogue. Refunds follow section 5.2, and a refunded purchase can no longer be downloaded. A paid Model's own licence still applies on top of this.
 
 7.1C **Reporting a Model.** If you believe a Model infringes your copyright or other rights, or is harmful, email [info@noodletechnology.com](mailto:info@noodletechnology.com) with a link to it, what you believe it infringes, and your contact details. We will review the report and may remove the Model.
 

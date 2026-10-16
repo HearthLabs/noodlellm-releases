@@ -1,7 +1,7 @@
-import { creatorAgreementMetadata, creatorAgreementPage } from "@/lib/pages";
+import { movedMetadata, movedPage, homeFor } from "@/lib/pages";
 
-export const metadata = creatorAgreementMetadata;
+export const metadata = movedMetadata;
 
 export default function Page() {
-  return creatorAgreementPage();
+  return movedPage(homeFor("en"));
 }

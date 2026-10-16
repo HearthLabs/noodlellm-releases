@@ -1,7 +1,7 @@
-import { licencesMetadata, licencesPage } from "@/lib/pages";
+import { movedMetadata, movedPage, pricingFor } from "@/lib/pages";
 
-export const metadata = licencesMetadata;
+export const metadata = movedMetadata;
 
 export default function Page() {
-  return licencesPage();
+  return movedPage(pricingFor("en"));
 }
