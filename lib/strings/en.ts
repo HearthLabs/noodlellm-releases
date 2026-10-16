@@ -49,7 +49,7 @@ export const en = {
     fromPrice: "from $8 a month",
 
     whyTitle: "Why run it yourself",
-    whyIntro: "The more of your work depends on AI, the more it matters who is in control of it.",
+    whyIntro: "The cloud is smarter, but that was never the whole question. Use both. Keep a cloud AI such as ChatGPT for the rare problem that needs the very best, since your local AI is weaker at hard reasoning and slower on a modest PC. Do the everyday, the private and the repetitive here: drafting a letter, summarising a report, finding the clause in a contract.",
     why: [
       {
         t: "They set the terms. You live with them.",
@@ -62,10 +62,6 @@ export const en = {
       {
         t: "Your files never leave the room.",
         b: "Nothing you type or open is uploaded, so there is nothing to leak and nobody else's privacy policy to trust. Once a model is installed it does not need the internet at all.",
-      },
-      {
-        t: "The cloud is smarter. That was never the whole question.",
-        b: "Some jobs need the cleverest model there is. Most do not: drafting a letter, summarising a report, finding the clause in a contract. Your local AI tends to be weaker at hard reasoning and slower on a modest PC, so keep a cloud AI (e.g., ChatGPT) for the rare problem that needs the very best, and do the everyday, the private and the repetitive here.",
       },
     ],
 

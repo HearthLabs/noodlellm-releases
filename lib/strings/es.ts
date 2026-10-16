@@ -43,7 +43,7 @@ export const es: Strings = {
     fromPrice: "desde 8 $ al mes",
 
     whyTitle: "Por qué ejecutarla tú",
-    whyIntro: "Cuanto más depende tu trabajo de la IA, más importa quién la controla.",
+    whyIntro: "La nube es más lista, pero esa nunca fue toda la cuestión. Usa las dos. Guarda una IA en la nube como ChatGPT para el problema raro que necesita lo mejor de lo mejor, porque tu IA local es peor en el razonamiento difícil y más lenta en un PC modesto. Haz aquí lo cotidiano, lo privado y lo repetitivo: redactar una carta, resumir un informe, encontrar la cláusula en un contrato.",
     why: [
       {
         t: "Ellos ponen las reglas. Tú te aguantas.",
@@ -56,10 +56,6 @@ export const es: Strings = {
       {
         t: "Tus archivos no salen de la habitación.",
         b: "No se sube nada de lo que escribes o abres, así que no hay nada que filtrar ni ninguna política de privacidad ajena en la que confiar. Una vez instalado un modelo, no necesita internet en absoluto.",
-      },
-      {
-        t: "La nube es más lista. Esa nunca fue toda la cuestión.",
-        b: "Algunas tareas necesitan el modelo más listo que exista. La mayoría no: redactar una carta, resumir un informe, encontrar la cláusula en un contrato. Tu IA local suele ser peor en el razonamiento difícil y más lenta en un PC modesto, así que guarda una IA en la nube (por ejemplo, ChatGPT) para el problema raro que necesita lo mejor de lo mejor, y haz aquí lo cotidiano, lo privado y lo repetitivo.",
       },
     ],
 

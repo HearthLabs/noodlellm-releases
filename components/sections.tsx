@@ -223,7 +223,7 @@ export function Why({ locale }: { locale: Locale }) {
         <h2 className="max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">{t.whyTitle}</h2>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-dim">{t.whyIntro}</p>
 
-        <ol className="mt-8 grid gap-4 sm:grid-cols-2">
+        <ol className="mt-8 grid gap-4 md:grid-cols-3">
           {t.why.map((point, i) => (
             <li key={point.t} className="rounded-lg border border-edge bg-surface-1 p-5">
               <span aria-hidden className="text-sm font-semibold tabular-nums text-accent">
@@ -248,8 +248,8 @@ export function Shot({ locale }: { locale: Locale }) {
     {/* ------------------------------------------------------------ the product */}
     {/* A chat using the person's own files and a skill: the screen people come back to every day. */}
     <section className="mx-auto max-w-5xl px-6 pt-20 pb-20">
-      <h2 className="max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">{t.shotTitle}</h2>
-      <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-dim">{t.shotBody}</p>
+      <h2 className="max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">{t.shotTitle}</h2>
+      <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-dim">{t.shotBody}</p>
       <Image
         src="/shots/app.webp"
         alt={t.shotAlt(SITE.name)}

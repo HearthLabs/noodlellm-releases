@@ -43,7 +43,7 @@ export const de: Strings = {
     fromPrice: "ab 8 $ im Monat",
 
     whyTitle: "Warum selbst betreiben",
-    whyIntro: "Je mehr deine Arbeit von KI abhängt, desto wichtiger wird, wer sie kontrolliert.",
+    whyIntro: "Die Cloud ist klüger, aber darum ging es nie allein. Nutze beides. Behalte eine Cloud-KI wie ChatGPT für das seltene Problem, das wirklich das Beste braucht, denn deine lokale KI ist beim schwierigen Schlussfolgern schwächer und auf einem bescheidenen PC langsamer. Erledige das Alltägliche, das Vertrauliche und das Wiederkehrende hier: einen Brief entwerfen, einen Bericht zusammenfassen, die Klausel in einem Vertrag finden.",
     why: [
       {
         t: "Sie machen die Regeln. Du musst damit leben.",
@@ -56,10 +56,6 @@ export const de: Strings = {
       {
         t: "Deine Dateien verlassen nie den Raum.",
         b: "Nichts, was du tippst oder öffnest, wird hochgeladen, also kann nichts durchsickern, und du musst niemandes Datenschutzerklärung vertrauen. Ist ein Modell installiert, braucht es überhaupt kein Internet.",
-      },
-      {
-        t: "Die Cloud ist klüger. Darum ging es aber nie allein.",
-        b: "Manche Aufgaben brauchen das klügste Modell, das es gibt. Die meisten nicht: einen Brief entwerfen, einen Bericht zusammenfassen, die Klausel in einem Vertrag finden. Deine lokale KI ist beim schwierigen Schlussfolgern meist schwächer und auf einem bescheidenen PC langsamer. Behalte also eine Cloud-KI (z. B. ChatGPT) für das seltene Problem, das wirklich das Beste braucht, und erledige das Alltägliche, das Vertrauliche und das Wiederkehrende hier.",
       },
     ],
 
