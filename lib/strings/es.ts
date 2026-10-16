@@ -91,7 +91,7 @@ export const es: Strings = {
       },
       {
         t: "Úsalo desde el móvil",
-        b: "Vincula tu móvil una vez escaneando un código y sigue tus conversaciones desde el sofá o la habitación de al lado. Funciona a través de la wifi y todo va cifrado entre los dos, así que nada sale de ahí.",
+        b: "Vincula tu móvil una vez escaneando un código y sigue tus conversaciones desde el sofá o la habitación de al lado, con tus archivos incluidos. Funciona a través de la wifi y todo va cifrado entre los dos, así que nada sale de ahí.",
       },
     ],
 

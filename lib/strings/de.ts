@@ -91,7 +91,7 @@ export const de: Strings = {
       },
       {
         t: "Vom Handy aus nutzen",
-        b: "Koppeln Sie Ihr Handy einmal per Code-Scan und führen Sie Ihre Unterhaltungen vom Sofa oder aus dem Nebenzimmer weiter. Es funktioniert über WLAN, und alles ist zwischen beiden Geräten verschlüsselt, sodass nichts nach außen dringt.",
+        b: "Koppeln Sie Ihr Handy einmal per Code-Scan und führen Sie Ihre Unterhaltungen vom Sofa oder aus dem Nebenzimmer weiter, mitsamt Ihren Dateien. Es funktioniert über WLAN, und alles ist zwischen beiden Geräten verschlüsselt, sodass nichts nach außen dringt.",
       },
     ],
 
