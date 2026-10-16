@@ -33,7 +33,7 @@ export const es: Strings = {
   },
 
   home: {
-    heroTitle: "Privado, sin conexión, sin contador. Esta es tuya.",
+    heroTitle: "Privado, sin conexión, sin contador. Esta IA local es solo tuya.",
     heroBody: (app) =>
       `${app} ejecuta modelos de IA en tu propio ordenador en lugar de en los servidores de otros. Nada de lo que escribes sale de tu equipo, sigue funcionando sin internet y no hay contador de cuánto lo usas. Escribe con él, resume con él y pregúntale por tus propios documentos.`,
     download: "Descargar para Windows",

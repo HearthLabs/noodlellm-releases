@@ -39,7 +39,7 @@ export const en = {
   },
 
   home: {
-    heroTitle: "Private, offline, unmetered. This one is yours.",
+    heroTitle: "Private, offline, unmetered. This local AI is only yours.",
     heroBody: (app: string) =>
       `${app} runs AI models on your own computer instead of someone else's servers. Nothing you type leaves your machine, it keeps working with the internet off, and there is no meter on how much you use it. Write with it, summarise with it, and ask it about your own documents.`,
     download: "Download for Windows",

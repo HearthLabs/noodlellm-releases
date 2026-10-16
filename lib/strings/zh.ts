@@ -32,7 +32,7 @@ export const zh: Strings = {
   },
 
   home: {
-    heroTitle: "私密、离线、不计量。这一个属于你。",
+    heroTitle: "私密、离线、不计量。这个本地 AI 只属于你。",
     heroBody: (app) =>
       `${app} 让 AI 模型在你自己的电脑上运行，而不是在别人的服务器上。你输入的内容不会离开你的电脑，断网也能照常使用，用多少都不计量收费。用它写作、做总结，询问你自己的文档。`,
     download: "下载 Windows 版",

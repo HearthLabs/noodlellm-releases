@@ -33,7 +33,7 @@ export const de: Strings = {
   },
 
   home: {
-    heroTitle: "Privat, offline, ohne Zähler. Diese hier gehört dir.",
+    heroTitle: "Privat, offline, ohne Zähler. Diese lokale KI gehört nur dir.",
     heroBody: (app) =>
       `${app} führt KI-Modelle auf deinem eigenen Computer aus statt auf den Servern anderer. Nichts, was du eingibst, verlässt deinen Rechner, es läuft auch ohne Internet weiter, und kein Zähler misst, wie viel du es nutzt. Schreib damit, fass damit zusammen und frag es zu deinen eigenen Dokumenten.`,
     download: "Für Windows herunterladen",
