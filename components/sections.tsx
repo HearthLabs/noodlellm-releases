@@ -4,7 +4,7 @@ import { SITE } from "@/lib/site";
 import { href, strings, type Locale } from "@/lib/i18n";
 
 /**
- * The sections the homepage and the audience pages are built from.
+ * The sections the homepage is built from.
  *
  * Originally the homepage.
  *
@@ -26,14 +26,6 @@ function IconUnlimited() {
   return (
     <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.6" className={ICON} aria-hidden="true">
       <path d="M6.5 8.5a3.5 3.5 0 1 0 0 7c2 0 3-1.5 5.5-3.5s3.5-3.5 5.5-3.5a3.5 3.5 0 1 1 0 7c-2 0-3-1.5-5.5-3.5S8.5 8.5 6.5 8.5Z" />
-    </svg>
-  );
-}
-function IconPrivate() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.6" className={ICON} aria-hidden="true">
-      <rect x="4" y="10.5" width="16" height="10" rx="2" />
-      <path d="M8 10.5V7a4 4 0 0 1 8 0v3.5" />
     </svg>
   );
 }
@@ -101,19 +93,9 @@ function IconGlobe() {
     </svg>
   );
 }
-function IconSeat() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.6" className={ICON} aria-hidden="true">
-      <circle cx="9" cy="8" r="3.2" />
-      <path d="M3.5 20a5.5 5.5 0 0 1 11 0M16.5 7.2a3 3 0 0 1 0 5.6M18.5 20a5.2 5.2 0 0 0-2.4-4.3" />
-    </svg>
-  );
-}
-
 // The icons pair with the cards in the strings by position; the words are per language,
 // the pictures are not.
 const INDIVIDUAL_ICONS = [IconFiles, IconMemory, IconUnlimited, IconEasy, IconPhone, IconGlobe];
-const PRACTICE_ICONS = [IconPrivate, IconFiles, IconEasy, IconSeat];
 
 function Card({ Icon, t, b }: { Icon: () => React.JSX.Element; t: string; b: string }) {
   return (
@@ -206,8 +188,9 @@ export function Hero({ locale }: { locale: Locale }) {
       </p>
 
 
-      <div className="mt-9">
+      <div id="download" className="mt-9 scroll-mt-6">
         <DownloadButton locale={locale} label={t.download} />
+        <p className="mt-1 text-xs text-ink-faint">{t.requires}</p>
         <p className="mt-3 text-sm text-ink-faint">
           {t.trial}{" "}
           <Link href={href(locale, "/pricing")} className="underline underline-offset-4 hover:text-ink">
@@ -250,33 +233,6 @@ export function Why({ locale }: { locale: Locale }) {
 }
 
 
-export function Steps({ locale }: { locale: Locale }) {
-  const t = strings(locale).home;
-  return (
-    <>
-    {/* ------------------------------------------------- three steps */}
-    <section className="mx-auto max-w-5xl px-6 pt-20 pb-16">
-      <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
-        <h2 className="text-lg font-medium">{t.stepsTitle}</h2>
-        <DownloadButton locale={locale} label={t.download} />
-      </div>
-      <ol className="mt-6 grid gap-8 sm:grid-cols-3">
-        {t.steps.map(([title, body], i) => (
-          <li key={title}>
-            <div className="flex h-8 w-8 items-center justify-center rounded-full border border-accent/50 text-sm font-medium text-accent">
-              {i + 1}
-            </div>
-            <h3 className="mt-3.5 font-medium">{title}</h3>
-            <p className="mt-1.5 text-sm leading-relaxed text-ink-dim">{body}</p>
-          </li>
-        ))}
-      </ol>
-    </section>
-    </>
-  );
-}
-
-
 export function Shot({ locale }: { locale: Locale }) {
   const t = strings(locale).home;
   return (
@@ -300,7 +256,6 @@ export function Shot({ locale }: { locale: Locale }) {
 }
 
 
-
 export function IndividualBlock({ locale }: { locale: Locale }) {
   const t = strings(locale).home;
   return (
@@ -308,14 +263,19 @@ export function IndividualBlock({ locale }: { locale: Locale }) {
     {/* ------------------------------------------------------ for individuals */}
     <section className="border-y border-edge bg-surface-1/40">
       <div className="mx-auto max-w-5xl px-6 pt-20 pb-16">
-        <p className="text-xs font-medium uppercase tracking-widest text-accent">{t.individualEyebrow}</p>
-        <h1 className="mt-3 max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">{t.individualTitle}</h1>
+        <h2 className="max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">{t.individualTitle}</h2>
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {t.individual.map((f, i) => (
             <Card key={f.t} Icon={INDIVIDUAL_ICONS[i]} {...f} />
           ))}
         </div>
         <ReadsDetails locale={locale} />
+        <p className="mt-6 max-w-3xl text-sm leading-relaxed text-ink-dim">
+          {t.practiceLine}{" "}
+          <Link href={href(locale, "/pricing")} className="text-accent underline-offset-4 hover:underline">
+            {t.practicePlan}
+          </Link>
+        </p>
       </div>
     </section>
     </>
@@ -323,22 +283,3 @@ export function IndividualBlock({ locale }: { locale: Locale }) {
 }
 
 
-export function PracticeBlock({ locale }: { locale: Locale }) {
-  const t = strings(locale).home;
-  return (
-    <>
-    {/* ------------------------------------------------------- for practices */}
-    <section className="mx-auto max-w-5xl px-6 pt-20 pb-16">
-      <p className="text-xs font-medium uppercase tracking-widest text-accent">{t.practiceEyebrow}</p>
-      <h1 className="mt-3 max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">{t.practiceTitle}</h1>
-      <p className="mt-4 max-w-2xl leading-relaxed text-ink-dim">{t.practiceIntro}</p>
-      <div className="mt-8 grid gap-4 sm:grid-cols-2">
-        {t.practice.map((f, i) => (
-          <Card key={f.t} Icon={PRACTICE_ICONS[i]} {...f} />
-        ))}
-      </div>
-      <ReadsDetails locale={locale} />
-    </section>
-    </>
-  );
-}

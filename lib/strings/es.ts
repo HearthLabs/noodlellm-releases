@@ -5,9 +5,6 @@ export const es: Strings = {
     tagline: "IA en tu propio ordenador",
     description:
       "Una aplicación de escritorio que ejecuta modelos de IA en tu propio ordenador. Comprueba qué puede ejecutar de verdad tu equipo, se instala con un clic y nunca envía tus conversaciones a ninguna parte.",
-    downloadTitle: "Descargar",
-    downloadDescription: (app) =>
-      `Descarga ${app} para Windows o Mac. Funciona con gráficos NVIDIA, AMD e Intel, Apple Silicon, o sin tarjeta gráfica.`,
     pricingTitle: "Precios",
     pricingDescription: (app) =>
       `Lo que cuesta ${app}: 14 días para probarlo y después una suscripción. Precio de fundador para los 100 primeros.`,
@@ -28,7 +25,6 @@ export const es: Strings = {
     blurb: (tagline) => `${tagline}. Los modelos funcionan en tu equipo, no en nuestra nube.`,
     product: "Producto",
     legal: "Legal",
-    download: "Descargar",
     pricing: "Precios",
     privacy: "Privacidad",
     terms: "Condiciones",
@@ -42,22 +38,9 @@ export const es: Strings = {
       `${app} ejecuta modelos de IA en tu propio ordenador en lugar de en los servidores de otros. Nada de lo que escribes sale de tu equipo, sigue funcionando sin internet y no hay contador de cuánto lo usas. Escribe con él, resume con él y pregúntale por tus propios documentos.`,
     download: "Descargar para Windows",
     downloadMac: "Descargar para Mac",
+    requires: "Windows 10 u 11, o un Mac con Apple Silicon (M1 o posterior). Funciona con cualquier tarjeta gráfica, o sin ninguna.",
     trial: "14 días para probarlo, después",
     fromPrice: "desde 8 $ al mes",
-
-    chooserTitle: "¿Cuál de estos eres tú?",
-    chooserIntro: "La misma aplicación, por dos motivos distintos. Elige el tuyo y te enseñamos lo que te importa.",
-    chooser: [
-      {
-        t: "Para ti",
-        b: "Una persona, en su propio ordenador, para el día a día.",
-      },
-      {
-        t: "Para un pequeño despacho",
-        b: "Abogados, contables, médicos y terapeutas cuyos expedientes no pueden ir a un servicio externo.",
-      },
-    ],
-    chooserMore: "Mira lo que hace por ti",
 
     whyTitle: "Por qué ejecutarla tú",
     whyIntro: "Cuanto más depende tu trabajo de la IA, más importa quién la controla.",
@@ -80,17 +63,13 @@ export const es: Strings = {
       },
     ],
 
-    stepsTitle: "Tres pasos y es tuya",
-    steps: [
-      ["Instálala", "Un clic y luego inicias sesión. Nada que configurar."],
-      ["Elige uno que diga que irá bien", "Ya ha revisado tu ordenador, así que cada modelo aparece marcado como que irá bien, lento o que no funcionará. La descarga ocupa más o menos lo que una película."],
-      ["Empieza a escribir", "Esa es toda la preparación."],
-    ],
     shotAlt: (app) => `Una conversación en ${app}, respondiendo a partir de un documento del propio usuario`,
     shotCaption: "Una conversación real en un equipo real. La respuesta indica el archivo del que salió.",
 
-    individualEyebrow: "Para usuarios individuales",
     individualTitle: "Lo que hace por ti",
+    practiceLine:
+      "Para un despacho o consulta: no se transmite nada, así que no hay ningún encargado del tratamiento que nombrar en un acuerdo de datos, y un plan Despachos cubre hasta 15 ordenadores en la oficina.",
+    practicePlan: "Ver el plan",
     individual: [
       {
         t: "Lee tus propios archivos",
@@ -135,72 +114,9 @@ export const es: Strings = {
       ["Imágenes, audio y vídeo", "Solo texto, por ahora."],
     ],
 
-    practiceEyebrow: "Para pequeños despachos",
-    practiceTitle: "Cuando la respuesta a «¿adónde fueron los datos?» tiene que ser «a ninguna parte»",
-    practiceIntro:
-      "Un abogado, un contable, un médico o un terapeuta a menudo no pueden enviar material de clientes a un servicio externo en absoluto, cueste lo que cueste y prometa lo que prometa el proveedor.",
-    practice: [
-      {
-        t: "Nada que poner en un acuerdo de datos",
-        b: "No hay encargado del tratamiento que nombrar ni transferencia que declarar, porque no se transmite nada. La pregunta que hace tu política de cumplimiento ni siquiera se plantea.",
-      },
-      {
-        t: "Cada respuesta muestra de dónde sale",
-        b: "Indícale las carpetas donde de verdad están los expedientes, con sus documentos de Word y PDF, y cada respuesta indica de qué archivo sale cada parte; un clic lo abre. Compruebas la fuente en vez de fiarte del modelo.",
-      },
-      {
-        t: "Prepara cada chat para una tarea",
-        b: "Una conversación para redactar cartas a clientes con el estilo del despacho, otra para resumir notas de casos: cada una puede tener sus propias instrucciones, con ejemplos para empezar.",
-      },
-      {
-        t: "Un solo precio para todo el despacho",
-        b: "El plan para despachos cubre hasta 15 ordenadores de un despacho o clínica por una sola cuota, mensual o anual, sin contar puestos por persona.",
-      },
-    ],
 
   },
 
-  download: {
-    title: (app) => `Descargar ${app}`,
-    lead: "Gratis durante 14 días. Un instalador y después funciona sin conexión.",
-    windows: "Windows 10 y 11",
-    windowsMeta: "64 bits · 19 MB",
-    windowsBody: (app) =>
-      `Funciona con gráficos NVIDIA, AMD e Intel, y también sin tarjeta gráfica, solo que más despacio. ${app} comprueba cuál tienes la primera vez que lo abres.`,
-    mac: "Mac con Apple Silicon",
-    macMeta: "M1 o posterior · 31 MB",
-    macBody: (app) =>
-      `Ejecuta los modelos en los gráficos integrados del Mac, que comparten su memoria. Necesita macOS 13.3 o posterior. ${app} comprueba cuánta puede usar la primera vez que lo abres.`,
-    costTitle: "Lo que cuesta",
-    cost1:
-      "Todo es gratis los primeros 14 días: la aplicación entera, todos los modelos abiertos del catálogo y sin tarjeta para empezar. Después es una suscripción, mensual o anual.",
-    cost2:
-      "Más adelante, algunos modelos especializados de la tienda también los venderán quienes los crearon. Serán una compra única, no un alquiler: compras uno y es tuyo.",
-    warnTitle: "Windows te avisará la primera vez.",
-    warn1: {
-      before: "Al ejecutar el instalador, Windows muestra una pantalla azul que dice",
-      quote: "«Windows protegió su PC»",
-      middle: ". No hay una forma evidente de seguir: tienes que hacer clic en",
-      moreInfo: "Más información",
-      then: " y después en",
-      runAnyway: "Ejecutar de todas formas",
-      after: ".",
-    },
-    warn2:
-      "No es un aviso de virus. Windows lo muestra con las aplicaciones nuevas que todavía no conoce, y solo la primera vez.",
-    macWarnTitle: "Tu Mac también preguntará.",
-    macWarn:
-      "La primera vez que lo abras, macOS dirá que no puede comprobar si la aplicación contiene software malicioso. Tampoco es un aviso de virus. Haz clic en OK, abre Ajustes del Sistema, ve a Privacidad y seguridad, desplázate hacia abajo y haz clic en Abrir igualmente. Solo lo pregunta una vez.",
-    needsTitle: "Lo que necesita",
-    needs: [
-      ["Windows 10 u 11, o un Mac con Apple Silicon", "Windows de 64 bits, o un Mac con M1 o posterior y macOS 13.3 o posterior. Nada más que instalar: ni Python, ni línea de comandos, ni configuración."],
-      ["Cualquier tarjeta gráfica, o ninguna", "NVIDIA, AMD e Intel funcionan, y en un Mac, sus gráficos integrados. Sin tarjeta, los modelos se ejecutan en el procesador: más despacio, pero funciona."],
-      ["Espacio para los modelos", "La aplicación ocupa 19 MB en Windows y 31 MB en Mac. Los modelos se descargan aparte, normalmente de 2 a 10 GB cada uno, y tú eliges cuáles."],
-      ["Conexión a internet de vez en cuando", "Para descargar modelos y mantener la suscripción al día. En el día a día funciona con la red desconectada; tus preguntas nunca la necesitan."],
-    ],
-    unsure: "¿No sabes qué puede con tu ordenador?",
-    orInstall: "Instálalo y te lo dirá.",
-  },
 
   subscribeSuccess: {
     title: "Ya estás suscrito",
@@ -271,7 +187,7 @@ export const es: Strings = {
       ["¿Puedo usarlo en más de un ordenador?", "Sí, en hasta 3 de tus ordenadores. En uno nuevo, abre Cuenta y usa el correo con el que pagaste; te enviamos un código de 6 dígitos. Al llegar al límite, la aplicación muestra tus ordenadores para que cierres la sesión en uno. Un ordenador que no se usa durante 60 días libera su plaza solo."],
       ["¿Funciona sin conexión?", "Sí. Tu licencia se comprueba en tu ordenador, sin internet. Se renueva sola cuando estás conectado, así que solo un ordenador que pase más de unos 35 días sin conexión tendrá que conectarse una vez."],
       ["¿Subirán mis 8 $ más adelante?", "Para los 100 primeros miembros, se mantienen los 8 $ al mes mientras sigan suscritos, aunque suba el precio para los nuevos miembros. O paga 100 $ una sola vez por una licencia de por vida y no vuelvas a pagar."],
-      ["¿Puedo cancelar?", "Sí, cuando quieras, desde la sección Cuenta de la aplicación. Los modelos que compraste siguen siendo tuyos."],
+      ["¿Puedo cancelar?", "Sí, cuando quieras, desde la sección Cuenta de la aplicación."],
       ["Somos un despacho. ¿Necesitamos una suscripción cada uno?", "No. El plan Despachos cubre hasta 15 ordenadores de una oficina por un solo precio."],
     ],
     ctaDownload: "Descárgalo y empieza los 14 días",

@@ -11,9 +11,6 @@ export const en = {
     tagline: "Run AI on your own machine",
     description:
       "A desktop app that runs AI models on your own computer. It checks what your machine can actually run, installs in one click, and never sends your conversations anywhere.",
-    downloadTitle: "Download",
-    downloadDescription: (app: string) =>
-      `Download ${app} for Windows or Mac. Works with NVIDIA, AMD and Intel graphics, Apple Silicon, or no graphics card at all.`,
     pricingTitle: "Pricing",
     pricingDescription: (app: string) =>
       `What ${app} costs: 14 days to try it, then a subscription. Founding rate for the first 100.`,
@@ -34,7 +31,6 @@ export const en = {
     blurb: (tagline: string) => `${tagline}. Models run on your machine, not in our cloud.`,
     product: "Product",
     legal: "Legal",
-    download: "Download",
     pricing: "Pricing",
     privacy: "Privacy",
     terms: "Terms",
@@ -48,22 +44,9 @@ export const en = {
       `${app} runs AI models on your own computer instead of someone else's servers. Nothing you type leaves your machine, it keeps working with the internet off, and there is no meter on how much you use it. Write with it, summarise with it, and ask it about your own documents.`,
     download: "Download for Windows",
     downloadMac: "Download for Mac",
+    requires: "Windows 10 or 11, or a Mac with Apple Silicon (M1 or newer). Any graphics card works, or none at all.",
     trial: "14 days to try it, then",
     fromPrice: "from $8 a month",
-
-    chooserTitle: "Which of these are you?",
-    chooserIntro: "The same app, for two different reasons. Pick yours and we will show you what matters to you.",
-    chooser: [
-      {
-        t: "For yourself",
-        b: "One person, on their own computer, for everyday use.",
-      },
-      {
-        t: "For a small practice",
-        b: "Solicitors, accountants, clinicians and therapists whose client files cannot go to an outside service.",
-      },
-    ],
-    chooserMore: "See what it does for you",
 
     whyTitle: "Why run it yourself",
     whyIntro: "The more of your work depends on AI, the more it matters who is in control of it.",
@@ -86,17 +69,13 @@ export const en = {
       },
     ],
 
-    stepsTitle: "Three steps, then it is yours",
-    steps: [
-      ["Install it", "One click, then sign in. Nothing to configure."],
-      ["Pick one it says will run well", "It has already checked your computer, so every model is marked as running well, slowly or not at all. The download is about the size of a film."],
-      ["Start typing", "That is the whole setup."],
-    ],
     shotAlt: (app: string) => `A conversation in ${app}, answering from the user's own document`,
     shotCaption: "A real conversation on a real machine. The answer names the file it came from.",
 
-    individualEyebrow: "For individual users",
     individualTitle: "What it does for you",
+    practiceLine:
+      "For a practice: nothing is transmitted, so there is no processor to name in a data agreement, and one Practices plan covers up to 15 computers in the office.",
+    practicePlan: "See the plan",
     individual: [
       {
         t: "It reads your own files",
@@ -141,72 +120,9 @@ export const en = {
       ["Images, audio and video", "Text only, for now."],
     ],
 
-    practiceEyebrow: "For small practices",
-    practiceTitle: "When the answer to “where did the data go?” has to be nowhere",
-    practiceIntro:
-      "A solicitor, an accountant, a clinician or a therapist often cannot send client material to a third-party service at all, whatever it costs and whatever the provider promises.",
-    practice: [
-      {
-        t: "Nothing to put in a data agreement",
-        b: "There is no processor to name and no transfer to disclose, because nothing is transmitted. The question your compliance policy asks does not arise.",
-      },
-      {
-        t: "Every answer shows where it came from",
-        b: "Point it at the folders where client files actually live, Word documents and PDFs included, and every answer names the file each part came from; one click opens it. You check the source rather than taking the model's word for it.",
-      },
-      {
-        t: "Set each chat up for a job",
-        b: "One conversation for drafting client letters in your house style, another for summarising case notes: each can have its own instructions, with examples to start from.",
-      },
-      {
-        t: "One price for the whole office",
-        b: "The Practices plan covers up to 15 computers in one firm or clinic for a single fee, monthly or yearly, with no per-person seats to count.",
-      },
-    ],
 
   },
 
-  download: {
-    title: (app: string) => `Download ${app}`,
-    lead: "Free for 14 days. One installer, then it works offline.",
-    windows: "Windows 10 and 11",
-    windowsMeta: "64-bit · 19 MB",
-    windowsBody: (app: string) =>
-      `Works with NVIDIA, AMD and Intel graphics, and without a graphics card at all, just more slowly. ${app} checks which you have the first time you open it.`,
-    mac: "Mac with Apple Silicon",
-    macMeta: "M1 or newer · 31 MB",
-    macBody: (app: string) =>
-      `Runs models on the Mac's built-in graphics, which share the Mac's memory. Needs macOS 13.3 or later. ${app} checks how much it can use the first time you open it.`,
-    costTitle: "What it costs",
-    cost1:
-      "Everything is free for the first 14 days: the whole app, every open model in the catalog, no card required to start. After that it is a subscription, paid monthly or yearly.",
-    cost2:
-      "Later, some specialist models in the store will also be sold by the people who made them. Those will be a one-off purchase rather than a rental: buy one and it stays yours.",
-    warnTitle: "Windows will warn you the first time.",
-    warn1: {
-      before: "When you run the installer, Windows shows a blue screen saying",
-      quote: "“Windows protected your PC”",
-      middle: ". There is no obvious way past it: you have to click",
-      moreInfo: "More info",
-      then: ", then",
-      runAnyway: "Run anyway",
-      after: ".",
-    },
-    warn2:
-      "This is not a virus warning. Windows shows it for new apps it does not recognise yet, and only the first time.",
-    macWarnTitle: "Your Mac will ask too.",
-    macWarn:
-      "The first time you open it, macOS says it cannot check the app for malicious software. This is not a virus warning either. Click Done, open System Settings, go to Privacy & Security, scroll down and click Open Anyway. It only asks once.",
-    needsTitle: "What it needs",
-    needs: [
-      ["Windows 10 or 11, or a Mac with Apple Silicon", "64-bit Windows, or an M1 or newer Mac on macOS 13.3 or later. Nothing else to install: no Python, no command line, no configuration."],
-      ["Any graphics card, or none", "NVIDIA, AMD and Intel all work, and on a Mac its built-in graphics do. Without one, models run on the processor instead: slower, but it works."],
-      ["Room for the models", "The app is 19 MB on Windows and 31 MB on a Mac. Models are separate downloads, usually 2–10 GB each, and you choose which."],
-      ["An internet connection, now and then", "To download models and to keep your subscription current. Day to day it runs with the network switched off; your questions never need it."],
-    ],
-    unsure: "Not sure what your computer can handle?",
-    orInstall: "Install it, and it will tell you.",
-  },
 
   subscribeSuccess: {
     title: "You're subscribed",
@@ -276,7 +192,7 @@ export const en = {
       ["Can I use it on more than one computer?", "Yes, on up to 3 of your computers. On a new one, open Account and use the email you paid with; we send you a 6-digit code. At the limit, the app lists your computers so you can sign one out. A computer unused for 60 days frees its place by itself."],
       ["Does it work offline?", "Yes. Your licence is checked on your computer, without the internet. It renews itself whenever you are online, so only a computer kept offline for more than about 35 days needs to go online once."],
       ["Will my $8 go up later?", "For the first 100 members, you keep $8 a month for as long as you stay subscribed, even after the price for new members rises. Or pay $100 once for a lifetime licence and never pay again."],
-      ["Can I cancel?", "Yes, at any time, from the Account section of the app. Models you bought outright stay yours."],
+      ["Can I cancel?", "Yes, at any time, from the Account section of the app."],
       ["We are a firm. Do we each need a subscription?", "No. The Practices plan covers up to 15 computers in one office for one price."],
     ],
     ctaDownload: "Download it and start the 14 days",

@@ -5,9 +5,6 @@ export const de: Strings = {
     tagline: "KI auf deinem eigenen Rechner",
     description:
       "Eine Desktop-App, die KI-Modelle auf deinem eigenen Computer ausführt. Sie prüft, was dein Rechner wirklich schafft, installiert mit einem Klick und schickt deine Gespräche nirgendwohin.",
-    downloadTitle: "Herunterladen",
-    downloadDescription: (app) =>
-      `${app} für Windows oder Mac herunterladen. Läuft mit NVIDIA-, AMD- und Intel-Grafik, Apple Silicon oder ganz ohne Grafikkarte.`,
     pricingTitle: "Preise",
     pricingDescription: (app) =>
       `Was ${app} kostet: 14 Tage zum Ausprobieren, danach ein Abo. Gründerpreis für die ersten 100.`,
@@ -28,7 +25,6 @@ export const de: Strings = {
     blurb: (tagline) => `${tagline}. Die Modelle laufen auf deinem Rechner, nicht in unserer Cloud.`,
     product: "Produkt",
     legal: "Rechtliches",
-    download: "Herunterladen",
     pricing: "Preise",
     privacy: "Datenschutz",
     terms: "AGB",
@@ -42,22 +38,9 @@ export const de: Strings = {
       `${app} führt KI-Modelle auf deinem eigenen Computer aus statt auf den Servern anderer. Nichts, was du eingibst, verlässt deinen Rechner, es läuft auch ohne Internet weiter, und kein Zähler misst, wie viel du es nutzt. Schreib damit, fass damit zusammen und frag es zu deinen eigenen Dokumenten.`,
     download: "Für Windows herunterladen",
     downloadMac: "Für Mac herunterladen",
+    requires: "Windows 10 oder 11, oder ein Mac mit Apple Silicon (M1 oder neuer). Jede Grafikkarte funktioniert, auch gar keine.",
     trial: "14 Tage zum Ausprobieren, danach",
     fromPrice: "ab 8 $ im Monat",
-
-    chooserTitle: "Was davon bist du?",
-    chooserIntro: "Dieselbe App, aus zwei verschiedenen Gründen. Wähl deinen, und wir zeigen dir, was für dich zählt.",
-    chooser: [
-      {
-        t: "Für dich selbst",
-        b: "Eine Person, auf dem eigenen Computer, für den Alltag.",
-      },
-      {
-        t: "Für eine kleine Kanzlei oder Praxis",
-        b: "Anwälte, Steuerberater, Ärzte und Therapeuten, deren Akten nicht an einen externen Dienst gehen dürfen.",
-      },
-    ],
-    chooserMore: "Sieh, was es für dich tut",
 
     whyTitle: "Warum selbst betreiben",
     whyIntro: "Je mehr deine Arbeit von KI abhängt, desto wichtiger wird, wer sie kontrolliert.",
@@ -80,17 +63,13 @@ export const de: Strings = {
       },
     ],
 
-    stepsTitle: "Drei Schritte, dann gehört sie dir",
-    steps: [
-      ["Installieren", "Ein Klick, dann anmelden. Nichts zu konfigurieren."],
-      ["Eines wählen, das gut laufen wird", "Deinen Computer hat es schon geprüft, also ist jedes Modell als gut, langsam oder gar nicht lauffähig markiert. Der Download ist etwa so groß wie ein Film."],
-      ["Lostippen", "Das ist die ganze Einrichtung."],
-    ],
     shotAlt: (app) => `Ein Gespräch in ${app}, das aus einem eigenen Dokument des Nutzers antwortet`,
     shotCaption: "Ein echtes Gespräch auf einem echten Rechner. Die Antwort nennt die Datei, aus der sie stammt.",
 
-    individualEyebrow: "Für Einzelpersonen",
     individualTitle: "Was es für dich tut",
+    practiceLine:
+      "Für eine Kanzlei oder Praxis: Es wird nichts übertragen, also gibt es keinen Auftragsverarbeiter, den ein Datenschutzvertrag nennen müsste, und ein Abo „Kanzleien & Praxen“ deckt bis zu 15 Computer im Büro ab.",
+    practicePlan: "Zum Abo",
     individual: [
       {
         t: "Es liest deine eigenen Dateien",
@@ -135,72 +114,9 @@ export const de: Strings = {
       ["Bilder, Audio und Video", "Vorerst nur Text."],
     ],
 
-    practiceEyebrow: "Für kleine Kanzleien und Praxen",
-    practiceTitle: "Wenn die Antwort auf „Wo sind die Daten hin?“ lauten muss: nirgendwohin",
-    practiceIntro:
-      "Anwälte, Steuerberater, Ärzte oder Therapeuten dürfen Mandanten- und Patientendaten oft gar nicht an einen externen Dienst geben, egal was er kostet und was der Anbieter verspricht.",
-    practice: [
-      {
-        t: "Nichts für einen Auftragsverarbeitungsvertrag",
-        b: "Es gibt keinen Auftragsverarbeiter zu benennen und keine Übermittlung offenzulegen, weil nichts übertragen wird. Die Frage, die deine Compliance-Richtlinie stellt, stellt sich gar nicht.",
-      },
-      {
-        t: "Jede Antwort zeigt ihre Quelle",
-        b: "Zeig ihm die Ordner, in denen deine Akten wirklich liegen, samt Word-Dokumenten und PDFs, und jede Antwort nennt die Datei, aus der jeder Teil stammt; ein Klick öffnet sie. Du prüfst die Quelle, statt dem Modell zu glauben.",
-      },
-      {
-        t: "Richte jeden Chat für eine Aufgabe ein",
-        b: "Ein Gespräch für Mandantenbriefe im Stil deiner Kanzlei, ein anderes zum Zusammenfassen von Fallnotizen: Jedes kann eigene Anweisungen haben, mit Beispielen zum Einstieg.",
-      },
-      {
-        t: "Ein Preis für die ganze Kanzlei",
-        b: "Der Tarif für Kanzleien und Praxen deckt bis zu 15 Computer einer Kanzlei oder Praxis zu einem Pauschalpreis ab, monatlich oder jährlich, ohne Plätze pro Person zu zählen.",
-      },
-    ],
 
   },
 
-  download: {
-    title: (app) => `${app} herunterladen`,
-    lead: "14 Tage kostenlos. Ein Installer, danach läuft es offline.",
-    windows: "Windows 10 und 11",
-    windowsMeta: "64-Bit · 19 MB",
-    windowsBody: (app) =>
-      `Läuft mit NVIDIA-, AMD- und Intel-Grafik und auch ganz ohne Grafikkarte, nur langsamer. ${app} prüft beim ersten Start, was du hast.`,
-    mac: "Mac mit Apple Silicon",
-    macMeta: "M1 oder neuer · 31 MB",
-    macBody: (app) =>
-      `Führt die Modelle auf der eingebauten Grafik des Mac aus, die sich den Arbeitsspeicher mit dem Mac teilt. Braucht macOS 13.3 oder neuer. ${app} prüft beim ersten Öffnen, wie viel davon es nutzen kann.`,
-    costTitle: "Was es kostet",
-    cost1:
-      "Die ersten 14 Tage ist alles kostenlos: die ganze App, jedes offene Modell im Katalog, keine Karte nötig zum Start. Danach ist es ein Abo, monatlich oder jährlich bezahlt.",
-    cost2:
-      "Später werden manche Spezialmodelle im Store auch von ihren Entwicklern verkauft. Das wird ein Einmalkauf, keine Miete: Kaufst du eines, gehört es dir.",
-    warnTitle: "Windows warnt dich beim ersten Mal.",
-    warn1: {
-      before: "Wenn du den Installer startest, zeigt Windows einen blauen Bildschirm mit",
-      quote: "„Der Computer wurde durch Windows geschützt“",
-      middle: ". Ein Weiter ist nicht zu sehen: Du musst auf",
-      moreInfo: "Weitere Informationen",
-      then: " klicken und dann auf",
-      runAnyway: "Trotzdem ausführen",
-      after: ".",
-    },
-    warn2:
-      "Das ist keine Virenwarnung. Windows zeigt sie bei neuen Apps, die es noch nicht kennt, und nur beim ersten Mal.",
-    macWarnTitle: "Auch dein Mac fragt nach.",
-    macWarn:
-      "Beim ersten Öffnen meldet macOS, dass es die App nicht auf Schadsoftware prüfen kann. Auch das ist keine Virenwarnung. Klicke auf Fertig, öffne die Systemeinstellungen, gehe zu Datenschutz & Sicherheit, scrolle nach unten und klicke auf Trotzdem öffnen. Es fragt nur einmal.",
-    needsTitle: "Was es braucht",
-    needs: [
-      ["Windows 10 oder 11, oder ein Mac mit Apple Silicon", "64-Bit-Windows oder ein Mac ab M1 mit macOS 13.3 oder neuer. Sonst nichts zu installieren: kein Python, keine Kommandozeile, keine Konfiguration."],
-      ["Irgendeine Grafikkarte oder keine", "NVIDIA, AMD und Intel funktionieren alle, auf dem Mac die eingebaute Grafik. Ohne Karte laufen die Modelle auf dem Prozessor: langsamer, aber es geht."],
-      ["Platz für die Modelle", "Die App hat 19 MB unter Windows und 31 MB auf dem Mac. Modelle sind eigene Downloads, meist 2–10 GB pro Stück, und du wählst welche."],
-      ["Ab und zu eine Internetverbindung", "Zum Herunterladen von Modellen und um das Abo aktuell zu halten. Im Alltag läuft es mit ausgeschaltetem Netz; deine Fragen brauchen es nie."],
-    ],
-    unsure: "Nicht sicher, was dein Computer schafft?",
-    orInstall: "Installier es, und es sagt es dir.",
-  },
 
   subscribeSuccess: {
     title: "Du bist abonniert",
@@ -270,7 +186,7 @@ export const de: Strings = {
       ["Kann ich es auf mehreren Computern nutzen?", "Ja, auf bis zu 3 deiner Computer. Auf einem neuen öffnest du Konto und gibst die E-Mail-Adresse an, mit der du bezahlt hast; wir schicken dir einen 6-stelligen Code. Ist das Limit erreicht, zeigt die App deine Computer, damit du einen abmelden kannst. Ein Computer, der 60 Tage nicht genutzt wird, gibt seinen Platz von selbst frei."],
       ["Funktioniert es offline?", "Ja. Deine Lizenz wird auf deinem Computer geprüft, ohne Internet. Sie erneuert sich, sobald du online bist. Nur ein Computer, der länger als etwa 35 Tage offline bleibt, muss einmal online gehen."],
       ["Steigen meine 8 $ später?", "Für die ersten 100 Mitglieder bleibt es bei 8 $ im Monat, solange das Abo läuft, auch wenn der Preis für neue Mitglieder steigt. Oder einmalig 100 $ für eine lebenslange Lizenz, danach nie wieder zahlen."],
-      ["Kann ich kündigen?", "Ja, jederzeit, im Bereich Konto der App. Modelle, die du gekauft hast, bleiben deine."],
+      ["Kann ich kündigen?", "Ja, jederzeit, im Bereich Konto der App."],
       ["Wir sind eine Kanzlei. Braucht jede Person ein Abo?", "Nein. Der Tarif für Kanzleien & Praxen gilt für bis zu 15 Computer an einem Standort, zu einem Preis."],
     ],
     ctaDownload: "Herunterladen und die 14 Tage starten",

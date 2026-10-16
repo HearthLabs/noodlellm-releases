@@ -100,7 +100,7 @@ export default function Pricing({ locale }: { locale: Locale }) {
             {!id && (
               <>
                 <Link
-                  href={href(locale, "/download")}
+                  href={`${href(locale, "/")}#download`}
                   className="mt-5 block rounded-md border border-edge px-4 py-2 text-center text-sm font-medium text-ink-dim transition-colors hover:bg-surface-2 hover:text-ink"
                 >
                   {t.tryItButton}
@@ -127,7 +127,7 @@ export default function Pricing({ locale }: { locale: Locale }) {
 
       <section className="mt-16 border-t border-edge pt-10">
         <p className="text-sm text-ink-dim">
-          <Link href={href(locale, "/download")} className={link}>
+          <Link href={`${href(locale, "/")}#download`} className={link}>
             {t.ctaDownload}
           </Link>
         </p>

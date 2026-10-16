@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
 import { SITE } from "./site";
-import { alternates, strings, type Locale } from "./i18n";
+import { alternates, href, strings, type Locale } from "./i18n";
 import Home from "@/components/pages/Home";
-import Download from "@/components/pages/Download";
+import Moved from "@/components/pages/Moved";
 import SubscribeSuccess from "@/components/pages/SubscribeSuccess";
 import Pricing from "@/components/pages/Pricing";
 import Legal from "@/components/pages/Legal";
-import { Individuals, Practices } from "@/components/pages/Audience";
-import { AUDIENCES } from "@/components/pages/Home";
 
 /**
  * Every page, once, for any language.
@@ -36,15 +34,6 @@ export function layoutMetadata(locale: Locale): Metadata {
 
 export const homePage = (locale: Locale) => <Home locale={locale} />;
 
-export function downloadMetadata(locale: Locale): Metadata {
-  const t = strings(locale).meta;
-  return {
-    title: t.downloadTitle,
-    description: t.downloadDescription(SITE.name),
-    alternates: alternates(locale, "/download"),
-  };
-}
-export const downloadPage = (locale: Locale) => <Download locale={locale} />;
 
 export function subscribeSuccessMetadata(locale: Locale): Metadata {
   const t = strings(locale).subscribeSuccess;
@@ -69,17 +58,15 @@ export function pricingMetadata(locale: Locale): Metadata {
 export const pricingPage = (locale: Locale) => <Pricing locale={locale} />;
 
 /**
- * The pages the homepage's question leads to. Their titles and descriptions are the
- * cards' own words, so a search result says the same thing the card does.
+ * Addresses that used to be pages: Download, Individuals, Practices, Licences and the
+ * Creator Agreement. Each now sends its visitor to the page that carries what it said, and
+ * asks search engines to drop it.
  */
-function audienceMetadata(locale: Locale, index: number): Metadata {
-  const choice = strings(locale).home.chooser[index];
-  return { title: choice.t, description: choice.b, alternates: alternates(locale, AUDIENCES[index]) };
-}
-export const individualsMetadata = (locale: Locale) => audienceMetadata(locale, 0);
-export const practicesMetadata = (locale: Locale) => audienceMetadata(locale, 1);
-export const individualsPage = (locale: Locale) => <Individuals locale={locale} />;
-export const practicesPage = (locale: Locale) => <Practices locale={locale} />;
+export const movedMetadata: Metadata = { robots: { index: false, follow: true } };
+export const movedPage = (to: string) => <Moved to={to} />;
+export const homeFor = (locale: Locale) => href(locale, "/");
+export const pricingFor = (locale: Locale) => href(locale, "/pricing");
+
 
 /** The Terms and the Privacy Statement: English only, so no locale (see Legal). */
 export const termsMetadata: Metadata = {
@@ -94,9 +81,3 @@ export const privacyMetadata: Metadata = {
 };
 export const termsPage = () => <Legal doc="terms" />;
 export const privacyPage = () => <Legal doc="privacy" />;
-export const creatorAgreementMetadata: Metadata = {
-  title: "Creator Agreement",
-  description: "The terms for listing and selling a model in the Noodle LLM store.",
-  alternates: { canonical: "/creator-agreement" },
-};
-export const creatorAgreementPage = () => <Legal doc="creator-agreement" />;
