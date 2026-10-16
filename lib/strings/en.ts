@@ -49,11 +49,11 @@ export const en = {
     fromPrice: "from $8 a month",
 
     whyTitle: "Why run it yourself",
-    whyIntro: "The cloud is smarter, but that was never the whole question. Use both. Keep a cloud AI such as ChatGPT for the rare problem that needs the very best, since your local AI is weaker at hard reasoning and slower on a modest PC. Do the everyday, the private and the repetitive here: drafting a letter, summarising a report, finding the clause in a contract.",
+    whyIntro: "The cloud is smarter, but that was never the whole question. Use both. Keep a cloud AI such as ChatGPT for the rare problem that needs the very best, since your local AI may be weaker at hard reasoning questions than cloud-based models. Do the everyday, the private and the repetitive here: drafting a letter, summarising a report, finding the clause in a contract.",
     why: [
       {
         t: "They set the terms. You live with them.",
-        b: "Cloud AI companies decide what it costs, how much you can use, which countries can use it and which model you get, and they change all of it when it suits them. On your own computer nothing changes unless you change it: the model you have stays exactly as it is, and when a better one comes out you download it, with no new contract.",
+        b: "Cloud AI companies decide the price, the limits and which model you get, and change them when it suits them. On your computer nothing changes unless you change it.",
       },
       {
         t: "Try again as often as you like.",
@@ -70,6 +70,7 @@ export const en = {
     shotAlt: (app: string) => `A chat in ${app} drafting a reply to a client from the user's own invoices and engagement letter, with the skill “My writing style” switched on`,
 
     individualTitle: "What it does for you",
+    individualIntro: "The app speaks English, German, Spanish, Japanese and Chinese, and most models answer in whichever language you write in.",
     practiceLine:
       "For a practice: nothing is transmitted, so there is no processor to name in a data agreement, and one Practices plan covers up to 15 computers in the office.",
     practicePlan: "See the plan",
@@ -98,29 +99,7 @@ export const en = {
         t: "Use it from your phone",
         b: "Pair your phone once by scanning a code, then carry on your conversations from the sofa or the next room, with your files included. It only works on your home or office Wi-Fi and everything is encrypted between the two, so nothing passes through us. The phone app is coming soon.",
       },
-      {
-        t: "In your language",
-        b: "The app speaks English, German, Spanish, Japanese and Chinese, and most models answer in whichever language you write in.",
-      },
     ],
-
-    readsMore: "What it can and cannot read",
-    readsHeading: "It reads",
-    reads: [
-      "Word documents (.docx)",
-      "PDFs with selectable text",
-      "PowerPoint decks (.pptx)",
-      "Excel spreadsheets (.xlsx)",
-      "Plain text, Markdown, CSV, JSON and RTF",
-    ],
-    cannotHeading: "It does not, yet",
-    cannot: [
-      ["Scans and photographs of pages", "There is no text in the file to read, only a picture of it."],
-      ["The pre-2007 .doc, .xls and .ppt formats", "Re-saving one in Office as .docx fixes it."],
-      ["Pages, Numbers and Keynote", "Exporting to the Word, Excel or PowerPoint equivalent works."],
-      ["Images, audio and video", "Text only, for now."],
-    ],
-
 
   },
 

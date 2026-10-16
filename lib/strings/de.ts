@@ -43,11 +43,11 @@ export const de: Strings = {
     fromPrice: "ab 8 $ im Monat",
 
     whyTitle: "Warum selbst betreiben",
-    whyIntro: "Die Cloud ist klüger, aber darum ging es nie allein. Nutze beides. Behalte eine Cloud-KI wie ChatGPT für das seltene Problem, das wirklich das Beste braucht, denn deine lokale KI ist beim schwierigen Schlussfolgern schwächer und auf einem bescheidenen PC langsamer. Erledige das Alltägliche, das Vertrauliche und das Wiederkehrende hier: einen Brief entwerfen, einen Bericht zusammenfassen, die Klausel in einem Vertrag finden.",
+    whyIntro: "Die Cloud ist klüger, aber darum ging es nie allein. Nutze beides. Behalte eine Cloud-KI wie ChatGPT für das seltene Problem, das wirklich das Beste braucht, denn deine lokale KI ist bei schwierigen Denkfragen womöglich schwächer als Cloud-Modelle. Erledige das Alltägliche, das Vertrauliche und das Wiederkehrende hier: einen Brief entwerfen, einen Bericht zusammenfassen, die Klausel in einem Vertrag finden.",
     why: [
       {
         t: "Sie machen die Regeln. Du musst damit leben.",
-        b: "Cloud-KI-Anbieter entscheiden, was es kostet, wie viel du nutzen darfst, in welchen Ländern es verfügbar ist und welches Modell du bekommst, und sie ändern das alles, wann es ihnen passt. Auf deinem eigenen Computer ändert sich nichts, außer du änderst es: Dein Modell bleibt, wie es ist, und kommt ein besseres heraus, lädst du es ohne neuen Vertrag herunter.",
+        b: "Cloud-KI-Anbieter bestimmen Preis, Grenzen und welches Modell du bekommst, und ändern das, wann es ihnen passt. Auf deinem Computer ändert sich nichts, solange du es nicht änderst.",
       },
       {
         t: "Probier es so oft, wie du willst.",
@@ -64,6 +64,7 @@ export const de: Strings = {
     shotAlt: (app) => `Ein Chat in ${app}, der aus den eigenen Rechnungen und dem Mandatsschreiben eine Antwort an eine Kundin entwirft, mit eingeschalteter Fähigkeit „My writing style“`,
 
     individualTitle: "Was es für dich tut",
+    individualIntro: "Die App gibt es auf Deutsch, Englisch, Spanisch, Japanisch und Chinesisch, und die meisten Modelle antworten in der Sprache, in der du schreibst.",
     practiceLine:
       "Für eine Kanzlei oder Praxis: Es wird nichts übertragen, also gibt es keinen Auftragsverarbeiter, den ein Datenschutzvertrag nennen müsste, und ein Abo „Kanzleien & Praxen“ deckt bis zu 15 Computer im Büro ab.",
     practicePlan: "Zum Abo",
@@ -92,29 +93,7 @@ export const de: Strings = {
         t: "Vom Handy aus nutzen",
         b: "Koppeln Sie Ihr Handy einmal per Code-Scan und führen Sie Ihre Unterhaltungen vom Sofa oder aus dem Nebenzimmer weiter, mitsamt Ihren Dateien. Es funktioniert nur im WLAN zu Hause oder im Büro, und alles ist zwischen beiden Geräten verschlüsselt, sodass nichts über uns läuft. Die Handy-App erscheint in Kürze.",
       },
-      {
-        t: "In Ihrer Sprache",
-        b: "Die App gibt es auf Deutsch, Englisch, Spanisch, Japanisch und Chinesisch, und die meisten Modelle antworten in der Sprache, in der Sie schreiben.",
-      },
     ],
-
-    readsMore: "Was es lesen kann und was nicht",
-    readsHeading: "Es liest",
-    reads: [
-      "Word-Dokumente (.docx)",
-      "PDFs mit markierbarem Text",
-      "PowerPoint-Präsentationen (.pptx)",
-      "Excel-Tabellen (.xlsx)",
-      "Text, Markdown, CSV, JSON und RTF",
-    ],
-    cannotHeading: "Noch nicht",
-    cannot: [
-      ["Scans und abfotografierte Seiten", "In der Datei steht kein Text, nur ein Bild davon."],
-      ["Die älteren Formate .doc, .xls und .ppt (vor 2007)", "In Office als .docx neu speichern behebt das."],
-      ["Pages, Numbers und Keynote", "Als Word, Excel oder PowerPoint exportieren funktioniert."],
-      ["Bilder, Audio und Video", "Vorerst nur Text."],
-    ],
-
 
   },
 

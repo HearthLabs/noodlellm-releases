@@ -43,11 +43,11 @@ export const es: Strings = {
     fromPrice: "desde 8 $ al mes",
 
     whyTitle: "Por qué ejecutarla tú",
-    whyIntro: "La nube es más lista, pero esa nunca fue toda la cuestión. Usa las dos. Guarda una IA en la nube como ChatGPT para el problema raro que necesita lo mejor de lo mejor, porque tu IA local es peor en el razonamiento difícil y más lenta en un PC modesto. Haz aquí lo cotidiano, lo privado y lo repetitivo: redactar una carta, resumir un informe, encontrar la cláusula en un contrato.",
+    whyIntro: "La nube es más lista, pero esa nunca fue toda la cuestión. Usa las dos. Guarda una IA en la nube como ChatGPT para el problema raro que necesita lo mejor de lo mejor, porque tu IA local puede ser peor que los modelos en la nube en preguntas de razonamiento difícil. Haz aquí lo cotidiano, lo privado y lo repetitivo: redactar una carta, resumir un informe, encontrar la cláusula en un contrato.",
     why: [
       {
         t: "Ellos ponen las reglas. Tú te aguantas.",
-        b: "Las empresas de IA en la nube deciden cuánto cuesta, cuánto puedes usar, en qué países se puede usar y qué modelo te toca, y lo cambian todo cuando les conviene. En tu propio ordenador nada cambia a menos que tú lo cambies: el modelo que tienes se queda tal cual y, cuando sale uno mejor, lo descargas sin contrato nuevo.",
+        b: "Las empresas de IA en la nube deciden el precio, los límites y qué modelo te toca, y lo cambian cuando les conviene. En tu ordenador nada cambia a menos que lo cambies tú.",
       },
       {
         t: "Vuelve a intentarlo tantas veces como quieras.",
@@ -64,6 +64,7 @@ export const es: Strings = {
     shotAlt: (app) => `Un chat en ${app} redactando la respuesta a una clienta a partir de las propias facturas y la carta de encargo, con la habilidad «My writing style» activada`,
 
     individualTitle: "Lo que hace por ti",
+    individualIntro: "La app está en español, inglés, alemán, japonés y chino, y la mayoría de los modelos responden en el idioma en que escribas.",
     practiceLine:
       "Para un despacho o consulta: no se transmite nada, así que no hay ningún encargado del tratamiento que nombrar en un acuerdo de datos, y un plan Despachos cubre hasta 15 ordenadores en la oficina.",
     practicePlan: "Ver el plan",
@@ -92,29 +93,7 @@ export const es: Strings = {
         t: "Úsalo desde el móvil",
         b: "Vincula tu móvil una vez escaneando un código y sigue tus conversaciones desde el sofá o la habitación de al lado, con tus archivos incluidos. Solo funciona en la wifi de casa o de la oficina y todo va cifrado entre los dos, así que nada pasa por nosotros. La app para móvil llegará pronto.",
       },
-      {
-        t: "En tu idioma",
-        b: "La app está en español, inglés, alemán, japonés y chino, y la mayoría de los modelos responden en el idioma en que escribas.",
-      },
     ],
-
-    readsMore: "Lo que puede leer y lo que no",
-    readsHeading: "Lee",
-    reads: [
-      "Documentos de Word (.docx)",
-      "PDF con texto seleccionable",
-      "Presentaciones de PowerPoint (.pptx)",
-      "Hojas de cálculo de Excel (.xlsx)",
-      "Texto plano, Markdown, CSV, JSON y RTF",
-    ],
-    cannotHeading: "Todavía no lee",
-    cannot: [
-      ["Escaneos y fotos de páginas", "No hay texto que leer en el archivo, solo una imagen de él."],
-      ["Los formatos .doc, .xls y .ppt anteriores a 2007", "Volver a guardarlo en Office como .docx lo soluciona."],
-      ["Pages, Numbers y Keynote", "Exportarlo al equivalente de Word, Excel o PowerPoint funciona."],
-      ["Imágenes, audio y vídeo", "Solo texto, por ahora."],
-    ],
-
 
   },
 

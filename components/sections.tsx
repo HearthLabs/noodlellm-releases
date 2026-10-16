@@ -93,17 +93,9 @@ function IconMemory() {
     </svg>
   );
 }
-function IconGlobe() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.6" className={ICON} aria-hidden="true">
-      <circle cx="12" cy="12" r="8.5" />
-      <path d="M3.5 12h17M12 3.5c2.5 2.6 3.5 5.4 3.5 8.5s-1 5.9-3.5 8.5c-2.5-2.6-3.5-5.4-3.5-8.5s1-5.9 3.5-8.5Z" />
-    </svg>
-  );
-}
 // The icons pair with the cards in the strings by position; the words are per language,
 // the pictures are not.
-const INDIVIDUAL_ICONS = [IconFiles, IconMemory, IconUnlimited, IconEasy, IconTeach, IconPhone, IconGlobe];
+const INDIVIDUAL_ICONS = [IconFiles, IconMemory, IconUnlimited, IconEasy, IconTeach, IconPhone];
 
 function Card({ Icon, t, b }: { Icon: () => React.JSX.Element; t: string; b: string }) {
   return (
@@ -143,43 +135,6 @@ function DownloadButton({ locale, label }: { locale: Locale; label: string }) {
   );
 }
 
-
-/**
- * The detail behind "it reads your own files", folded away: the cards make the claim, and
- * whoever needs to know whether their .doc files count can open this and find out.
- */
-function ReadsDetails({ locale }: { locale: Locale }) {
-  const t = strings(locale).home;
-  return (
-    <details className="mt-4 rounded-lg border border-edge bg-surface-1 px-5 py-3.5">
-      <summary className="cursor-pointer text-sm text-ink-dim hover:text-ink">{t.readsMore}</summary>
-      <div className="mt-4 grid gap-6 pb-1 sm:grid-cols-2">
-        <div>
-          <h3 className="text-sm font-medium">{t.readsHeading}</h3>
-          <ul className="mt-2.5 space-y-1.5">
-            {t.reads.map((r) => (
-              <li key={r} className="flex gap-2.5 text-sm leading-relaxed text-ink-dim">
-                <span aria-hidden className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
-                {r}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h3 className="text-sm font-medium">{t.cannotHeading}</h3>
-          <ul className="mt-2.5 space-y-2">
-            {t.cannot.map(([what, why]) => (
-              <li key={what} className="text-sm leading-relaxed">
-                <span className="text-ink-dim">{what}</span>
-                <span className="block text-xs text-ink-faint">{why}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </details>
-  );
-}
 
 export function Hero({ locale }: { locale: Locale }) {
   const t = strings(locale).home;
@@ -271,13 +226,12 @@ export function IndividualBlock({ locale }: { locale: Locale }) {
     <section className="border-y border-edge bg-surface-1/40">
       <div className="mx-auto max-w-5xl px-6 pt-20 pb-16">
         <h2 className="max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">{t.individualTitle}</h2>
-        {/* An odd card out spans the row rather than leaving a hole beside it. */}
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 sm:[&>*:last-child:nth-child(odd)]:col-span-2">
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-dim">{t.individualIntro}</p>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {t.individual.map((f, i) => (
             <Card key={f.t} Icon={INDIVIDUAL_ICONS[i]} {...f} />
           ))}
         </div>
-        <ReadsDetails locale={locale} />
         <p className="mt-6 max-w-3xl text-sm leading-relaxed text-ink-dim">
           {t.practiceLine}{" "}
           <Link href={href(locale, "/pricing")} className="text-accent underline-offset-4 hover:underline">
