@@ -218,6 +218,7 @@ export const es: Strings = {
     billingYearly: "Anual",
     yearlySave: "Más barato",
     lead: "Catorce días para probarlo todo y después una suscripción. Los modelos se descargan gratis y se usan tanto como quieras; la suscripción es por la aplicación. Sin cargos por mensaje ni por token.",
+    lifetime: (p: string) => `o ${p} una sola vez, tuyo para siempre`,
     plans: [
       {
         name: "Pruébalo",
@@ -229,12 +230,21 @@ export const es: Strings = {
         note: "",
       },
       {
-        name: "Particulares",
+        name: "Miembro fundador",
         price: "",
         per: "al mes (solo los 100 primeros)",
         perYear: "al año (solo los 100 primeros)",
         blurb: "Para una persona que quiere su IA en su propio ordenador.",
         points: ["Todo lo de la prueba, sin límite de tiempo", "Sin cobros por mensaje ni topes diarios", "Hasta 3 de tus ordenadores", "Tu precio fijo mientras sigas suscrito"],
+        note: "",
+      },
+      {
+        name: "Particulares",
+        price: "",
+        per: "al mes",
+        perYear: "al año",
+        blurb: "Para una persona que quiere su IA en su propio ordenador.",
+        points: ["Todo lo de la prueba, sin límite de tiempo", "Sin cobros por mensaje ni topes diarios", "Hasta 3 de tus ordenadores", "Cancela cuando quieras"],
         note: "",
       },
       {
@@ -260,7 +270,7 @@ export const es: Strings = {
       ["¿Os llega algo de lo que escribo?", "No. Tus preguntas, respuestas y archivos nunca salen de tu ordenador. La aplicación solo se conecta para descargar modelos y comprobar tu suscripción."],
       ["¿Qué pasa después de los 14 días?", "La aplicación se pausa hasta que te suscribas. Tus modelos y conversaciones se quedan en tu ordenador y no se borra nada."],
       ["¿Puedo usarlo en más de un ordenador?", "Sí, en hasta 3 de tus ordenadores. Para usar un cuarto, cierra la sesión en uno de los otros desde la aplicación."],
-      ["¿Subirán mis 8 $ más adelante?", "Para los 100 primeros miembros, se mantienen los 8 $ al mes, u 80 $ al año, mientras sigan suscritos, aunque suba el precio para los nuevos miembros."],
+      ["¿Subirán mis 8 $ más adelante?", "Para los 100 primeros miembros, se mantienen los 8 $ al mes mientras sigan suscritos, aunque suba el precio para los nuevos miembros. O paga 100 $ una sola vez por una licencia de por vida y no vuelvas a pagar."],
       ["¿Puedo cancelar?", "Sí, cuando quieras, desde la sección Cuenta de la aplicación. Los modelos que compraste siguen siendo tuyos."],
       ["Somos un despacho. ¿Necesitamos una suscripción cada uno?", "No. El plan Despachos cubre hasta 15 ordenadores de una oficina por un solo precio."],
     ],

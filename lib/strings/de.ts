@@ -217,6 +217,7 @@ export const de: Strings = {
     billingYearly: "Jährlich",
     yearlySave: "Günstiger",
     lead: "Vierzehn Tage, um alles auszuprobieren, danach ein Abo. Die Modelle selbst sind kostenlos herunterzuladen und so oft zu nutzen, wie du willst; das Abo ist für die App. Keine Gebühren pro Nachricht oder pro Token.",
+    lifetime: (p: string) => `oder einmalig ${p}, für immer deins`,
     plans: [
       {
         name: "Ausprobieren",
@@ -228,12 +229,21 @@ export const de: Strings = {
         note: "",
       },
       {
-        name: "Privatpersonen",
+        name: "Gründungsmitglied",
         price: "",
         per: "pro Monat (nur die ersten 100)",
         perYear: "pro Jahr (nur die ersten 100)",
         blurb: "Für eine Person, die ihre KI auf dem eigenen Computer will.",
         points: ["Alles aus der Testphase, ohne Zeitlimit", "Keine Kosten pro Nachricht, kein Tageslimit", "Bis zu 3 deiner Computer", "Dein Preis bleibt fest, solange dein Abo läuft"],
+        note: "",
+      },
+      {
+        name: "Privatpersonen",
+        price: "",
+        per: "pro Monat",
+        perYear: "pro Jahr",
+        blurb: "Für eine Person, die ihre KI auf dem eigenen Computer will.",
+        points: ["Alles aus der Testphase, ohne Zeitlimit", "Keine Kosten pro Nachricht, kein Tageslimit", "Bis zu 3 deiner Computer", "Jederzeit kündbar"],
         note: "",
       },
       {
@@ -259,7 +269,7 @@ export const de: Strings = {
       ["Wird etwas, das ich eingebe, an euch geschickt?", "Nein. Deine Fragen, Antworten und Dateien verlassen nie deinen Computer. Die App geht nur online, um Modelle herunterzuladen und dein Abo zu prüfen."],
       ["Was passiert nach den 14 Tagen?", "Die App pausiert, bis du ein Abo abschließt. Deine Modelle und Gespräche bleiben auf deinem Computer, und nichts wird gelöscht."],
       ["Kann ich es auf mehreren Computern nutzen?", "Ja, auf bis zu 3 deiner Computer. Für einen vierten meldest du einen der anderen in der App ab."],
-      ["Steigen meine 8 $ später?", "Für die ersten 100 Mitglieder bleibt es bei 8 $ im Monat oder 80 $ im Jahr, solange das Abo läuft, auch wenn der Preis für neue Mitglieder steigt."],
+      ["Steigen meine 8 $ später?", "Für die ersten 100 Mitglieder bleibt es bei 8 $ im Monat, solange das Abo läuft, auch wenn der Preis für neue Mitglieder steigt. Oder einmalig 100 $ für eine lebenslange Lizenz, danach nie wieder zahlen."],
       ["Kann ich kündigen?", "Ja, jederzeit, im Bereich Konto der App. Modelle, die du gekauft hast, bleiben deine."],
       ["Wir sind eine Kanzlei. Braucht jede Person ein Abo?", "Nein. Der Tarif für Kanzleien & Praxen gilt für bis zu 15 Computer an einem Standort, zu einem Preis."],
     ],

@@ -223,6 +223,7 @@ export const en = {
     billingYearly: "Yearly",
     yearlySave: "Pay less",
     lead: "Fourteen days to try everything, then a subscription. The models themselves are free to download and run as often as you like; the subscription is for the app. No per-message or per-token charges.",
+    lifetime: (p: string) => `or ${p} once, yours for life`,
     plans: [
       {
         name: "Try it",
@@ -234,12 +235,21 @@ export const en = {
         note: "",
       },
       {
-        name: "Individuals",
+        name: "Founding member",
         price: "",
         per: "per month (first 100 only)",
         perYear: "per year (first 100 only)",
         blurb: "For one person who wants their AI on their own computer.",
         points: ["Everything in the trial, with no time limit", "No per-message charges or daily caps", "Up to 3 of your computers", "Your price is locked in while you stay subscribed"],
+        note: "",
+      },
+      {
+        name: "Individuals",
+        price: "",
+        per: "per month",
+        perYear: "per year",
+        blurb: "For one person who wants their AI on their own computer.",
+        points: ["Everything in the trial, with no time limit", "No per-message charges or daily caps", "Up to 3 of your computers", "Cancel any time"],
         note: "",
       },
       {
@@ -265,7 +275,7 @@ export const en = {
       ["Does anything I type get sent to you?", "No. Your questions, answers and files never leave your computer. The app only goes online to download models and check your subscription."],
       ["What happens after the 14 days?", "The app pauses until you subscribe. Your models and conversations stay on your computer, and nothing is deleted."],
       ["Can I use it on more than one computer?", "Yes, on up to 3 of your computers. To use a fourth, sign one of the others out from the app."],
-      ["Will my $8 go up later?", "For the first 100 members, you keep $8 a month, or $80 a year, for as long as you stay subscribed, even after the price for new members rises."],
+      ["Will my $8 go up later?", "For the first 100 members, you keep $8 a month for as long as you stay subscribed, even after the price for new members rises. Or pay $100 once for a lifetime licence and never pay again."],
       ["Can I cancel?", "Yes, at any time, from the Account section of the app. Models you bought outright stay yours."],
       ["We are a firm. Do we each need a subscription?", "No. The Practices plan covers up to 15 computers in one office for one price."],
     ],
