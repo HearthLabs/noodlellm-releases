@@ -63,8 +63,9 @@ export const de: Strings = {
       },
     ],
 
-    shotAlt: (app) => `Ein Gespräch in ${app}, das aus einem eigenen Dokument des Nutzers antwortet`,
-    shotCaption: "Ein echtes Gespräch auf einem echten Rechner. Die Antwort nennt die Datei, aus der sie stammt.",
+    shotTitle: "Es sagt dir, was dein PC schafft",
+    shotBody: "Öffne den Store, und jedes Modell ist schon mit deinem Computer abgeglichen: was gut läuft, was langsam läuft und was nicht passt. Such dir eins aus, installiere es mit einem Klick und leg los.",
+    shotAlt: (app) => `Der Store von ${app}, jedes Modell markiert danach, wie gut es auf diesem PC läuft`,
 
     individualTitle: "Was es für dich tut",
     practiceLine:

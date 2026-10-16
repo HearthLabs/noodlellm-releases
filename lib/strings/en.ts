@@ -69,8 +69,9 @@ export const en = {
       },
     ],
 
-    shotAlt: (app: string) => `A conversation in ${app}, answering from the user's own document`,
-    shotCaption: "A real conversation on a real machine. The answer names the file it came from.",
+    shotTitle: "It tells you what your PC can run",
+    shotBody: "Open the store and every model has already been checked against your computer: which run great, which run slowly and which will not fit. Pick one, install it in one click, and start.",
+    shotAlt: (app: string) => `The ${app} store, with each model marked by how well it runs on this PC`,
 
     individualTitle: "What it does for you",
     practiceLine:

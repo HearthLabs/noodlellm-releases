@@ -246,18 +246,17 @@ export function Shot({ locale }: { locale: Locale }) {
   return (
     <>
     {/* ------------------------------------------------------------ the product */}
-    <section className="mx-auto max-w-5xl px-6 pb-20">
-      <figure>
-        <Image
-          src="/shots/chat.png"
-          alt={t.shotAlt(SITE.name)}
-          width={1280}
-          height={820}
-          className="rounded-xl border border-edge shadow-2xl shadow-black/40"
-          priority
-        />
-        <figcaption className="mt-3 text-xs leading-relaxed text-ink-faint">{t.shotCaption}</figcaption>
-      </figure>
+    {/* The store, because "will it run on my PC?" is the question nobody else answers. */}
+    <section className="mx-auto max-w-5xl px-6 pt-20 pb-20">
+      <h2 className="max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">{t.shotTitle}</h2>
+      <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-dim">{t.shotBody}</p>
+      <Image
+        src="/shots/app.webp"
+        alt={t.shotAlt(SITE.name)}
+        width={1280}
+        height={820}
+        className="mt-10 rounded-xl border border-edge shadow-2xl shadow-black/40"
+      />
     </section>
     </>
   );

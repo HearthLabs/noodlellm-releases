@@ -62,8 +62,9 @@ export const zh: Strings = {
       },
     ],
 
-    shotAlt: (app) => `${app} 中的一段对话，根据用户自己的文档作答`,
-    shotCaption: "真实机器上的一段真实对话。回答标明了出自哪个文件。",
+    shotTitle: "它会告诉你，你的电脑能跑什么",
+    shotBody: "打开商店，每个模型都已经按你的电脑检查过：哪些跑得很好，哪些较慢，哪些装不下。挑一个，一键安装，马上开始。",
+    shotAlt: (app) => `${app} 商店，每个模型都标明了在这台电脑上的运行情况`,
 
     individualTitle: "它能为你做什么",
     practiceLine:
